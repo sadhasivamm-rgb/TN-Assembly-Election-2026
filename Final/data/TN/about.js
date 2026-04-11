@@ -859,39 +859,7 @@
         ]
       },
 
-      {
-        constno: 228,
-        constname: "Tenkasi",
-        about: "Tenkasi constituency, located near the Western Ghats, is known for its scenic environment, agriculture, and growing tourism potential. It has a mix of rural and semi-urban characteristics with reliance on farming and small businesses.",
-
-        problem: [
-          {
-            title: "Tourism infrastructure gaps",
-            desc: "Despite having natural attractions and religious sites, the region lacks adequate infrastructure such as proper roads, sanitation, and accommodation facilities for tourists."
-          },
-          {
-            title: "Agricultural challenges",
-            desc: "Farmers depend on seasonal rainfall and face difficulties due to inconsistent water availability and limited irrigation facilities."
-          }
-        ]
-      },
-
-      {
-        constno: 229,
-        constname: "Alangulam",
-        about: "Alangulam constituency is primarily rural with agriculture as the main economic activity. The region depends on traditional farming practices and has limited industrial development.",
-
-        problem: [
-          {
-            title: "Limited infrastructure development",
-            desc: "Many villages lack proper road connectivity, healthcare facilities, and educational institutions, affecting overall development."
-          },
-          {
-            title: "Water management issues",
-            desc: "Irregular rainfall and insufficient irrigation infrastructure create water shortages, impacting agriculture and daily life."
-          }
-        ]
-      },
+      
 
       {
         constno: 230,
