@@ -660,6 +660,728 @@
       ]
     }
   ]
-}
+}, {
+    distNo: 5,
+    distName: "Virudhunagar",
+    consit: [
+
+      {
+        constno: 206,
+        constname: "Virudhunagar",
+        about: "Virudhunagar constituency is a historically significant commercial center in southern Tamil Nadu, known for its strong trading network in oil, pulses, and grocery commodities. The region has developed through small-scale industries and merchant-based economic activities over decades. It also holds political importance as the birthplace of former Chief Minister K. Kamaraj. The constituency reflects a mixed socio-economic profile where urban trade hubs coexist with rural agricultural areas, creating diverse developmental challenges and opportunities.",
+
+        problem: [
+          {
+            title: "Water scarcity",
+            desc: "Virudhunagar town and its surrounding rural areas frequently experience water shortages due to limited rainfall and excessive dependence on groundwater sources. Continuous extraction has led to declining water tables, forcing residents to rely on tanker supply during peak summer months and affecting irrigation for agriculture."
+          },
+          {
+            title: "Urban infrastructure issues",
+            desc: "Many parts of the constituency face challenges related to road maintenance, drainage systems, and urban planning. During monsoon seasons, poor drainage leads to water stagnation and flooding of roads, causing inconvenience to residents and disruption in transportation."
+          }
+        ]
+      },
+
+      {
+        constno: 207,
+        constname: "Aruppukkottai",
+        about: "Aruppukkottai constituency is characterized by its combined dependence on agriculture and small-scale textile activities. Cotton cultivation plays a major role in the local economy, and the presence of weaving and related industries supports employment for a significant portion of the population. The region is semi-urban with strong reliance on natural resources, making it sensitive to environmental and climatic changes.",
+
+        problem: [
+          {
+            title: "Agricultural dependency on rainfall",
+            desc: "Farmers in Aruppukkottai largely depend on seasonal monsoon rains due to the absence of major irrigation infrastructure such as canals or reservoirs. This results in unpredictable agricultural output and financial instability during periods of drought or delayed rainfall."
+          },
+          {
+            title: "Groundwater depletion",
+            desc: "Continuous usage of borewells for both farming and domestic purposes has significantly reduced groundwater levels in many villages. This has created long-term sustainability issues and increased the cost of water access for residents."
+          }
+        ]
+      },
+
+      {
+        constno: 208,
+        constname: "Sattur",
+        about: "Sattur constituency is known for its matchstick manufacturing and other small-scale industries that provide employment to a large number of workers. The local economy is driven by these traditional industries, which are labor-intensive and form the backbone of livelihoods in the region.",
+
+        problem: [
+          {
+            title: "Industrial safety concerns",
+            desc: "Workers in matchstick and small-scale industrial units are often exposed to hazardous chemicals and flammable materials without adequate safety measures. This increases the risk of workplace accidents and long-term health issues among labourers."
+          },
+          {
+            title: "Labour welfare issues",
+            desc: "Many workers are employed in informal settings with low wages, lack of job security, and limited access to social protection schemes. This affects their overall quality of life and economic stability."
+          }
+        ]
+      },
+
+      {
+        constno: 209,
+        constname: "Sivakasi",
+        about: "Sivakasi constituency is globally recognized as India's largest hub for fireworks, printing, and match industries. It plays a crucial role in the national economy by providing large-scale employment and contributing significantly to industrial output. The region is highly industrialized, but its economic growth is closely tied to hazardous and labor-intensive activities.",
+
+        problem: [
+          {
+            title: "Firecracker factory accidents",
+            desc: "Frequent explosions have been reported in firecracker manufacturing units located in and around Sivakasi, including nearby villages such as Ramuthevanpatti and Chinnakamanpatti. These incidents are often caused by improper handling of chemicals, overcrowded workspaces, and inadequate enforcement of safety regulations, leading to loss of lives and injuries."
+          },
+          {
+            title: "Industrial pollution",
+            desc: "Continuous industrial activity in fireworks and printing sectors contributes to air and chemical pollution in the region. Emissions from factories and improper disposal of waste materials affect environmental quality and pose health risks to residents."
+          }
+        ]
+      },
+
+      {
+        constno: 210,
+        constname: "Srivilliputhur",
+        about: "Srivilliputhur constituency is culturally significant due to the presence of the Andal Temple, an important pilgrimage site in Tamil Nadu. The region also has a reputation for dairy-based products such as palkova and supports agriculture and small-scale industries. Tourism plays a vital role in its local economy.",
+
+        problem: [
+          {
+            title: "Tourism infrastructure limitations",
+            desc: "Despite attracting a large number of devotees and tourists, the constituency lacks sufficient infrastructure such as parking facilities, sanitation systems, and accommodation services. This reduces the overall tourism experience and limits economic potential."
+          },
+          {
+            title: "Water management issues",
+            desc: "The region faces seasonal water shortages due to irregular rainfall and limited storage facilities. This affects both domestic consumption and agricultural activities in surrounding villages."
+          }
+        ]
+      },
+
+      {
+        constno: 211,
+        constname: "Rajapalayam",
+        about: "Rajapalayam constituency is known for its textile mills and agricultural activities, forming a key part of the industrial and rural economy in Tamil Nadu. The region has a strong workforce engaged in both manufacturing and farming sectors.",
+
+        problem: [
+          {
+            title: "Textile industry slowdown",
+            desc: "The textile sector in Rajapalayam has faced challenges due to market fluctuations, increased production costs, and competition. This has led to reduced operations in some mills and impacted employment opportunities."
+          },
+          {
+            title: "Water scarcity affecting economy",
+            desc: "Limited availability of water affects both agricultural irrigation and industrial processes, creating challenges for economic activities and reducing productivity in the region."
+          }
+        ]
+      },
+
+      {
+        constno: 212,
+        constname: "Tiruchuli",
+        about: "Tiruchuli constituency is predominantly rural with agriculture as the primary occupation. The region has cultural importance and relies heavily on traditional farming practices with limited industrial development.",
+
+        problem: [
+          {
+            title: "Underdeveloped infrastructure",
+            desc: "Basic infrastructure such as roads, healthcare facilities, and educational institutions are not well developed in many parts of Tiruchuli, affecting access to essential services."
+          },
+          {
+            title: "Agricultural challenges",
+            desc: "Farmers depend heavily on rainfall due to lack of irrigation systems, leading to uncertain crop yields and financial instability during adverse weather conditions."
+          }
+        ]
+      }
+
+    ]
+  },
+  {
+    distNo: 6,
+    distName: "Tirunelveli",
+    consit: [
+
+      {
+        constno: 224,
+        constname: "Tirunelveli",
+        about: "Tirunelveli constituency is an important urban and administrative center in southern Tamil Nadu, known for its educational institutions, trade activities, and historical significance. The region has a mixed economy with strong contributions from agriculture, small-scale industries, and service sectors. Its urban areas, including Tirunelveli town and Palayamkottai, act as key hubs for commerce and governance, while surrounding rural areas depend heavily on agriculture supported by the Tamirabarani river.",
+
+        problem: [
+          {
+            title: "Urban flooding and drainage issues",
+            desc: "Tirunelveli town and Palayamkottai frequently experience waterlogging during heavy rainfall due to inadequate stormwater drainage systems. Poor maintenance of existing drainage infrastructure leads to flooding of roads and residential areas, causing disruption to daily activities."
+          },
+          {
+            title: "Water supply imbalance",
+            desc: "Although the region is supported by the Tamirabarani river, uneven distribution and seasonal variations lead to water shortages in certain areas. This creates challenges for both urban households and agricultural activities in nearby rural zones."
+          }
+        ]
+      },
+
+      {
+        constno: 225,
+        constname: "Ambasamudram",
+        about: "Ambasamudram constituency is known for its strong agricultural base and proximity to the Western Ghats, with significant reliance on irrigation from rivers and dams. The region benefits from fertile land and contributes to paddy cultivation and other crops, making agriculture the backbone of its economy.",
+
+        problem: [
+          {
+            title: "Agricultural dependency on water sources",
+            desc: "Farmers in Ambasamudram depend heavily on river water and dam releases for irrigation. Any delay or reduction in water supply directly affects crop yield and farmer income."
+          },
+          {
+            title: "Human-wildlife conflict",
+            desc: "Due to its proximity to forest areas, villages near the Western Ghats experience issues such as crop damage and occasional threats from wild animals, impacting agricultural productivity and safety."
+          }
+        ]
+      },
+
+      {
+        constno: 226,
+        constname: "Nanguneri",
+        about: "Nanguneri constituency is a semi-rural region with agriculture and emerging industrial activities, including special economic zones aimed at boosting employment. The area has potential for development but still faces infrastructure challenges.",
+
+        problem: [
+          {
+            title: "Industrial development delays",
+            desc: "Planned industrial projects and special economic zones have faced delays in implementation, limiting job creation and economic growth opportunities in the region."
+          },
+          {
+            title: "Water scarcity in rural areas",
+            desc: "Many villages experience irregular water supply and depend on groundwater, which becomes insufficient during dry seasons."
+          }
+        ]
+      },
+
+      {
+        constno: 227,
+        constname: "Radhapuram",
+        about: "Radhapuram constituency is known for its coastal and semi-arid landscape, with agriculture and fishing as primary occupations. It is also close to major energy infrastructure such as the Kudankulam Nuclear Power Plant.",
+
+        problem: [
+          {
+            title: "Water scarcity and drought conditions",
+            desc: "The semi-arid nature of the region results in frequent water shortages, affecting both drinking water supply and agricultural activities."
+          },
+          {
+            title: "Public concerns over industrial projects",
+            desc: "Areas around Kudankulam have witnessed public concerns regarding safety, environmental impact, and displacement, reflecting challenges in balancing development and local interests."
+          }
+        ]
+      },
+
+      {
+        constno: 228,
+        constname: "Tenkasi",
+        about: "Tenkasi constituency, located near the Western Ghats, is known for its scenic environment, agriculture, and growing tourism potential. It has a mix of rural and semi-urban characteristics with reliance on farming and small businesses.",
+
+        problem: [
+          {
+            title: "Tourism infrastructure gaps",
+            desc: "Despite having natural attractions and religious sites, the region lacks adequate infrastructure such as proper roads, sanitation, and accommodation facilities for tourists."
+          },
+          {
+            title: "Agricultural challenges",
+            desc: "Farmers depend on seasonal rainfall and face difficulties due to inconsistent water availability and limited irrigation facilities."
+          }
+        ]
+      },
+
+      {
+        constno: 229,
+        constname: "Alangulam",
+        about: "Alangulam constituency is primarily rural with agriculture as the main economic activity. The region depends on traditional farming practices and has limited industrial development.",
+
+        problem: [
+          {
+            title: "Limited infrastructure development",
+            desc: "Many villages lack proper road connectivity, healthcare facilities, and educational institutions, affecting overall development."
+          },
+          {
+            title: "Water management issues",
+            desc: "Irregular rainfall and insufficient irrigation infrastructure create water shortages, impacting agriculture and daily life."
+          }
+        ]
+      },
+
+      {
+        constno: 230,
+        constname: "Palayamkottai",
+        about: "Palayamkottai constituency is a major educational and administrative hub, often referred to as the 'Oxford of South India' due to its concentration of schools and colleges. It has a well-developed urban environment with growing residential and commercial areas.",
+
+        problem: [
+          {
+            title: "Traffic congestion",
+            desc: "Increasing urbanization and vehicle usage have led to traffic congestion in key roads and junctions, causing delays and inconvenience."
+          },
+          {
+            title: "Waste management issues",
+            desc: "Rapid urban growth has created challenges in managing solid waste effectively, leading to sanitation concerns in certain areas."
+          }
+        ]
+      }
+
+    ]
+  },
+    {
+        "distNo": 24,
+        "distName": "Madurai",
+        "consit": [
+            {
+                "constno": 188,
+                "constname": "Melur",
+                "about": "An agrarian-heavy seat focused on the Kallazhagar Temple and granite industries. It serves as the gateway to Madurai from the northern and eastern districts.",
+                "problem": [
+                    {
+                        "title": "Summer Water Scarcity",
+                        "desc": "Heavy reliance on seasonal tanks and Periyar-Vaigai water which often fails to reach the tail-end areas during crucial cultivation periods."
+                    },
+                    {
+                        "title": "Stalled Rail Connectivity",
+                        "desc": "The long-pending Madurai-Melur-Karaikudi broad gauge rail project remains on paper, hindering industrial transport and pilgrim movement."
+                    },
+                    {
+                        "title": "Rural Road Neglect",
+                        "desc": "While main highways are paved, interior village roads connecting agricultural hamlets are crumbling and narrow, preventing easy market access."
+                    },
+                    {
+                        "title": "Granite Industry Decline",
+                        "desc": "The closure of many granite units has led to large-scale unemployment among local manual laborers who have no alternative skill sets."
+                    },
+                    {
+                        "title": "Paddy Procurement Delays",
+                        "desc": "Lack of sufficient Direct Procurement Centers (DPCs) forces farmers to wait for weeks or sell to middlemen at lower rates."
+                    }
+                ]
+            },
+            {
+                "constno": 189,
+                "constname": "Madurai East",
+                "about": "A mix of urban sprawl and rural pockets. It is currently witnessing rapid real-estate growth but lacks the infrastructure to match the population density.",
+                "problem": [
+                    {
+                        "title": "Sewage Overflow",
+                        "desc": "Inadequate underground drainage (UGD) in newly annexed wards leads to frequent sewage stagnation in residential streets."
+                    },
+                    {
+                        "title": "NH-87 Congestion",
+                        "desc": "Heavy traffic on the Paramakudi-Ramanathapuram section creates severe bottlenecks at junction points within the constituency."
+                    },
+                    {
+                        "title": "Drinking Water Gaps",
+                        "desc": "Many household extensions still rely on private tankers as the piped water supply has not expanded at the rate of housing construction."
+                    },
+                    {
+                        "title": "Unplanned Real Estate",
+                        "desc": "Rapid conversion of agricultural land into housing layouts without proper road width or storm-water drain planning."
+                    },
+                    {
+                        "title": "Public Health Center Shortage",
+                        "desc": "The rapid population increase in eastern suburbs has not been met with a corresponding increase in primary health facilities."
+                    }
+                ]
+            },
+            {
+                "constno": 190,
+                "constname": "Sholavandan",
+                "about": "An SC-reserved constituency known as the 'rice bowl' of Madurai. Life here revolves around the Vaigai River and traditional agriculture.",
+                "problem": [
+                    {
+                        "title": "Peranai Regulator Siltation",
+                        "desc": "Heavy silt accumulation in the regulator and canal systems reduces water flow efficiency to paddy fields during the monsoon."
+                    },
+                    {
+                        "title": "Lack of Cold Storage",
+                        "desc": "Banana and coconut farmers face massive losses due to the absence of modern processing units and government-run cold storage facilities."
+                    },
+                    {
+                        "title": "Vaigai Encroachment",
+                        "desc": "Illegal encroachments and waste dumping along the riverbanks have narrowed the river's path, increasing localized flood risks."
+                    },
+                    {
+                        "title": "Interior Connectivity",
+                        "desc": "Narrow bridges over irrigation canals are in dilapidated condition, making it dangerous for heavy agricultural vehicles to cross."
+                    },
+                    {
+                        "title": "Dwindling Ground Water",
+                        "desc": "Over-extraction for agriculture in non-canal areas has led to a dangerous drop in the water table, affecting drinking water wells."
+                    }
+                ]
+            },
+            {
+                "constno": 191,
+                "constname": "Madurai North",
+                "about": "A vital urban segment housing major government offices and the Mattuthavani market hub. It is the face of 'Modern Madurai' but faces 'Old City' issues.",
+                "problem": [
+                    {
+                        "title": "Panthalkudi Canal Stagnation",
+                        "desc": "The slow progress of canal works has turned this waterway into a breeding ground for mosquitoes and a source of foul smell."
+                    },
+                    {
+                        "title": "Market Chaos",
+                        "desc": "The Mattuthavani vegetable market lacks proper waste management and organized parking, leading to daily traffic gridlock."
+                    },
+                    {
+                        "title": "Rainwater Inundation",
+                        "desc": "Areas like Sellur and Bibikulam continue to face knee-deep waterlogging even after moderate rainfall due to clogged drains."
+                    },
+                    {
+                        "title": "Stalled Public Housing",
+                        "desc": "Several slum clearance board projects are lagging, forcing low-income families to live in precarious conditions along canal banks."
+                    },
+                    {
+                        "title": "Encroached Main Roads",
+                        "desc": "Major stretches like the 120-feet road are narrowed by illegal commercial parking and temporary sheds."
+                    }
+                ]
+            },
+            {
+                "constno": 192,
+                "constname": "Madurai South",
+                "about": "The historical heart of the city with extremely high population density. It is dominated by small-scale industries, traders, and heritage sites.",
+                "problem": [
+                    {
+                        "title": "Obsolete UGD System",
+                        "desc": "The drainage pipes in the historic core are nearly a century old and cannot handle the current load, leading to constant leaks."
+                    },
+                    {
+                        "title": "Encroached Footpaths",
+                        "desc": "Commercial activity has swallowed pedestrian spaces, forcing people to walk on roads and worsening traffic snarls."
+                    },
+                    {
+                        "title": "Slum Housing Quality",
+                        "desc": "Urban poor in wards like 39 and 43 live in dilapidated conditions with limited access to private sanitation."
+                    },
+                    {
+                        "title": "Air Pollution",
+                        "desc": "High density of old commercial vehicles and narrow lanes create pockets of severe air pollution that affect the elderly and children."
+                    },
+                    {
+                        "title": "Fire Safety Risk",
+                        "desc": "Many wholesale godowns operate in narrow lanes where a fire engine cannot enter, creating a ticking time bomb for the neighborhood."
+                    }
+                ]
+            },
+            {
+                "constno": 193,
+                "constname": "Madurai Central",
+                "about": "The political and religious center (Meenakshi Temple). High-profile seat currently navigating major infra overhaul like Goripalayam Flyover.",
+                "problem": [
+                    {
+                        "title": "Gridlock Traffic",
+                        "desc": "The narrow streets surrounding the temple are permanently choked, exacerbated by ongoing construction projects."
+                    },
+                    {
+                        "title": "Vaigai Pollution",
+                        "desc": "Direct discharge of untreated sewage and meat waste from Nelpettai into the river remains an unsolved environmental disaster."
+                    },
+                    {
+                        "title": "Unreliable Metro Progress",
+                        "desc": "Project delays due to feasibility disputes between Center and State have left residents without a mass transit solution."
+                    },
+                    {
+                        "title": "Parking Scarcity",
+                        "desc": "Lack of designated multi-level parking forces tourists and locals to park on-street, narrowing already tight lanes."
+                    },
+                    {
+                        "title": "Heritage Decay",
+                        "desc": "Beyond the main temple, several historic buildings and 'Mantapams' are suffering from neglect and illegal occupation."
+                    }
+                ]
+            },
+            {
+                "constno": 194,
+                "constname": "Madurai West",
+                "about": "A highly urbanized voter base. It is the residential hub for the city's middle class but struggles with 'extension area' neglect.",
+                "problem": [
+                    {
+                        "title": "Extension Area UGD",
+                        "desc": "Newly developed layouts in the western periphery are still waiting for integrated underground drainage lines."
+                    },
+                    {
+                        "title": "Public Space Shortage",
+                        "desc": "Despite high tax collection, residents lack sufficient public parks and recreational centers for the dense population."
+                    },
+                    {
+                        "title": "Primary Healthcare Strain",
+                        "desc": "Urban Primary Health Centers (UPHCs) are understaffed, forcing residents to travel to the distant Government Rajaji Hospital."
+                    },
+                    {
+                        "title": "Garbage Collection Gaps",
+                        "desc": "Outer wards report erratic door-to-door waste collection, leading to garbage being dumped in open vacant plots."
+                    },
+                    {
+                        "title": "Drinking Water Pressure",
+                        "desc": "High-altitude areas in the west suffer from very low pressure in the municipal water lines during summer months."
+                    }
+                ]
+            },
+            {
+                "constno": 195,
+                "constname": "Thiruparankundram",
+                "about": "A suburban hub centered on the Murugan hill shrine. It is rapidly transitioning from a pilgrim town to a major residential suburb.",
+                "problem": [
+                    {
+                        "title": "Deepathoon Dispute",
+                        "desc": "Ongoing legal and social tension regarding religious rights on the hill shrine continues to affect local communal harmony."
+                    },
+                    {
+                        "title": "Garbage Mismanagement",
+                        "desc": "Municipal waste collection has failed to reach the outer boundaries, leading to illegal burning of trash."
+                    },
+                    {
+                        "title": "Unplanned Urbanization",
+                        "desc": "Rapid construction of high-rises without widening existing narrow approach roads has made fire safety a nightmare."
+                    },
+                    {
+                        "title": "Railway Gate Delays",
+                        "desc": "Frequent closure of railway gates at key junctions cuts off entire neighborhoods for hours daily."
+                    },
+                    {
+                        "title": "Temple Tourism Infrastructure",
+                        "desc": "Lack of adequate public toilets and cloakrooms for the thousands of daily pilgrims visiting the Murugan temple."
+                    }
+                ]
+            },
+            {
+                "constno": 196,
+                "constname": "Thirumangalam",
+                "about": "A strategic administrative center and agricultural belt. It is a major transit point for all vehicles moving further south.",
+                "problem": [
+                    {
+                        "title": "Youth Unemployment",
+                        "desc": "Lack of major industrial estates or IT parks forces local graduates to migrate to larger cities for survival."
+                    },
+                    {
+                        "title": "Inadequate Bus Terminus",
+                        "desc": "The existing town bus stand is too small, leading to dangerous boarding conditions on the main highway."
+                    },
+                    {
+                        "title": "Paddy Procurement Corruption",
+                        "desc": "Farmers frequently report 'commission' demands and unfair trade practices at the Direct Procurement Centres (DPCs)."
+                    },
+                    {
+                        "title": "Highway Safety",
+                        "desc": "The intersection of the town road and the four-way highway is an accident blackspot lacking proper lighting and signals."
+                    },
+                    {
+                        "title": "Irrigation Canal Clogging",
+                        "desc": "Tail-end areas of the 58-canal project often receive no water due to illegal tapping and siltation upstream."
+                    }
+                ]
+            },
+            {
+                "constno": 197,
+                "constname": "Usilampatti",
+                "about": "Located between Madurai and Theni, it is a politically sensitive region with a deep socio-cultural history and agrarian roots.",
+                "problem": [
+                    {
+                        "title": "Healthcare Infrastructure",
+                        "desc": "The Government Headquarters Hospital lacks an adequate mortuary and specialized wards, forcing referrals to Madurai city."
+                    },
+                    {
+                        "title": "Drinking Water Scarcity",
+                        "desc": "The 58-canal project and local water schemes are insufficient to meet the needs of tail-end villages."
+                    },
+                    {
+                        "title": "Industrial Stagnation",
+                        "desc": "Zero major investments in the last decade have left the local economy entirely dependent on volatile agricultural returns."
+                    },
+                    {
+                        "title": "Educational Access",
+                        "desc": "Students from rural hamlets face poor public transport connectivity to reach colleges in Madurai or the local town."
+                    },
+                    {
+                        "title": "Livestock Support",
+                        "desc": "As a major cattle-rearing area, the lack of modern veterinary hospitals and fodder subsidies is hurting local livelihoods."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "distNo": 23,
+        "distName": "Dindigul",
+        "consit": [
+            {
+                "constno": 127,
+                "constname": "Palani",
+                "about": "A world-famous pilgrimage center housing the sacred abode of Lord Murugan and the tourist hub of Kodaikanal. Despite its high revenue generation, it faces severe administrative and environmental neglect.",
+                "problem": [
+                    {
+                        "title": "Sanitation and River Pollution",
+                        "desc": "The sacred Shanmuganadhi river is heavily polluted with sewage and waste dumping, while the town lacks a modern waste management system to handle the massive pilgrim footfall."
+                    },
+                    {
+                        "title": "District Bifurcation Demand",
+                        "desc": "Residents face extreme hardship traveling 70km to the Dindigul Collectorate; there is a massive, unmet demand for Palani to be declared a separate district headquarters."
+                    },
+                    {
+                        "title": "Incomplete Infrastructure",
+                        "desc": "Major projects like the Palani-Kodaikanal ropeway and the Palani-Erode railway line remain stuck in the proposal stage, hindering tourism and trade growth."
+                    },
+                    {
+                        "title": "Waterbody Siltation",
+                        "desc": "The Vaiyapuri tank, a key water source and landmark, is heavily silted and requires urgent desilting to prevent summer water crises."
+                    },
+                    {
+                        "title": "Cold Storage for Ayakudi Guavas",
+                        "desc": "Farmers of the famous Ayakudi guavas lack adequate government cold storage facilities, leading to post-harvest losses and price exploitation by middlemen."
+                    }
+                ]
+            },
+            {
+                "constno": 128,
+                "constname": "Oddanchatram",
+                "about": "South India's primary vegetable supply hub. While it moves over 1,000 tonnes of produce daily, its infrastructure has become a major bottleneck for the agrarian economy.",
+                "problem": [
+                    {
+                        "title": "Market Design Failure",
+                        "desc": "The new ₹21 crore Gandhi Market complex is a vertical failure; built on two levels without lifts, it is unusable for heavy vegetable sacks, forcing traders to stay in private lots."
+                    },
+                    {
+                        "title": "TASMAC Nuisance",
+                        "desc": "The persistence of a government liquor shop (TASMAC) right in front of the market complex creates a hostile and unsafe environment for women laborers and farmers."
+                    },
+                    {
+                        "title": "Traffic Paralysis",
+                        "desc": "The road connecting Palani Road to the market is too narrow for container trucks and buses, causing permanent gridlock during market hours."
+                    },
+                    {
+                        "title": "Lack of Integrated Processing",
+                        "desc": "Despite the massive volume of vegetables, there is zero government investment in local food processing or value-addition units."
+                    },
+                    {
+                        "title": "Inadequate Public Parking",
+                        "desc": "The absence of a designated heavy vehicle parking yard forces lorries to park on highways, leading to frequent accidents and congestion."
+                    }
+                ]
+            },
+            {
+                "constno": 129,
+                "constname": "Athoor",
+                "about": "A high-profile constituency often represented by senior ministers. It is a mix of traditional agriculture and expanding suburban residential zones.",
+                "problem": [
+                    {
+                        "title": "Water Supply Reliability",
+                        "desc": "Despite promises of Vaigai river water, many villages like Pillaiyarnatham still suffer from erratic drinking water supply during the peak summer months."
+                    },
+                    {
+                        "title": "Stalled Industrial Growth",
+                        "desc": "The announced TIDEL park and other industrial clusters are yet to see ground-level implementation, leading to high unemployment among local graduates."
+                    },
+                    {
+                        "title": "Reservoir Siltation",
+                        "desc": "The Kamarajar reservoir and surrounding check-dams have lost significant storage capacity due to decades of silt accumulation."
+                    },
+                    {
+                        "title": "Encroached Common Lands",
+                        "desc": "Illegal encroachments on water channels and grazing lands have reduced the natural groundwater recharge capacity of the constituency."
+                    },
+                    {
+                        "title": "Healthcare Access Gaps",
+                        "desc": "While a new hospital was announced, existing rural health centers are understaffed and lack basic emergency trauma care facilities."
+                    }
+                ]
+            },
+            {
+                "constno": 130,
+                "constname": "Nilakottai",
+                "about": "A reserved constituency and a global hub for jasmine cultivation. The entire local economy is sensitive to the volatile flower market and agricultural water availability.",
+                "problem": [
+                    {
+                        "title": "Perfume Factory Demand",
+                        "desc": "Jasmine farmers are forced to sell to private buyers at throwaway prices because the government has failed to establish a state-run perfume extraction unit."
+                    },
+                    {
+                        "title": "Secondary Healthcare Failure",
+                        "desc": "The Nilakottai Government Hospital lacks specialist doctors, with most patients being referred to Madurai for even standard medical procedures."
+                    },
+                    {
+                        "title": "Cold Storage for Floriculture",
+                        "desc": "Highly perishable flowers like roses and jasmine rot during market gluts due to the total absence of government-run cold storage."
+                    },
+                    {
+                        "title": "Groundwater Depletion",
+                        "desc": "Unregulated borewell digging for flower farms has caused the water table to drop to dangerous levels, affecting rural drinking water wells."
+                    },
+                    {
+                        "title": "Middlemen Exploitation",
+                        "desc": "Lack of a regulated market auction system for flowers allows middlemen to fix prices, leaving farmers with minimal profits."
+                    }
+                ]
+            },
+            {
+                "constno": 131,
+                "constname": "Natham",
+                "about": "A hilly terrain famous for its premium mango and coconut crops. It remains one of the most industrially backward regions in the district.",
+                "problem": [
+                    {
+                        "title": "Mango Value-Chain Gaps",
+                        "desc": "Premium Natham mangoes are sold raw to other districts; the absence of a local pulp factory or processing unit robs farmers of potential income."
+                    },
+                    {
+                        "title": "Wild Animal Crop Raids",
+                        "desc": "Farmers on the foothills face constant destruction by wild boars and peacocks, with the forest department offering little to no compensation."
+                    },
+                    {
+                        "title": "Poor Interior Roads",
+                        "desc": "Roads connecting hilly hamlets to the town are in deplorable condition, making it impossible for transport vehicles to reach farms during rains."
+                    },
+                    {
+                        "title": "Coconut Pest Infestation",
+                        "desc": "The recurring invasive pest attacks on coconut groves are not being addressed with sufficient scientific or financial aid from the government."
+                    },
+                    {
+                        "title": "High Migration Rates",
+                        "desc": "The total lack of local MSME units forces almost every educated youth to migrate to Chennai or Tiruppur for even low-wage work."
+                    }
+                ]
+            },
+            {
+                "constno": 132,
+                "constname": "Dindigul",
+                "about": "The district headquarters and the historic 'City of Locks.' As of 2026, the town is struggling with 'Old City' infrastructure that cannot handle its new status as a Corporation.",
+                "problem": [
+                    {
+                        "title": "Lock Industry Extinction",
+                        "desc": "The world-famous lock industry is dying due to zero modernization and lack of branding support, leaving thousands of heritage artisans in poverty."
+                    },
+                    {
+                        "title": "Bus Terminus Crisis",
+                        "desc": "The Kamarajar bus stand is paralyzed by load; the proposed Pallapatti terminus is stalled due to environmental protests, leaving the city in transit chaos."
+                    },
+                    {
+                        "title": "Chronic Sewage Overflows",
+                        "desc": "The underground drainage (UGD) system is incomplete and poorly designed, leading to raw sewage flooding the streets every time it rains."
+                    },
+                    {
+                        "title": "Gandhi Market Congestion",
+                        "desc": "The central vegetable market remains an unplanned mess with no parking, causing permanent traffic gridlock in the heart of the town."
+                    },
+                    {
+                        "title": "Industrial Pollution",
+                        "desc": "Effluent discharge from old tanneries continues to contaminate the local groundwater, making it unfit for consumption in several wards."
+                    }
+                ]
+            },
+            {
+                "constno": 133,
+                "constname": "Vedasandur",
+                "about": "A dry agrarian belt and a hub for small spinning mills. It is a region of high debt and low industrial diversity.",
+                "problem": [
+                    {
+                        "title": "Spinning Mill Closures",
+                        "desc": "High power tariffs and cotton price fluctuations have led to the closure of dozens of small spinning mills, creating a local employment crisis."
+                    },
+                    {
+                        "title": "Tobacco Market Collapse",
+                        "desc": "With the global shift away from tobacco, farmers have no government support or subsidy to transition to viable alternative crops."
+                    },
+                    {
+                        "title": "Shenbhagavalli Dam Ruin",
+                        "desc": "The failure to reconstruct the Shenbhagavalli check-dam has deprived thousands of acres of irrigation, turning fertile lands into scrub."
+                    },
+                    {
+                        "title": "Drinking Water Scarcity",
+                        "desc": "As a drought-prone belt, many villages still rely on overhead tanks that only receive water once every 10-15 days."
+                    },
+                    {
+                        "title": "Rural Debt Trap",
+                        "desc": "The failure of both the textile and agriculture sectors has pushed a majority of rural families into the clutches of private moneylenders."
+                    }
+                ]
+            }
+        ]
+    }
 
 ]
