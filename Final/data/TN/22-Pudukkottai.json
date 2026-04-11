@@ -1,0 +1,76 @@
+{
+    "distNo": 21,
+    "distName": "Pudukkottai",
+    "consit": [
+        {
+            "constno": 180,
+            "constname": "Gandarvakottai",
+            "about": "Rural constituency (Arimalam area) with agriculture-driven economy and water resource constraints",
+            "problem": [
+                {
+                    "title": "Water",
+                    "desc": "Irrigation water is unreliable: severe staff shortages and clogged canal regulators delay water reaching tail-end tanks, depriving farmers of promised supply"
+                },
+                {
+                    "title": "Agriculture",
+                    "desc": "Farmers face crop losses from unpredictable weather: recent unseasonal heavy rains submerged over 2,000 acres of mature paddy, and recurring droughts hurt yields"
+                }
+            ]
+        },
+        {
+            "constno": 181,
+            "constname": "Viralimalai",
+            "about": "Semi-arid constituency with agriculture and small-scale trades",
+            "problem": [
+                {
+                    "title": "Water",
+                    "desc": "Villages struggle with drinking and irrigation water shortages due to low rainfall and limited canal infrastructure"
+                }
+            ]
+        },
+        {
+            "constno": 182,
+            "constname": "Pudukkottai",
+            "about": "Urban constituency and district headquarters with mixed rural-urban population",
+            "problem": [
+                {
+                    "title": "Infrastructure",
+                    "desc": "Urban roads and drainage are stressed by rapid growth"
+                }
+            ]
+        },
+        {
+            "constno": 183,
+            "constname": "Thirumayam",
+            "about": "Rural constituency with agriculture and notable historical sites",
+            "problem": [
+                {
+                    "title": "Water",
+                    "desc": "Water supply is erratic"
+                }
+            ]
+        },
+        {
+            "constno": 184,
+            "constname": "Alangudi",
+            "about": "Agricultural constituency with coastal fringe",
+            "problem": [
+                {
+                    "title": "Water",
+                    "desc": "Saline water intrusion causes shortages"
+                }
+            ]
+        },
+        {
+            "constno": 185,
+            "constname": "Aranthangi",
+            "about": "Coastal-rural constituency with farming and fishing communities",
+            "problem": [
+                {
+                    "title": "Water",
+                    "desc": "Drinking water shortages due to poor supply"
+                }
+            ]
+        }
+    ]
+}
