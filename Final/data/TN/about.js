@@ -479,7 +479,7 @@
     ]
 }
   {
-  distNo: 33,
+  distNo: 3,
   distName: "Tenkasi",
   consit: [
     {
@@ -580,7 +580,7 @@
   ]
 },
 {
-  distNo: 34,
+  distNo: 4,
   distName: "Theni",
   consit: [
     {
