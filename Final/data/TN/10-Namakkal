@@ -3,6 +3,25 @@
     "distName": "Namakkal",
     "consit": [
 {
+        "constno": 92,
+        "constname": "Rasipuram (SC)",
+        "about": "Rasipuram is a State Legislative Assembly constituency in Namakkal district of Tamil Nadu. Its constituency number is 92 and it is a Scheduled Caste (SC) reserved constituency.",
+        "problem": [
+          {
+            "title": "Rural Development Issues",
+            "desc": "Limited access to infrastructure and services in rural areas."
+          },
+          {
+            "title": "Social Welfare Concerns",
+            "desc": "Need for better implementation of welfare schemes."
+          },
+          {
+            "title": "Agricultural Challenges",
+            "desc": "Dependence on rainfall affects farming output."
+          }
+        ]
+      },
+{
         "constno": 93,
         "constname": "Senthamangalam (ST)",
         "about": "Senthamangalam is a State Legislative Assembly constituency in Namakkal district of Tamil Nadu. Its constituency number is 93 and it is a Scheduled Tribe (ST) reserved constituency.",
@@ -21,27 +40,9 @@
           }
         ]
       },
-{
-        "constno": 94,
-        "constname": "Rasipuram (SC)",
-        "about": "Rasipuram is a State Legislative Assembly constituency in Namakkal district of Tamil Nadu. Its constituency number is 92 and it is a Scheduled Caste (SC) reserved constituency.",
-        "problem": [
-          {
-            "title": "Rural Development Issues",
-            "desc": "Limited access to infrastructure and services in rural areas."
-          },
-          {
-            "title": "Social Welfare Concerns",
-            "desc": "Need for better implementation of welfare schemes."
-          },
-          {
-            "title": "Agricultural Challenges",
-            "desc": "Dependence on rainfall affects farming output."
-          }
-        ]
-      },
+
  {
-        "constno": 95,
+        "constno": 94,
         "constname": "Namakkal",
         "about": "Namakkal is a State Legislative Assembly constituency in Namakkal district of Tamil Nadu. Its constituency number is 94 and it forms part of the Namakkal Lok Sabha constituency.",
         "problem": [
@@ -60,7 +61,7 @@
         ]
       },
  {
-        "constno": 96,
+        "constno": 95,
         "constname": "Paramathi Velur",
         "about": "Paramathi Velur is a State Legislative Assembly constituency in Namakkal district of Tamil Nadu. Its constituency number is 95 and it forms part of the Namakkal Lok Sabha constituency.",
         "problem": [
@@ -79,7 +80,7 @@
         ]
       },
 {
-        "constno": 97,
+        "constno": 96,
         "constname": "Tiruchengodu",
         "about": "Tiruchengodu is a State Legislative Assembly constituency in Namakkal district of Tamil Nadu. Its constituency number is 96 and it forms part of the Namakkal Lok Sabha constituency.",
         "problem": [
@@ -99,7 +100,7 @@
       }
 
       {
-        "constno": 98,
+        "constno": 97,
         "constname": "Kumarapalayam",
         "about": "Kumarapalayam is a State Legislative Assembly constituency in Namakkal district of Tamil Nadu. Its constituency number is 97 and it was established in 2008. It forms part of the Erode Lok Sabha constituency.",
         "problem": [
