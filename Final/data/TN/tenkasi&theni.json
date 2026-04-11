@@ -1,6 +1,6 @@
 let data = [
   {
-  distNo: 5,
+  distNo: 33,
   distName: "Tenkasi",
   consit: [
     {
@@ -101,7 +101,7 @@ let data = [
   ]
 },
 {
-  distNo: 6,
+  distNo: 34,
   distName: "Theni",
   consit: [
     {
