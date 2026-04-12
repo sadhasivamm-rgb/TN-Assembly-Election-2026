@@ -785,6 +785,202 @@
     }
 
   ]
-}
+}, {
+    distNo:11,
+    distName: "Erode",
+    consit: [
+
+      {
+        constno: 97,
+        constname: "Kumarapalayam",
+        about: "Kumarapalayam is a prominent textile and powerloom center located along the Cauvery river basin, forming part of the Erode–Tiruppur textile corridor. The constituency hosts numerous weaving, dyeing, and processing units, contributing significantly to employment and regional textile exports.",
+
+        problem: [
+          {
+            title: "Textile dyeing pollution",
+            desc: "Dyeing and textile processing units in Kumarapalayam generate chemical effluents which, if not properly treated, can contaminate nearby water bodies and groundwater. This has been a long-standing environmental concern in textile belt regions of Erode."
+          },
+          {
+            title: "Groundwater depletion",
+            desc: "Heavy industrial and agricultural water usage has led to declining groundwater levels, affecting drinking water availability and increasing dependency on external water sources."
+          },
+          {
+            title: "Labour welfare concerns",
+            desc: "Workers in powerloom and textile sectors often face long working hours, limited job security, and wage-related challenges, as commonly observed in small-scale industrial clusters."
+          }
+        ]
+      },
+
+      {
+        constno: 98,
+        constname: "Erode East",
+        about: "Erode East is a major urban commercial hub known for its large turmeric market, one of the biggest in India, and extensive textile trading activities. It plays a key role in agricultural commodity trading and regional business operations.",
+
+        problem: [
+          {
+            title: "Traffic congestion in market areas",
+            desc: "High volume of traders, transport vehicles, and daily commuters in Erode city leads to severe congestion, especially around market zones and commercial streets."
+          },
+          {
+            title: "Urban drainage and flooding",
+            desc: "During heavy rainfall, certain areas of Erode city experience waterlogging due to insufficient stormwater drainage systems and rapid urbanization."
+          },
+          {
+            title: "Solid waste management challenges",
+            desc: "Large-scale commercial activity results in high waste generation, creating challenges in proper segregation, disposal, and maintaining urban sanitation."
+          }
+        ]
+      },
+
+      {
+        constno: 99,
+        constname: "Erode West",
+        about: "Erode West is a fast-growing urban and semi-urban constituency with a strong presence of textile processing units, residential expansion, and commercial establishments supporting the local economy.",
+
+        problem: [
+          {
+            title: "Noyyal river pollution",
+            desc: "Industrial discharge from textile units in surrounding regions contributes to pollution in the Noyyal river, affecting water quality used for irrigation and groundwater recharge."
+          },
+          {
+            title: "Urban traffic pressure",
+            desc: "Increasing vehicle ownership and urban growth have led to congestion on major roads, affecting mobility and increasing travel time."
+          },
+          {
+            title: "Water supply stress",
+            desc: "Growing population and industrial demand have increased pressure on municipal water supply systems, leading to shortages in some areas."
+          }
+        ]
+      },
+
+      {
+        constno: 100,
+        constname: "Modakkurichi",
+        about: "Modakkurichi is predominantly an agricultural constituency supported by irrigation from the Cauvery river system. Crops such as paddy, turmeric, and sugarcane are widely cultivated, forming the backbone of the rural economy.",
+
+        problem: [
+          {
+            title: "Dependence on Cauvery irrigation",
+            desc: "Agriculture in Modakkurichi relies heavily on water released from the Cauvery river. Variations in water release due to seasonal factors directly impact crop cycles and yield."
+          },
+          {
+            title: "Groundwater over-extraction",
+            desc: "Farmers increasingly depend on borewells to supplement irrigation, leading to depletion of groundwater resources over time."
+          },
+          {
+            title: "Climate variability impact",
+            desc: "Irregular rainfall patterns and temperature changes affect agricultural productivity, increasing uncertainty for farmers."
+          }
+        ]
+      },
+
+      {
+        constno: 103,
+        constname: "Perundurai",
+        about: "Perundurai is a rural constituency with growing industrial activity, particularly around the SIPCOT industrial estate, along with traditional agriculture in surrounding villages.",
+
+        problem: [
+          {
+            title: "Industrial pollution",
+            desc: "Industrial activities in SIPCOT areas contribute to air and water pollution, affecting nearby agricultural lands and residential zones."
+          },
+          {
+            title: "Water resource pressure",
+            desc: "Industrial and domestic water demand has increased significantly, leading to stress on available water resources and supply systems."
+          },
+          {
+            title: "Infrastructure strain",
+            desc: "Rapid industrial development has increased traffic and load on roads and civic infrastructure, requiring upgrades and maintenance."
+          }
+        ]
+      },
+
+      {
+        constno: 104,
+        constname: "Bhavani",
+        about: "Bhavani is an important agricultural constituency located at the confluence of the Cauvery and Bhavani rivers. The region benefits from irrigation and is known for farming activities.",
+
+        problem: [
+          {
+            title: "River water pollution",
+            desc: "Discharge of untreated waste from upstream and nearby regions affects water quality in the river confluence, impacting agriculture and drinking water."
+          },
+          {
+            title: "Flood risk in low-lying areas",
+            desc: "During periods of heavy rainfall, increased river flow can lead to flooding in nearby settlements and agricultural lands."
+          },
+          {
+            title: "Dependence on river irrigation",
+            desc: "Farmers rely on river water, making agriculture vulnerable to seasonal variations and water availability."
+          }
+        ]
+      },
+
+      {
+        constno: 105,
+        constname: "Anthiyur",
+        about: "Anthiyur is a rural constituency located near forest and hilly regions, with agriculture and livestock forming the main livelihood sources.",
+
+        problem: [
+          {
+            title: "Water scarcity",
+            desc: "Limited rainfall and absence of major irrigation systems lead to water shortages affecting both agriculture and domestic needs."
+          },
+          {
+            title: "Agricultural challenges",
+            desc: "Farmers face crop instability due to climate variability and lack of consistent irrigation support."
+          },
+          {
+            title: "Connectivity limitations",
+            desc: "Rural and hilly terrain results in limited road infrastructure, affecting access to markets and services."
+          }
+        ]
+      },
+
+      {
+        constno: 106,
+        constname: "Gobichettipalayam",
+        about: "Gobichettipalayam is an agriculture-rich constituency known for turmeric, sugarcane, and irrigation-based farming supported by canal systems.",
+
+        problem: [
+          {
+            title: "Irrigation dependency",
+            desc: "Agriculture heavily depends on canal irrigation systems, making it vulnerable to water shortages during low supply periods."
+          },
+          {
+            title: "Groundwater depletion",
+            desc: "Extensive use of groundwater for irrigation has reduced water levels over time."
+          },
+          {
+            title: "Rising agricultural costs",
+            desc: "Increasing input costs such as fertilizers, labor, and water usage affect the profitability of farming."
+          }
+        ]
+      },
+
+      {
+        constno: 107,
+        constname: "Bhavanisagar",
+        about: "Bhavanisagar constituency is supported by the Bhavanisagar Dam, one of the largest earthen dams in India, playing a crucial role in irrigation and agriculture in the region.",
+
+        problem: [
+          {
+            title: "Dependence on Bhavanisagar Dam",
+            desc: "Agriculture relies heavily on water released from the Bhavanisagar Dam, making it sensitive to rainfall and reservoir levels."
+          },
+          {
+            title: "Drought impact",
+            desc: "Low rainfall years reduce water storage in the dam, affecting irrigation and crop productivity."
+          },
+          {
+            title: "Groundwater stress",
+            desc: "Supplementary use of borewells leads to depletion of groundwater resources over time."
+          }
+        ]
+      }
+
+    ]
+  }
+
 ]
    
