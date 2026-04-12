@@ -633,7 +633,7 @@
   ]
 },
 {
-  distNo: 4,
+  distNo: 29,
   distName: "Tirunelveli",
   consit: [
 
@@ -680,7 +680,7 @@
     },
 
     {
-      constno: 226,
+      constno: 227,
       constname: "Nanguneri",
       about: "Nanguneri constituency includes rural and semi-urban areas with agriculture as a primary occupation, along with planned industrial zones such as the Special Economic Zone.",
 
@@ -701,7 +701,7 @@
     },
 
     {
-      constno: 227,
+      constno: 228,
       constname: "Radhapuram",
       about: "Radhapuram constituency is a coastal and semi-arid region with agriculture and fishing as primary livelihoods, and it is located near the Kudankulam Nuclear Power Plant.",
 
@@ -721,29 +721,10 @@
       ]
     },
 
-    {
-      constno: 228,
-      constname: "Tenkasi",
-      about: "Tenkasi constituency is known for its scenic environment, agriculture, and tourism attractions such as waterfalls and temples, with a mix of rural and semi-urban economy.",
-
-      problem: [
-        {
-          title: "Tourism infrastructure gaps",
-          desc: "Tourist locations in Tenkasi lack adequate infrastructure such as proper roads, sanitation, and facilities, affecting visitor experience."
-        },
-        {
-          title: "Flooding during heavy rainfall",
-          desc: "Due to proximity to Western Ghats, certain areas experience flooding during intense rainfall."
-        },
-        {
-          title: "Agricultural dependency on rainfall",
-          desc: "Farmers depend on seasonal rainfall leading to inconsistent agricultural output."
-        }
-      ]
-    },
+    
 
     {
-      constno: 229,
+      constno: 223,
       constname: "Alangulam",
       about: "Alangulam constituency is a predominantly rural region with agriculture as the primary occupation and limited industrial development.",
 
@@ -764,7 +745,7 @@
     },
 
     {
-      constno: 230,
+      constno: 226,
       constname: "Palayamkottai",
       about: "Palayamkottai is a major educational hub known for its concentration of schools and colleges, often referred to as the 'Oxford of South India'.",
 
