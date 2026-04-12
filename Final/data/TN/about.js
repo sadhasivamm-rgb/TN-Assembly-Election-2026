@@ -661,7 +661,7 @@
     }
   ]
 }, {
-  distNo: 5,
+  distNo: 26,
   distName: "Virudhunagar",
   consit: [
 
@@ -787,7 +787,7 @@
   ]
 },
 {
-  distNo: 6,
+  distNo: 29,
   distName: "Tirunelveli",
   consit: [
 
@@ -1796,7 +1796,7 @@
   ],
 },
 {
-  distNo: 3,
+  distNo: 11,
   distName: "Erode",
   consit: [
 
@@ -1929,7 +1929,7 @@
   ]
 },
 {
-  distNo: 4,
+  distNo: 12,
   distName: "Nilgiris",
   consit: [
 
