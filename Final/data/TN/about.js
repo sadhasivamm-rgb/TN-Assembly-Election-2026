@@ -980,6 +980,75 @@
       }
 
     ]
+  },{
+    distNo: 12,
+    distName: "Nilgiris",
+    consit: [
+
+      {
+        constno: 108,
+        constname: "Udhagamandalam",
+        about: "Udhagamandalam, popularly known as Ooty, is one of the most prominent hill stations in India, located in the Nilgiris district within the Western Ghats, a UNESCO-recognized biodiversity hotspot. The region is characterized by steep slopes, fragile ecosystems, dense vegetation, and a cool climate, making it a major center for tourism and tea cultivation. Ooty also plays a critical role in ecological balance as part of the Nilgiri Biosphere Reserve, supporting diverse flora and fauna while sustaining a tourism-driven economy.",
+
+        problem: [
+          {
+            title: "Frequent landslides during monsoon",
+            desc: "The Nilgiris, including Udhagamandalam, is classified as a high landslide-prone zone due to its steep terrain, weak soil structure, and intense monsoon rainfall. During heavy rains, water infiltration loosens soil layers, leading to landslides that damage roads, buildings, and public infrastructure. These events frequently disrupt connectivity between Ooty and nearby towns like Coonoor and Mettupalayam, affecting both residents and tourism-related activities. Multiple government and research reports have identified unregulated construction and slope modification as additional factors increasing landslide vulnerability."
+          },
+          {
+            title: "Tourism pressure and environmental stress",
+            desc: "Ooty attracts lakhs of tourists annually, especially during peak seasons, resulting in significant pressure on local infrastructure and natural ecosystems. High tourist inflow leads to traffic congestion, overcrowding, and excessive waste generation, particularly plastic waste. Despite regulatory measures, waste management remains a challenge due to the hilly terrain and limited disposal capacity. This has raised concerns about long-term environmental degradation and sustainability of tourism in the region."
+          },
+          {
+            title: "Urban infrastructure strain",
+            desc: "Rapid urban expansion driven by tourism and population growth has placed stress on essential services such as water supply, drainage systems, and road infrastructure. The existing civic systems are often inadequate to handle peak seasonal demand, leading to water shortages, sewage overflow, and congestion. Reports have highlighted that unplanned development in fragile hill areas further aggravates these issues, increasing vulnerability to natural hazards."
+          }
+        ]
+      },
+
+      {
+        constno: 109,
+        constname: "Gudalur",
+        about: "Gudalur is a forest-dominated constituency located at the tri-junction of Tamil Nadu, Kerala, and Karnataka. It lies within a critical wildlife corridor connecting major protected areas such as the Nilgiri Biosphere Reserve, making it ecologically sensitive. The region has a significant tribal population that depends on forest resources for livelihood, along with small-scale agriculture and plantation activities.",
+
+        problem: [
+          {
+            title: "Severe human-wildlife conflict",
+            desc: "Gudalur is one of the most affected regions in Tamil Nadu in terms of human-wildlife conflict, particularly involving elephants and gaur. Due to its location within active wildlife corridors, animals frequently enter human settlements and agricultural fields in search of food and water. This results in crop destruction, property damage, and sometimes loss of human life. Studies and reports from forest departments and research organizations consistently highlight Gudalur as a hotspot for such conflicts, making it a major socio-environmental issue."
+          },
+          {
+            title: "Restrictions on forest land usage",
+            desc: "A large portion of Gudalur falls under forest and protected land categories, limiting land ownership and usage rights for local communities, especially tribal populations. While these regulations aim to conserve biodiversity, they also restrict agricultural expansion and access to forest resources, affecting traditional livelihoods. This has led to long-standing socio-economic challenges and demands for land rights and rehabilitation."
+          },
+          {
+            title: "Limited connectivity and infrastructure",
+            desc: "The hilly terrain, dense forest cover, and scattered settlements in Gudalur create significant challenges for infrastructure development. Road connectivity is limited and often disrupted during heavy rains or landslides, affecting access to healthcare, education, and markets. Emergency services also face delays due to poor accessibility, making infrastructure development a key concern in the region."
+          }
+        ]
+      },
+
+      {
+        constno: 110,
+        constname: "Coonoor",
+        about: "Coonoor is a major hill town in the Nilgiris district, known for its tea plantations, scenic landscapes, and tourism. It plays a crucial role in the hill economy, supporting plantation agriculture and tourism-based livelihoods. The region is part of the ecologically sensitive Western Ghats and is characterized by steep slopes and fragile terrain.",
+
+        problem: [
+          {
+            title: "Recurring landslides and road disruptions",
+            desc: "Coonoor frequently experiences landslides during periods of heavy rainfall, due to its steep slopes and unstable soil conditions. These landslides damage roads, including key routes connecting Coonoor to Mettupalayam and Ooty, leading to transportation disruptions. News reports and government alerts regularly highlight such incidents, especially during monsoon seasons."
+          },
+          {
+            title: "Environmental degradation due to land use changes",
+            desc: "Expansion of tea plantations, construction activities, and deforestation have altered natural land cover in the region. This has reduced slope stability and increased the risk of soil erosion and landslides. Environmental studies have pointed out that changes in land use patterns are a major contributing factor to ecological imbalance in Coonoor."
+          },
+          {
+            title: "Tourism-related infrastructure pressure",
+            desc: "Coonoor attracts a significant number of tourists, leading to increased demand for transportation, accommodation, and public services. This results in traffic congestion, increased waste generation, and pressure on water supply systems. Managing tourism sustainably remains a major challenge for local authorities."
+          }
+        ]
+      }
+
+    ]
   }
 
 ]
