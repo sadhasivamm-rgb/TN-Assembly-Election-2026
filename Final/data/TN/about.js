@@ -1182,6 +1182,96 @@
       }
 
     ]
+  },{
+    distNo: 36,
+    distName: "Tirupattur",
+    consit: [
+
+      {
+        constno: 47,
+        constname: "Vaniyambadi",
+        about: "Vaniyambadi is one of the most prominent leather tanning and export hubs in India, forming a key part of the Vellore–Tirupattur leather industry belt. The constituency has a strong industrial base with numerous tanneries and leather processing units that contribute significantly to exports and employment.",
+
+        problem: [
+          {
+            title: "Leather tannery pollution",
+            desc: "Leather processing units generate chemical effluents containing chromium and other pollutants. Despite treatment facilities, improper discharge and leakage have led to contamination of soil and nearby water bodies, affecting agriculture and the environment."
+          },
+          {
+            title: "Groundwater contamination",
+            desc: "Long-term exposure to tannery waste has resulted in deterioration of groundwater quality in several areas, making it unsafe for drinking and irrigation without treatment."
+          },
+          {
+            title: "Worker health risks",
+            desc: "Workers in leather industries are exposed to hazardous chemicals, leading to respiratory issues, skin diseases, and occupational health risks due to prolonged exposure."
+          }
+        ]
+      },
+
+      {
+        constno: 48,
+        constname: "Ambur",
+        about: "Ambur is a major center for leather manufacturing and export-oriented industries, playing a vital role in India's leather economy. It also has a mix of urban and semi-urban settlements with strong industrial activity.",
+
+        problem: [
+          {
+            title: "Industrial pollution from leather units",
+            desc: "Effluents from leather industries contribute to pollution of water sources and soil, impacting surrounding agricultural lands and environmental quality."
+          },
+          {
+            title: "Water scarcity due to industrial demand",
+            desc: "High water consumption by leather industries, combined with limited natural water sources, leads to shortages for domestic use."
+          },
+          {
+            title: "Urban infrastructure pressure",
+            desc: "Industrial growth has led to increased population and urban expansion, putting pressure on roads, drainage systems, and civic facilities."
+          }
+        ]
+      },
+
+      {
+        constno: 49,
+        constname: "Jolarpet",
+        about: "Jolarpet is a major railway junction in Tamil Nadu, serving as an important transport hub connecting southern and northern India. The constituency supports trade, mobility, and logistics activities.",
+
+        problem: [
+          {
+            title: "Traffic congestion near railway junction",
+            desc: "High passenger movement, goods transport, and road traffic around Jolarpet junction create congestion, especially during peak travel hours, affecting local mobility."
+          },
+          {
+            title: "Urban expansion and infrastructure strain",
+            desc: "Growth of residential and commercial areas around the railway hub has increased demand for civic amenities, leading to pressure on roads, drainage, and services."
+          },
+          {
+            title: "Water supply challenges",
+            desc: "Increasing population and limited water resources lead to irregular water supply in certain areas, especially during summer."
+          }
+        ]
+      },
+
+      {
+        constno: 50,
+        constname: "Tirupattur",
+        about: "Tirupattur is an administrative and semi-urban center located in the Palar river basin, with a mix of agriculture, small-scale industries, and growing urban development.",
+
+        problem: [
+          {
+            title: "Water scarcity in Palar basin",
+            desc: "The Palar river is largely dry for most of the year due to over-extraction and lack of perennial flow, forcing heavy dependence on groundwater. This leads to recurring water shortages affecting both domestic and agricultural needs."
+          },
+          {
+            title: "Groundwater depletion",
+            desc: "Excessive use of borewells for irrigation and domestic supply has led to declining groundwater levels, increasing the cost and difficulty of accessing water."
+          },
+          {
+            title: "Urban infrastructure limitations",
+            desc: "Rapid growth of the town has created pressure on roads, drainage systems, and public services, resulting in congestion and civic challenges."
+          }
+        ]
+      }
+
+    ]
   }
 
 ]
