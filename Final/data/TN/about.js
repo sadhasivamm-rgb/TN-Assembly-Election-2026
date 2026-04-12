@@ -479,7 +479,7 @@
     ]
 },
 {
-  distNo: 3,
+  distNo: 26,
   distName: "Virudhunagar",
   consit: [
 
@@ -526,7 +526,7 @@
     },
 
     {
-      constno: 208,
+      constno: 204,
       constname: "Sattur",
       about: "Sattur is known for matchstick industries and small-scale manufacturing units providing employment to local workers.",
 
@@ -547,7 +547,7 @@
     },
 
     {
-      constno: 209,
+      constno: 205,
       constname: "Sivakasi",
       about: "Sivakasi is India's largest hub for fireworks, printing, and match industries, contributing significantly to employment and industrial output.",
 
@@ -568,7 +568,7 @@
     },
 
     {
-      constno: 210,
+      constno: 203,
       constname: "Srivilliputhur",
       about: "Srivilliputhur is a culturally important constituency known for the Andal Temple and pilgrimage activities.",
 
@@ -589,7 +589,7 @@
     },
 
     {
-      constno: 211,
+      constno: 202,
       constname: "Rajapalayam",
       about: "Rajapalayam is known for textile industries and agricultural activities contributing to the regional economy.",
 
@@ -610,7 +610,7 @@
     },
 
     {
-      constno: 212,
+      constno: 208,
       constname: "Tiruchuli",
       about: "Tiruchuli is a rural constituency with agriculture as the main occupation and limited industrial development.",
 
