@@ -81,7 +81,7 @@ const alliancesData = {
       pn: "STMK",
       fullName: "STMK",
       icon: "../assets/icons/admk.svg",
-      cid: [],
+      cid: [144],
       canid: [],
       figmaSeats: "–"
     },
@@ -89,7 +89,7 @@ const alliancesData = {
       pn: "TM-BSP",
       fullName: "TM-BSP",
       icon: "../assets/icons/admk.svg",
-      cid: [],
+      cid: [15],
       canid: [],
       figmaSeats: "–"
     },
@@ -97,7 +97,7 @@ const alliancesData = {
       pn: "SIFB",
       fullName: "SIFB",
       icon: "../assets/icons/BJP.svg",
-      cid: [],
+      cid: [114],
       canid: [],
       figmaSeats: "–"
     },
@@ -188,7 +188,7 @@ const alliancesData = {
       pn: "MMK",
       fullName: "MMK",
       icon: "../assets/icons/dmk.svg",
-      cid: [],
+      cid: [163,138],
       canid: [],
       figmaSeats: "–"
     },
@@ -247,7 +247,7 @@ const alliancesData = {
       pn: "AIPTMK",
       fullName: "AIPTMK",
       icon: "../assets/icons/aiptmk.jpg",
-      cid: [],
+      cid: [3, 29, 151, 80, 161, 167, 139, 141, 174, 168, 163, 172, 175, 176, 132, 130, 135, 137, 193, 189, 194, 191, 192, 195, 196, 188, 197, 186, 187, 209, 211, 212, 210, 202, 203, 204, 205, 206, 207, 224, 226, 227, 223, 222, 221, 219, 214, 217, 218, 213, 230, 231, 232, 233, 114, 118, 123, 98, 94, 88, 59, 53, 147, 149, 150, 158, 155, 154, 153, 152, 77, 74, 70],
       canid: [],
       figmaSeats: "–"
     },
@@ -255,7 +255,7 @@ const alliancesData = {
       pn: "PT",
       fullName: "PT",
       icon: "../assets/icons/pmk.jpg",
-      cid: [],
+      cid: [217, 224, 203, 222, 219, 220, 223, 218, 214, 213, 207, 206, 204, 205, 209, 211, 212, 189, 194, 191, 192, 195, 196, 197, 198, 199, 200, 130, 132, 141, 140, 139, 138, 174, 168, 163, 161, 135, 98, 96, 94, 12, 10],
       canid: [],
       figmaSeats: "–"
     },
