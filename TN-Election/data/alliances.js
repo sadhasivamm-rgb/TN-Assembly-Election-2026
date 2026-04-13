@@ -48,7 +48,7 @@ const alliancesData = {
     {
       pn: "TMC",
       fullName: "TMC",
-      icon: "../assets/icons/bjp.svg",
+      icon: "../assets/icons/TMC.png",
       cid: [41, 99, 128, 171, 234],
       canid: [],
       figmaSeats: "–"
@@ -56,7 +56,7 @@ const alliancesData = {
     {
       pn: "IJK",
       fullName: "IJK",
-      icon: "",
+      icon: "../assets/icons/admk.svg",
       cid: [30, 148],
       canid: [],
       figmaSeats: "–"
@@ -64,7 +64,7 @@ const alliancesData = {
     {
       pn: "PBK",
       fullName: "PBK",
-      icon: "",
+      icon: "../assets/icons/admk.svg",
       cid: [45],
       canid: [],
       figmaSeats: "–"
@@ -72,7 +72,7 @@ const alliancesData = {
     {
       pn: "PNK",
       fullName: "PNK",
-      icon: "",
+      icon: "../assets/icons/admk.svg",
       cid: [193],
       canid: [],
       figmaSeats: "–"
@@ -80,7 +80,7 @@ const alliancesData = {
     {
       pn: "STMK",
       fullName: "STMK",
-      icon: "",
+      icon: "../assets/icons/admk.svg",
       cid: [],
       canid: [],
       figmaSeats: "–"
@@ -88,7 +88,7 @@ const alliancesData = {
     {
       pn: "TM-BSP",
       fullName: "TM-BSP",
-      icon: "",
+      icon: "../assets/icons/admk.svg",
       cid: [],
       canid: [],
       figmaSeats: "–"
@@ -96,7 +96,7 @@ const alliancesData = {
     {
       pn: "SIFB",
       fullName: "SIFB",
-      icon: "",
+      icon: "../assets/icons/BJP.svg",
       cid: [],
       canid: [],
       figmaSeats: "–"
@@ -104,7 +104,7 @@ const alliancesData = {
     {
       pn: "TMMK",
       fullName: "TMMK",
-      icon: "",
+      icon: "../assets/icons/BJP.svg",
       cid: [202],
       canid: [],
       figmaSeats: "–"
@@ -123,7 +123,7 @@ const alliancesData = {
     {
       pn: "INC",
       fullName: "Indian National Congress",
-      icon: "",
+      icon: "../assets/icons/INC.svg",
       cid: [2, 26, 29, 39, 51, 53, 58, 82, 98, 108, 117, 121, 146, 155, 161, 183, 184, 197, 205, 210, 216, 219, 225, 227, 231, 233, 234],
       canid: [],
       figmaSeats: "169–178"
@@ -131,7 +131,7 @@ const alliancesData = {
     {
       pn: "CPI",
       fullName: "CPI",
-      icon: "",
+      icon: "../assets/icons/cpi.webp",
       cid: [56, 107, 113, 166, 203],
       canid: [],
       figmaSeats: "169–178"
@@ -139,7 +139,7 @@ const alliancesData = {
     {
       pn: "CPM",
       fullName: "CPI(M)",
-      icon: "",
+      icon: "../assets/icons/CPI(M).png",
       cid: [10, 127, 164, 178, 232],
       canid: [],
       figmaSeats: "169–178"
@@ -147,7 +147,7 @@ const alliancesData = {
     {
       pn: "VCK",
       fullName: "VCK",
-      icon: "",
+      icon: "../assets/icons/vck.jpg",
       cid: [72, 199, 80, 154, 159, 34, 38, 33],
       canid: [],
       figmaSeats: "27"
@@ -155,7 +155,7 @@ const alliancesData = {
     {
       pn: "MDMK",
       fullName: "MDMK",
-      icon: "",
+      icon: "../assets/icons/dmk.svg",
       cid: [100, 160, 192, 221],
       canid: [],
       figmaSeats: "18"
@@ -163,7 +163,7 @@ const alliancesData = {
     {
       pn: "DMDK",
       fullName: "DMDK",
-      icon: "",
+      icon: "../assets/icons/dmdk.png",
       cid: [3, 30, 46, 59, 66, 71, 84, 88, 152, 206],
       canid: [],
       figmaSeats: "–"
@@ -171,7 +171,7 @@ const alliancesData = {
     {
       pn: "IUML",
       fullName: "IUML",
-      icon: "",
+      icon: "../assets/icons/iuml.png",
       cid: [47, 172],
       canid: [],
       figmaSeats: "–"
@@ -179,7 +179,7 @@ const alliancesData = {
     {
       pn: "KMDK",
       fullName: "KMDK",
-      icon: "",
+      icon: "../assets/icons/dmk.svg",
       cid: [96, 123],
       canid: [],
       figmaSeats: "–"
@@ -187,7 +187,7 @@ const alliancesData = {
     {
       pn: "MMK",
       fullName: "MMK",
-      icon: "",
+      icon: "../assets/icons/dmk.svg",
       cid: [],
       canid: [],
       figmaSeats: "–"
@@ -195,7 +195,7 @@ const alliancesData = {
     {
       pn: "MJK",
       fullName: "MJK",
-      icon: "",
+      icon: "../assets/icons/dmk.svg",
       cid: [158],
       canid: [],
       figmaSeats: "–"
@@ -203,7 +203,7 @@ const alliancesData = {
     {
       pn: "MPP",
       fullName: "MPP",
-      icon: "",
+      icon: "../assets/icons/dmk.svg",
       cid: [186],
       canid: [],
       figmaSeats: "–"
@@ -211,7 +211,7 @@ const alliancesData = {
     {
       pn: "SDPI",
       fullName: "SDPI",
-      icon: "",
+      icon: "../assets/icons/dmk.svg",
       cid: [169],
       canid: [],
       figmaSeats: "–"
@@ -219,7 +219,7 @@ const alliancesData = {
     {
       pn: "TDK",
       fullName: "TDK",
-      icon: "",
+      icon: "../assets/icons/dmk.svg",
       cid: [131],
       canid: [],
       figmaSeats: "–"
@@ -246,7 +246,7 @@ const alliancesData = {
     {
       pn: "AIPTMK",
       fullName: "AIPTMK",
-      icon: "",
+      icon: "../assets/icons/aiptmk.jpg",
       cid: [],
       canid: [],
       figmaSeats: "–"
@@ -254,7 +254,7 @@ const alliancesData = {
     {
       pn: "PT",
       fullName: "PT",
-      icon: "",
+      icon: "../assets/icons/pmk.jpg",
       cid: [],
       canid: [],
       figmaSeats: "–"
@@ -262,7 +262,7 @@ const alliancesData = {
     {
       pn: "PMK(SR)",
       fullName: "PMK(SR)",
-      icon: "",
+      icon: "../assets/icons/pmk.jpg",
       cid: [59, 58, 61, 62, 60, 85, 88, 89, 84, 86, 72, 70, 71, 75, 74, 77, 78, 80, 79, 152, 153, 154, 156, 63, 64, 65, 66, 67, 68, 69, 42, 41, 39, 36, 37, 35, 33],
       canid: [],
       figmaSeats: "–"
