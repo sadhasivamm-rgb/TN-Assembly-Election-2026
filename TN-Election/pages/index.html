@@ -47,6 +47,24 @@
         <!-- Map canvas -->
         <div class="map-right">
           <svg id="tn-map-svg"></svg>
+          <!-- Popup anchored inside map -->
+          <div class="map-popup" id="map-popup">
+            <div class="popup-header">
+              <div class="popup-name" id="popup-name">—</div>
+              <button class="popup-close" id="popup-close-btn" aria-label="Close">×</button>
+            </div>
+            <div class="popup-body">
+              <div class="popup-section-label">Candidate</div>
+              <div id="popup-candidates"></div>
+              <div class="popup-section-label">Current MLA</div>
+              <div id="popup-mla"></div>
+            </div>
+            <div class="popup-footer">
+              <button class="popup-view-btn" onclick="viewConstituencyDetails()">
+                View full details ›
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- Right column: CM Candidates + Alliance Table -->
@@ -145,26 +163,7 @@
     <!-- Tooltip -->
     <div class="map-tooltip" id="map-tooltip"></div>
 
-    <!-- Popup -->
-    <div class="map-popup-overlay" id="map-popup-overlay">
-      <div class="map-popup" style="position:relative">
-        <div class="popup-header">
-          <div class="popup-name" id="popup-name">—</div>
-          <button class="popup-close" id="popup-close-btn" aria-label="Close">×</button>
-        </div>
-        <div class="popup-body">
-          <div class="popup-section-label">Candidate</div>
-          <div id="popup-candidates"></div>
-          <div class="popup-section-label">Current MLA</div>
-          <div id="popup-mla"></div>
-        </div>
-        <div class="popup-footer">
-          <button class="popup-view-btn" onclick="viewConstituencyDetails()">
-            View full details ›
-          </button>
-        </div>
-      </div>
-    </div>
+
 
   </main>
 
