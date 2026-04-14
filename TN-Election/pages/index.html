@@ -14,6 +14,9 @@
   <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/home.css" />
   <link rel="stylesheet" href="../css/tn-map.css" />
+
+  <link rel="stylesheet" href="../css/manifestos.css"/>
+  
 </head>
 
 <body data-page="index">
@@ -165,6 +168,44 @@
 
 
 
+     <!-- SECTION 2 : POPULAR CANDIDATES -->
+      <section class="popular-candidates-section" id="popular-candidates-section">
+      <div class="section-header">
+        <h2 class="section-title">Popular Candidates</h2>
+      </div>
+      <!-- Your friend fills this container via js/home/popular-candidates.js -->
+      <div id="popular-candidates-container"></div>
+    </section>
+
+    <!-- SECTION 3 : BIG FIGHTS  -->
+      <section class="big-fights-preview-section" id="big-fights-preview-section">
+      <div class="section-header">
+        <h2 class="section-title">Big Fights</h2>
+        <a href="pages/bigfights.html" class="section-viewall-btn">View all</a>
+      </div>
+      <!-- Your friend fills this container via js/home/big-fights-preview.js -->
+      <div id="big-fights-preview-container"></div>
+    </section>
+
+    <!-- SECTION 4 : MANIFESTOS -->
+       <section class="manifestos-section" id="manifestos-section">
+      <div class="section-header">
+        <h2 class="section-title">Manifestos</h2>
+      </div>
+      <!-- filled by js/home/manifestos.js -->
+      <div class="manifestos-grid" id="manifestos-container"></div>
+    </section>
+
+    <!-- SECTION 5 : RICHEST CANDIDATES -->
+<section class="richest-candidates-section">
+  <div id="richest-candidates-container"></div>
+</section>
+
+
+ 
+    <!-- ── Footer ── -->
+      <div id="footer-container"></div>
+
   </main>
 
   <!-- Data -->
@@ -183,11 +224,22 @@
 
   <!-- Components -->
   <script src="../js/components/navbar.js"></script>
+  <script src="js/components/footer.js"></script>
 
   <!-- Page modules -->
   <script src="../js/home/cm-candidates.js"></script>
   <script src="../js/home/alliance-table.js"></script>
   <script src="../js/home/tn-map.js"></script>
+  
+
+  <script src="../js/home/popular-candidates.js"></script>
+  <script src="../js/home/big-fights-preview.js"></script>
+  <script src="../data/manifestos.js"></script>
+
+  <!-- <script type="module" src="../js/home/richest-highmargin.js"></script> -->
+   <script type="module" src="../data/richest-candidate.js"></script>
+<script type="module" src="../data/top-winners-data.js"></script>
+<script type="module" src="../js/home/richest-highmargin.js"></script>
 </body>
 
 </html>

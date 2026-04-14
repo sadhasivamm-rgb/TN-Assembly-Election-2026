@@ -1,0 +1,265 @@
+/* ════════════════════════════════════════════════
+   MANIFESTOS SECTION
+   ════════════════════════════════════════════════ */
+.manifestos-section {
+  padding: 28px 32px 40px;
+  background: #f0f4f8;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.section-viewall-btn {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+  background: #e8240e;
+  padding: 5px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.section-viewall-btn:hover {
+  background: #c51c0a;
+}
+
+/* ── Cards grid ── */
+.manifestos-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Each card ── */
+.manifesto-card {
+  position: relative;
+  width: 210px;
+  height: 244px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.manifesto-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+/* Image fills the full card */
+.manifesto-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: filter 0.35s ease;
+}
+
+.manifesto-card:hover .manifesto-card__img {
+  filter: brightness(0.6);
+}
+
+/* ── Hover overlay slides up from bottom ── */
+.manifesto-card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 30, 0.0) 0%,
+    rgba(10, 10, 30, 0.88) 55%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 22px;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.32s ease, transform 0.32s ease;
+}
+
+.manifesto-card:hover .manifesto-card__overlay {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/* Party name inside overlay */
+.manifesto-card__overlay-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+/* ── Overlay buttons ── */
+.manifesto-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 130px;
+  padding: 8px 0;
+  border-radius: 22px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.manifesto-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+}
+
+/* View button — orange solid */
+.manifesto-btn--view {
+  background: #ff6a00;
+  color: #ffffff;
+}
+
+/* Download button — orange outline */
+.manifesto-btn--download {
+  background: transparent;
+  color: #ffffff;
+  border: 1.8px solid #ff6a00;
+}
+
+/* ════════════════════════════════════════════════
+   PDF VIEWER MODAL
+   ════════════════════════════════════════════════ */
+.manifesto-pdf-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+}
+
+.manifesto-pdf-overlay.active {
+  display: flex;
+  animation: mfOverlayIn 0.2s ease;
+}
+
+@keyframes mfOverlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.manifesto-pdf-modal {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 96vw;
+  height: 94vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  animation: mfModalIn 0.25s ease;
+}
+
+@keyframes mfModalIn {
+  from { transform: translateY(28px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.manifesto-pdf-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid #e8ecf0;
+  background: #f7f9fb;
+  flex-shrink: 0;
+}
+
+.manifesto-pdf-modal__title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1a1a2e;
+}
+
+.manifesto-pdf-modal__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.manifesto-pdf-modal__download-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 16px;
+  background: #e8240e;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.manifesto-pdf-modal__download-btn:hover {
+  background: #c51c0a;
+}
+
+.manifesto-pdf-modal__close {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #666;
+  cursor: pointer;
+  padding: 2px 8px;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.manifesto-pdf-modal__close:hover {
+  background: #ebebeb;
+  color: #111;
+}
+
+.manifesto-pdf-modal__body {
+  flex: 1;
+  height: 100%;
+}
+
+.manifesto-pdf-modal__iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  /* display: block; */
+}
