@@ -26,22 +26,22 @@
         <!-- Header -->
         <div class="candidates-header">
           <h1 class="candidates-header__title">Candidate Details</h1>
+          <div class="candidates-search">
+            <svg class="candidates-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input
+              type="text"
+              id="candidates-search-input"
+              class="candidates-search__input"
+              placeholder="Search Candidate"
+              autocomplete="off"
+            />
+          </div>
         </div>
 
         <!-- Search -->
-        <div class="candidates-search">
-          <svg class="candidates-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-          <input
-            type="text"
-            id="candidates-search-input"
-            class="candidates-search__input"
-            placeholder="Search Candidate"
-            autocomplete="off"
-          />
-        </div>
 
         <!-- Filter Tabs -->
         <div class="candidates-tabs" role="tablist">
@@ -59,11 +59,20 @@
       </div>
     </main>
 
-    <!-- Scripts -->
+    <!-- Scripts — ORDER MATTERS -->
+
+    <!-- Step 1: Data files -->
     <script src="../data/navbar.js"></script>
-    <script src="../js/components/navbar.js"></script>
     <script src="../data/candidates.js"></script>
+    <script src="../data/all-candidates.js"></script>
+
+    <!-- Step 2: Components -->
+    <script src="../js/components/navbar.js"></script>
+
+    <!-- Step 3: Page modules -->
     <script src="../js/candidates/candidate-cards.js"></script>
     <script src="../js/candidates/filter-tabs.js"></script>
+    <script src="../js/candidates/candidate-popup.js"></script>
+
   </body>
 </html>
