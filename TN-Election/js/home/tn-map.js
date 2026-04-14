@@ -173,7 +173,6 @@ function buildMap() {
     .on('click', function(event, d) {
       event.stopPropagation();
       tooltip.classList.remove('is-visible');
-      openPopup(d.properties.AC_NO);
       // Remove highlight from all, apply orange hologram to clicked
       d3.selectAll('.constituency-path')
         .classed('highlighted', false)
@@ -183,6 +182,10 @@ function buildMap() {
         .classed('highlighted', true)
         .attr('fill', '#FF8C00')
         .attr('filter', 'url(#hologram-glow)');
+      // Pass click coords relative to .map-right so popup anchors on map
+      var mapRight = document.querySelector('.map-right');
+      var rect = mapRight.getBoundingClientRect();
+      openPopup(d.properties.AC_NO, event.clientX - rect.left, event.clientY - rect.top, rect);
     });
 
   // Close popup when clicking map background — reset highlight
@@ -196,7 +199,7 @@ function buildMap() {
 }
 
 // ── Popup ─────────────────────────────────────────────────────
-function openPopup(constId) {
+function openPopup(constId, x, y, mapRect) {
   selectedConstId = String(constId);
   var c = constituenciesData[selectedConstId];
   if (!c) return;
@@ -241,12 +244,38 @@ function openPopup(constId) {
       '</div>' +
     '</div>';
 
-  // Show overlay
-  document.getElementById('map-popup-overlay').classList.add('is-open');
+  // ── Position popup inside .map-right ──────────────────────
+  var popup = document.getElementById('map-popup');
+  if (popup && mapRect) {
+    var popupW = 230;
+    var popupH = popup.offsetHeight || 220;
+
+    // Default: show above the click point, centred horizontally
+    var left = x;
+    var top  = y - 12; // gap between arrow tip and click point
+    var flipBelow = false;
+
+    // If popup would go above the top edge, flip it below
+    if (top - popupH < 0) {
+      flipBelow = true;
+      top = y + 12;
+    }
+
+    // Clamp horizontally so popup stays inside the map
+    var minLeft = popupW / 2 + 4;
+    var maxLeft = mapRect.width - popupW / 2 - 4;
+    left = Math.max(minLeft, Math.min(maxLeft, left));
+
+    popup.style.left = left + 'px';
+    popup.style.top  = top  + 'px';
+    popup.dataset.flip = flipBelow ? 'below' : 'above';
+    popup.classList.add('is-open');
+  }
 }
 
 function closePopup() {
-  document.getElementById('map-popup-overlay').classList.remove('is-open');
+  var popup = document.getElementById('map-popup');
+  if (popup) popup.classList.remove('is-open');
   d3.selectAll('.constituency-path')
     .classed('highlighted', false)
     .attr('filter', null)
@@ -298,7 +327,16 @@ function initSearch() {
           // Scroll/zoom to it (basic zoom to centroid)
           // zoomToConstituency(c.id);
         }
-        openPopup(c.id);
+        var mapRight = document.querySelector('.map-right');
+        var rect = mapRight.getBoundingClientRect();
+        var pathEl2 = document.getElementById('path-' + c.id);
+        var x = rect.width / 2, y = rect.height / 2;
+        if (pathEl2) {
+          var bb = pathEl2.getBoundingClientRect();
+          x = bb.left + bb.width / 2 - rect.left;
+          y = bb.top  + bb.height / 2 - rect.top;
+        }
+        openPopup(c.id, x, y, rect);
       });
       results.appendChild(item);
     });
@@ -351,11 +389,15 @@ document.addEventListener('DOMContentLoaded', function() {
   initSearch();
 
   // Popup close button
-  document.getElementById('popup-close-btn').addEventListener('click', closePopup);
+  var closeBtn = document.getElementById('popup-close-btn');
+  if (closeBtn) closeBtn.addEventListener('click', closePopup);
 
-  // Close popup on overlay click (outside popup card)
-  document.getElementById('map-popup-overlay').addEventListener('click', function(e) {
-    if (e.target === this) closePopup();
+  // Close popup when clicking outside it on the SVG background
+  document.addEventListener('click', function(e) {
+    var popup = document.getElementById('map-popup');
+    if (popup && popup.classList.contains('is-open') && !popup.contains(e.target)) {
+      closePopup();
+    }
   });
 
   // Resize — rebuild map
