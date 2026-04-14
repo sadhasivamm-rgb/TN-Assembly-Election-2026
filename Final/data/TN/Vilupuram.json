@@ -109,6 +109,87 @@
           "desc": "Lack of nearby government girls’ school increases dropout rates in rural areas."
         }
       ]
-    }
-  ]
+    },
+  {
+    "constno": 70,
+    "constname": "Gingee",
+    "about": "Known as the 'Troy of the East' due to its historic hill fort, Gingee is a semi-arid agrarian constituency. It acts as a gateway between Villupuram and Tiruvannamalai, with an economy heavily dependent on rain-fed agriculture and small-scale lime and granite industries.",
+    "problem": [
+      {
+        "title": "Fort Tourism Neglect",
+        "desc": "Despite its heritage value, the lack of modern amenities, light-and-sound shows, and star-rated accommodation prevents Gingee from becoming a major global tourist hub, limiting local revenue."
+      },
+      {
+        "title": "Nandan Canal Project Delay",
+        "desc": "The decades-old demand to divert surplus water from the Thenpennai River to the Nandan Canal remains incomplete, leaving thousands of acres of farmland dry in 2026."
+      },
+      {
+        "title": "Granite Quarrying Hazards",
+        "desc": "Extensive stone quarrying in the foothills has led to severe dust pollution and structural cracks in nearby village homes; locals demand stricter environmental audits."
+      },
+      {
+        "title": "Monkey Menace in Farms",
+        "desc": "Farmers near the hillocks report massive crop losses due to the unchecked population of macaques; the demand for a dedicated wildlife relocation center is pending."
+      },
+      {
+        "title": "Inadequate Cold Storage for Onions",
+        "desc": "Gingee is a major small-onion producing belt, but without government cold storage, farmers are forced to sell during harvest gluts at throwaway prices."
+      }
+    ]
+  },
+  {
+    "constno": 71,
+    "constname": "Mailam",
+    "about": "A spiritual and educational pocket centered around the famous Murugan Temple on the hillock. It is a predominantly rural constituency with a significant population involved in agriculture and palm-leaf handicrafts.",
+    "problem": [
+      {
+        "title": "Temple Hill Infrastructure",
+        "desc": "The increasing footfall of devotees has outpaced the existing parking and sanitation facilities; traffic jams at the foot of the hill are now a daily occurrence."
+      },
+      {
+        "title": "Plight of Palm Workers",
+        "desc": "Traditional palm-leaf artisans lack institutional credit and a modern 'Haverstack' style marketing platform, leading to the slow death of this ancient craft."
+      },
+      {
+        "title": "Drinking Water Salinity",
+        "desc": "Over-extraction of groundwater in the Mailam block has led to increased salinity; residents are demanding a connection to the Combined Water Supply Scheme (CWSS)."
+      },
+      {
+        "title": "School Infrastructure Deficit",
+        "desc": "Several primary schools in the interior villages like Rettanai are still operating in dilapidated buildings, posing safety risks to children during the monsoon."
+      },
+      {
+        "title": "Encroachment of Temple Lands",
+        "desc": "Disputes over the encroachment of 'Manyam' lands belonging to the Mailam Bommapuram Adheenam have led to legal stalemates, stalling local development projects."
+      }
+    ]
+  },
+  {
+    "constno": 72,
+    "constname": "Tindivanam (SC)",
+    "about": "A strategic junction town where several National Highways meet. As a reserved constituency, it serves as a critical commercial hub for oilseeds (groundnut) and is often referred to as the 'Entrance to the South' from Chennai.",
+    "problem": [
+      {
+        "title": "Oilseed Research Stagnation",
+        "desc": "The local Oilseeds Research Station requires urgent modernization and funding to help farmers combat new pest varieties affecting groundnut yields in 2026."
+      },
+      {
+        "title": "NH-66 Highway Expansion Delay",
+        "desc": "The slow progress of the Tindivanam-Krishnagiri highway expansion has turned the town entrance into a high-accident zone due to poor lighting and diversions."
+      },
+      {
+        "title": "Suburban Rail Demand",
+        "desc": "Commuters traveling to Chennai for work are demanding the extension of the Chennai suburban electric train (EMU) network from Chengalpattu to Tindivanam."
+      },
+      {
+        "title": "Encroachment of Lake Beds",
+        "desc": "Encroachments in the major irrigation tanks (Eris) around the town have reduced water storage capacity, leading to localized urban flooding during heavy rains."
+      },
+      {
+        "title": "Waste Management Crisis",
+        "desc": "The absence of a scientific solid waste processing plant has led to the accumulation of 'legacy waste,' causing groundwater contamination in the outskirts."
+      }
+    ]
+  }
+]
 }
