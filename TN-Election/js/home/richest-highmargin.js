@@ -1,6 +1,6 @@
 // renderStats.js
 import topCandidatesByAssets from "../../data/richest-candidate.js";
-import topWinnersData from "../../data/top-winners-data.js";
+import topWinnersData from "../../data/high-margin-winner.js";
 
 function getPartyFlag(pn) {
   const flags = {
