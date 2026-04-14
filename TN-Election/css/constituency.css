@@ -142,12 +142,15 @@
     color: var(--color-muted);
 }
 
-/* ── Right column: candidates ─── */
+/* ── Right column: candidates + history stacked ─── */
 .const-right-col {
     background: var(--color-white);
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border);
     padding: var(--gap-md);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 }
 
 /* ── Section heading ─── */
@@ -168,30 +171,37 @@
 
 .candidates-scroll {
     display: flex;
-    gap: var(--gap-md);
+    gap: 18px;
     width: max-content;
     padding: 4px 2px;
 }
 
 .cand-card {
     width: 130px;
-    background: var(--color-white);
-    border-radius: var(--radius-lg);
-    border: 2.5px solid transparent;
+    background: #fff;
+    border-radius: 14px;
+    border: 2px solid #E5E7EB;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     overflow: hidden;
     flex-shrink: 0;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.2s ease;
 }
 
 .cand-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
+
+/* Party border colors */
+.cand-card.party-dmk  { border-color: #EF4444; }
+.cand-card.party-admk { border-color: #22C55E; }
+.cand-card.party-ntk  { border-color: #16A34A; }
+.cand-card.party-tvk  { border-color: #F59E0B; }
 
 .cand-photo-wrap {
     width: 100%;
-    aspect-ratio: 1;
+    height: 130px;
     background: #F1F5F9;
     overflow: hidden;
 }
@@ -207,7 +217,7 @@
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    margin: -17px auto 0;
+    margin: -17px auto 6px;
     position: relative;
     z-index: 1;
     border: 2px solid #fff;
@@ -223,7 +233,7 @@
 }
 
 .cand-name {
-    font-size: 12px;
+    font-size: 12.5px;
     font-weight: 700;
     color: var(--color-dark);
     text-align: center;
@@ -231,13 +241,13 @@
 }
 
 .cand-party-badge {
-    margin: 4px auto 10px;
+    margin: 6px auto 10px;
     display: block;
     width: fit-content;
     font-size: 10px;
     font-weight: 700;
     color: #fff;
-    padding: 2px 10px;
+    padding: 3px 10px;
     border-radius: 20px;
 }
 
@@ -260,11 +270,10 @@
     transform: translateY(-1px);
 }
 
-/* ── Historical trajectory ─── */
-.history-section {
-    margin-bottom: var(--gap-lg);
-}
-
+/* ══════════════════════════════════════════
+   HISTORY GRID — inside right col
+   Always 3 columns on desktop (matches screenshot)
+   ══════════════════════════════════════════ */
 .history-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -281,8 +290,8 @@
 
 .history-card {
     background: var(--color-white);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    border: 1px solid #E5E7EB;
     padding: var(--gap-md);
 }
 
@@ -327,7 +336,7 @@
 .history-runnerup {
     margin-top: 10px;
     padding-top: 10px;
-    border-top: 1px solid #F5F5F5;
+    border-top: 1px solid #F1F5F9;
 }
 
 .history-ru-name {
@@ -444,22 +453,21 @@
 .assembly-table {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
     overflow: hidden;
 }
 
 .assembly-cell {
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--color-border);
-    border-right: 1px solid var(--color-border);
+    padding: 14px;
+    border-bottom: 1px solid #F1F5F9;
+    border-right: 1px solid #F1F5F9;
 }
 
 .assembly-cell:nth-child(even) {
     border-right: none;
 }
 
-/* last row — remove bottom border */
 .assembly-cell:nth-last-child(-n+2) {
     border-bottom: none;
 }
@@ -476,96 +484,4 @@
     font-size: 15px;
     font-weight: 800;
     color: var(--color-dark);
-}
-/* ================================
-   FINAL PIXEL PERFECT FIX
-   ================================ */
-
-/* Candidate Scroll */
-.candidates-scroll {
-    display: flex;
-    gap: 18px;
-    padding: 4px;
-}
-
-/* Candidate Card */
-.cand-card {
-    width: 130px;
-    background: #fff;
-    border-radius: 14px;
-    border: 2px solid #E5E7EB;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    overflow: hidden;
-    transition: all 0.2s ease;
-}
-
-.cand-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-}
-
-/* Party Colors */
-.cand-card.party-dmk { border-color: #EF4444; }
-.cand-card.party-admk { border-color: #22C55E; }
-.cand-card.party-ntk { border-color: #16A34A; }
-.cand-card.party-tvk { border-color: #F59E0B; }
-
-/* Image */
-.cand-photo-wrap {
-    height: 130px;
-    background: #F1F5F9;
-}
-
-/* Icon */
-.cand-icon-wrap {
-    width: 34px;
-    height: 34px;
-    margin: -17px auto 6px;
-    border: 2px solid #fff;
-    background: #fff;
-}
-
-/* Text */
-.cand-name {
-    font-size: 12.5px;
-    font-weight: 700;
-    text-align: center;
-}
-
-.cand-party-badge {
-    margin: 6px auto 10px;
-    display: block;
-    font-size: 10px;
-    padding: 3px 10px;
-    border-radius: 20px;
-    color: #fff;
-}
-
-/* Right Panel */
-.const-right-col {
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-}
-
-/* History */
-.history-card {
-    border-radius: 14px;
-    border: 1px solid #E5E7EB;
-}
-
-.history-runnerup {
-    border-top: 1px solid #F1F5F9;
-}
-
-/* Assembly */
-.assembly-table {
-    border: 1px solid #E5E7EB;
-    border-radius: 14px;
-}
-
-.assembly-cell {
-    border-bottom: 1px solid #F1F5F9;
-    border-right: 1px solid #F1F5F9;
-    padding: 14px;
 }

@@ -22,7 +22,7 @@
       ‹ <span id="const-breadcrumb">Back</span>
     </button>
 
-    <!-- Hero: two-column — left: map+description | right: candidates -->
+    <!-- Hero: two-column — left: map+description | right: candidates + history -->
     <div class="const-hero-outer">
 
       <!-- LEFT COLUMN -->
@@ -37,24 +37,25 @@
         </div>
       </div>
 
-      <!-- RIGHT COLUMN -->
+      <!-- RIGHT COLUMN: candidates + historical trajectory stacked -->
       <div class="const-right-col">
+
+        <!-- Contesting Candidates -->
         <div class="section-heading">Contesting Candidates</div>
         <div class="candidates-scroll-wrap">
           <div class="candidates-scroll" id="candidates-scroll"></div>
         </div>
-        <div style="text-align:right;margin-top:12px">
+        <div style="text-align:right;margin-top:12px;margin-bottom:24px">
           <button class="view-all-btn" id="view-all-btn">View all</button>
         </div>
+
+        <!-- Historical Trajectory — inside right col, below candidates -->
+        <div class="section-heading">Historical Trajectory</div>
+        <div class="history-grid" id="history-cards"></div>
+
       </div>
 
     </div>
-
-    <!-- Historical Trajectory -->
-    <section class="history-section">
-      <div class="section-heading">Historical Trajectory</div>
-      <div class="history-grid" id="history-cards"></div>
-    </section>
 
     <!-- Census Details + Assembly Details -->
     <div class="census-assembly-grid">

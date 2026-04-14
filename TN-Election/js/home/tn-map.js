@@ -316,26 +316,36 @@ function initSearch() {
       item.innerHTML =
         '<div class="result-name">' + c.name + '</div>' +
         '<div class="result-dist">' + c.district + ' · ' + c.reserved_status + '</div>';
-      item.addEventListener('click', function() {
+      item.addEventListener('click', function(event) {
+        event.stopPropagation();
         input.value = c.name;
         results.classList.remove('is-open');
-        // Highlight on map
-        d3.selectAll('.constituency-path').classed('highlighted', false);
+
+        // Reset all paths first — same as map click handler
+        d3.selectAll('.constituency-path')
+          .classed('highlighted', false)
+          .attr('filter', null)
+          .attr('fill', '#E5E7EB');
+
+        // Apply orange hologram highlight — identical to clicking on map
         var pathEl = document.getElementById('path-' + c.id);
         if (pathEl) {
-          d3.select(pathEl).classed('highlighted', true);
-          // Scroll/zoom to it (basic zoom to centroid)
-          // zoomToConstituency(c.id);
+          d3.select(pathEl)
+            .classed('highlighted', true)
+            .attr('fill', '#FF8C00')
+            .attr('filter', 'url(#hologram-glow)');
         }
+
+        // Calculate popup position from the path's bounding box
         var mapRight = document.querySelector('.map-right');
         var rect = mapRight.getBoundingClientRect();
-        var pathEl2 = document.getElementById('path-' + c.id);
         var x = rect.width / 2, y = rect.height / 2;
-        if (pathEl2) {
-          var bb = pathEl2.getBoundingClientRect();
-          x = bb.left + bb.width / 2 - rect.left;
+        if (pathEl) {
+          var bb = pathEl.getBoundingClientRect();
+          x = bb.left + bb.width  / 2 - rect.left;
           y = bb.top  + bb.height / 2 - rect.top;
         }
+
         openPopup(c.id, x, y, rect);
       });
       results.appendChild(item);
