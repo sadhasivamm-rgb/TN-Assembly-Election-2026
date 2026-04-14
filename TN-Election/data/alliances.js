@@ -31,7 +31,7 @@ const alliancesData = {
     },
     {
       pn: "PMK",
-      fullName: "PMK (Pattali Makkal Katchi)",
+      fullName: "PMK",
       icon: "../assets/icons/pmk.png",
       cid: [88, 59, 58, 75, 39, 161, 33, 36, 150, 66, 70, 152, 78, 159, 164, 12, 89, 8],
       canid: [],
@@ -39,7 +39,7 @@ const alliancesData = {
     },
     {
       pn: "AMMK",
-      fullName: "AMMK (TTV Dhinakaran)",
+      fullName: "AMMK",
       icon: "../assets/icons/ammk.webp",
       cid: [9, 27, 140, 199, 217, 229, 167, 168, 184],
       canid: [],
@@ -122,7 +122,7 @@ const alliancesData = {
     },
     {
       pn: "INC",
-      fullName: "Indian National Congress",
+      fullName: "INC",
       icon: "../assets/icons/INC.svg",
       cid: [2, 26, 29, 39, 51, 53, 58, 82, 98, 108, 117, 121, 146, 155, 161, 183, 184, 197, 205, 210, 216, 219, 225, 227, 231, 233, 234],
       canid: [],
