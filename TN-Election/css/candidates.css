@@ -147,7 +147,13 @@
   background-color: white;
   border-radius: 10px;
   height: 500px;
-  overflow-y: auto; 
+  overflow-y: auto;
+  /* FIX 1: hide scrollbar but keep scroll working */
+  scrollbar-width: none;
+}
+
+.candidates-grid::-webkit-scrollbar {
+  display: none;
 }
 
 /* TABLET: 3 cards per row */
@@ -194,14 +200,14 @@
 /* ---------- Floating oval photo — overflows above card ---------- */
 .candidate-card__photo-wrap {
   position: absolute;
-  bottom:100px;
+  bottom: 100px;
   left: 50%;
   transform: translateX(-50%);
   width: 120px;
   height: 148px;
   border-radius: 80px;
   overflow: hidden;
-  background:transparent;
+  background: transparent;
   z-index: 1;
 }
 
@@ -212,13 +218,13 @@
   object-position: top center;
 }
 .candidate-card:hover .candidate-card__photo-wrap {
-  box-shadow: 4px 4px 4px 0px #00000040; 
+  box-shadow: 4px 4px 4px 0px #00000040;
 }
 /* ---------- Card body — alliance/party colour background ---------- */
 .candidate-card__body {
   width: 182px;
   height: 176px;
-  border-radius:8px;
+  border-radius: 8px;
   color: black;
   display: flex;
   flex-direction: column;
@@ -226,10 +232,10 @@
   justify-content: flex-end;
   padding-top: 64px;
   overflow: hidden;
-  transition: box-shadow 0.15s ease;  
+  transition: box-shadow 0.15s ease;
 }
 .candidate-card:hover .candidate-card__body {
-  box-shadow: 4px 4px 4px 0px #00000040; 
+  box-shadow: 4px 4px 4px 0px #00000040;
 }
 
 /* ---------- Footer — name, constituency, bar ---------- */
@@ -269,7 +275,7 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background:white;
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -349,7 +355,6 @@
   animation: cardFadeIn 0.25s ease both;
 }
 
-/*
 /* ============================================
    Candidate Detail Popup — Figma Design
    ============================================ */
@@ -359,6 +364,8 @@
   inset: 0;
   background: rgba(0,0,0,0.45);
   z-index: 1000;
+  /* FIX 2: removed fixed width:1200px — use full viewport */
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -375,7 +382,9 @@
   border-radius: var(--radius-lg);
   width: 100%;
   max-width: 860px;
+  /* FIX 3: constrain modal height so it never grows taller than viewport */
   max-height: 90vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -397,20 +406,21 @@
   flex-shrink: 0;
 }
 .popup-header__title { font-size: var(--font-lg); font-weight: 800; color: var(--color-dark); }
-.popup-header__back{
+.popup-header__back {
   background: none;
-  border: none; 
-  cursor: pointer; 
+  border: none;
+  cursor: pointer;
   padding: 4px;
-  color: var(--color-dark); 
-  display: flex; align-items: center;
-  border-radius: var(--radius-sm); 
+  color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
   transition: background 0.15s;
 }
 .popup-header__close {
   position: absolute;
   top: 10px;
-  right:10px;
+  right: 10px;
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -444,20 +454,23 @@
 /* ── TOP ROW: left panel + right competitors ── */
 .popup-top-row {
   display: flex;
-  gap: var(--gap-md);
+  /* FIX 4: removed fixed width:1152px — use full available width */
+  width: 100%;
   align-items: stretch;
+  /* FIX 5: fixed height so the row doesn't grow with content */
+  flex-shrink: 0;
 }
 
 /* LEFT PANEL */
 .popup-left {
   display: flex;
   gap: var(--gap-md);
-  background: var(--color-white);
-  border-radius: var(--radius-md);
+  background: transparent;
   padding: var(--gap-md);
   flex-shrink: 0;
   align-items: flex-start;
-  min-width: 0;
+  width: 400px;
+  min-height: 200px;
 }
 
 .popup-main__photo-wrap {
@@ -485,7 +498,7 @@
 }
 .popup-main__name {
   font-size: 28px;
-  font-family: 'Inter',sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 900;
   line-height: 1.15;
   margin: 0;
@@ -551,12 +564,14 @@
 .popup-right {
   flex: 1;
   background: var(--color-white);
-  border-radius: var(--radius-md);
+  border-radius: 5px;
   padding: var(--gap-md);
+  /* FIX 6: removed fixed width:641px and height:353px — use flex sizing */
   min-width: 0;
   display: flex;
   flex-direction: column;
   gap: var(--gap-sm);
+  overflow: hidden;
 }
 .popup-competitors__title {
   font-size: var(--font-md);
@@ -564,23 +579,30 @@
   color: var(--color-dark);
   flex-shrink: 0;
 }
+
+/* FIX 7: competitors scroll — no scrollbar, fills remaining height */
 .popup-competitors__scroll {
   display: flex;
   gap: 12px;
   overflow-x: auto;
+  overflow-y: hidden;
+  flex: 1;
   padding-bottom: 6px;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
+  /* hide scrollbar completely */
+  scrollbar-width: none;
+  align-items: flex-start;
 }
-.popup-competitors__scroll::-webkit-scrollbar { height: 4px; }
-.popup-competitors__scroll::-webkit-scrollbar-track { background: var(--color-bg); border-radius: 2px; }
-.popup-competitors__scroll::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
+.popup-competitors__scroll::-webkit-scrollbar {
+  display: none;
+}
+
 .popup-competitors__empty { font-size: var(--font-sm); color: var(--color-muted); padding: var(--gap-sm); }
 
 /* ── Competitor mini-card (matches candidate card style) ── */
 .pcomp-card {
   flex-shrink: 0;
-  width: 100px;
+  width: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -592,7 +614,7 @@
 
 .pcomp-card__photo-wrap {
   position: absolute;
-  top: 0;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   width: 72px;
@@ -614,6 +636,7 @@
   padding-top: 50px;
   overflow: hidden;
   position: relative;
+  height: 140px;
 }
 
 .pcomp-card__name {
@@ -672,21 +695,29 @@
 .popup-details-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--gap-md);
 }
 @media (max-width: 576px) {
   .popup-details-grid { grid-template-columns: 1fr; }
   .popup-top-row { flex-direction: column; }
   .popup-wins-bar { width: 100%; }
+  .popup-left { width: 100%; }
 }
 
 .popup-details-col {
   background: var(--color-white);
-  border-radius: var(--radius-md);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   padding: var(--gap-md);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+}
+.popup-details-col1 {
+  background: var(--color-white);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: var(--gap-md);
+  display: flex;
+  flex-direction: column;
 }
 .popup-details__heading {
   font-size: var(--font-md);

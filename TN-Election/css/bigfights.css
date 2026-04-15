@@ -1,35 +1,68 @@
 /* ============================================
-   css/bigfights.css
-   Big Fights page — Mobile First
-   Strictly matching Figma design
+   css/bigfights.css — Big Fights page
+   Mobile First
    ============================================ */
 
 /* ---------- Page layout ---------- */
+.candidates-search {
+  position: relative;
+  margin-bottom: var(--gap-md);
+}
+
+.candidates-search__input {
+  width: 100%;
+  padding: 10px 16px 10px 42px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-md);
+  font-family: inherit;
+  background: var(--color-white);
+  color: var(--color-dark);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.candidates-search__input:focus {
+  border-color: var(--color-primary);
+}
+
+.candidates-search__input::placeholder {
+  color: var(--color-muted);
+}
+
+.candidates-search__icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-muted);
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+}
 .bigfights-page {
   padding: var(--gap-md);
   max-width: 1200px;
   margin: 0 auto;
 }
-
 @media (min-width: 993px) {
-  .bigfights-page {
-    padding: var(--gap-lg) var(--gap-xl);
-  }
+  .bigfights-page { padding: var(--gap-lg) var(--gap-xl); }
 }
 
 /* ---------- Filter Tabs ---------- */
 .bigfight-tabs {
   display: flex;
-  gap:20px;
+  gap: 20px;
   margin-bottom: var(--gap-lg);
+  position: relative;
 }
 
 .bigfight-tab {
   padding: 8px 22px;
-  border-radius:8px;
+  border-radius: 8px;
   border: 2px solid var(--color-border);
   background: #F8E0DB;
-  color:#E54B2A;
+  color: #E54B2A;
   font-size: var(--font-md);
   font-weight: 700;
   font-family: inherit;
@@ -37,60 +70,63 @@
   min-height: 44px;
   transition: all 0.18s ease;
 }
-
 .bigfight-tab--active {
-  background:white;
+  background: white;
   border-color: #E54B2A;
   color: #E54B2A;
 }
-
 .bigfight-tab:hover:not(.bigfight-tab--active) {
   border-color: var(--color-primary);
   color: var(--color-primary);
 }
 
-/* ---------- Cards Grid ---------- */
-/* MOBILE: 1 card per row */
+/* ============================================
+   BIG FIGHTS — Card Grid
+   ============================================ */
+
 .bigfight-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--gap-md);
 }
-
-/* TABLET: 2 cards per row */
 @media (min-width: 577px) {
-  .bigfight-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .bigfight-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
-/* LAPTOP: 3 cards per row */
 @media (min-width: 993px) {
-  .bigfight-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .bigfight-grid { grid-template-columns: repeat(3, 1fr); }
 }
-
+/* #bigfight-cards-container{
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+} */
 /* ---------- Fight Card ---------- */
+#bigfight-cards-container{
+display: flex;
+flex-direction: row;
+flex-wrap:wrap;
+gap: 8px;
+}
 .fight-card {
   background: var(--color-white);
   border-radius: var(--radius-lg);
   padding: var(--gap-md);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
   display: flex;
+  flex: 1 1 300px;
   flex-direction: column;
   gap: 10px;
   position: relative;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
   overflow: visible;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  min-width: 0; /* prevents grid blowout */
 }
-
 .fight-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.11);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.11);
 }
 
-/* ---------- Constituency tag — top right ---------- */
+/* Constituency tag — top right corner */
 .fight-card__constituency {
   position: absolute;
   top: -1px;
@@ -110,7 +146,7 @@
   border-left: 1px solid var(--color-border);
 }
 
-/* ---------- Candidate row ---------- */
+/* Candidate row */
 .fight-card__candidate {
   display: flex;
   align-items: center;
@@ -118,15 +154,13 @@
   padding-top: 4px;
 }
 
-/* ---------- Photo + party logo wrapper ---------- */
+/* Photo wrap */
 .fight-card__photo-wrap {
   position: relative;
   width: 56px;
   height: 56px;
   flex-shrink: 0;
 }
-
-/* Circular photo */
 .fight-card__photo-circle {
   width: 56px;
   height: 56px;
@@ -138,20 +172,19 @@
   align-items: center;
   justify-content: center;
 }
-
-.fight-card__photo {
+.fight-card__photo-circle img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   display: block;
 }
-
 .fight-card__photo--svg {
   width: 65%;
   height: 65%;
 }
 
-/* Party logo — bottom right of photo */
+/* Party logo badge */
 .fight-card__party-logo {
   position: absolute;
   bottom: -2px;
@@ -167,14 +200,11 @@
   justify-content: center;
   box-shadow: 0 1px 4px rgba(0,0,0,0.15);
 }
-
 .fight-card__party-logo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-
-/* Party logo fallback — coloured dot with initials */
 .fight-card__party-logo--fallback {
   font-size: 7px;
   font-weight: 900;
@@ -183,13 +213,8 @@
   text-align: center;
 }
 
-/* ---------- Candidate info (right of photo) ---------- */
-.fight-card__info {
-  flex: 1;
-  min-width: 0;
-}
-
-/* Name + (PARTY) on same line */
+/* Candidate info */
+.fight-card__info { flex: 1; min-width: 0; }
 .fight-card__name-line {
   font-size: var(--font-md);
   font-weight: 700;
@@ -199,14 +224,11 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .fight-card__party-inline {
   font-size: var(--font-md);
   font-weight: 700;
   color: var(--color-muted);
 }
-
-/* "Result awaiting" pill */
 .fight-card__status {
   display: block;
   margin-top: 5px;
@@ -219,7 +241,19 @@
   box-sizing: border-box;
 }
 
-/* ---------- Empty state ---------- */
+/* Progress bar */
+.fight-card__progress-wrap { padding: 2px 0; }
+.fight-card__progress-bar {
+  display: flex;
+  width: 100%;
+  height: 6px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background: var(--color-border);
+}
+.fight-card__bar { height: 100%; }
+
+/* Empty state */
 .bigfight-empty {
   grid-column: 1 / -1;
   text-align: center;
@@ -227,161 +261,160 @@
   color: var(--color-muted);
   font-size: var(--font-md);
 }
-/* ============================================
-   Popular Battles — Carousel + Cards
-   ============================================ */
 
-/* ---------- Dropdown ---------- */
-.bigfight-tabs {
-  position: relative;
-}
+/* ============================================
+   POPULAR BATTLES — Dropdown
+   ============================================ */
 
 .pop-dropdown {
   position: absolute;
-  top: 48px;
+  top: 52px;
   left: 0;
-  background: #fff;
+  background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-  z-index: 200;
-  min-width: 220px;
+  z-index: 300;
+  min-width: 240px;
   overflow: hidden;
-  animation: dropIn 0.15s ease;
+  animation: dropIn 0.15s ease both;
 }
-
 @keyframes dropIn {
   from { opacity: 0; transform: translateY(-6px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.pop-dropdown__item {
+.pop-dd__item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
+  gap: 10px;
+  padding: 12px 16px;
   cursor: pointer;
   transition: background 0.12s;
+  border-bottom: 1px solid var(--color-border);
 }
+.pop-dd__item:last-child { border-bottom: none; }
+.pop-dd__item:hover { background: var(--color-bg); }
+.pop-dd__item--active { background: #fff8f6; }
 
-.pop-dropdown__item:hover,
-.pop-dropdown__item--active {
-  background: #f8f8f8;
-}
-
-.pop-dropdown__pill {
+.pop-dd__pill {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: var(--radius-full);
+  border: 1.5px solid;
   font-size: var(--font-sm);
   font-weight: 800;
   white-space: nowrap;
 }
-
-.pop-dropdown__icon {
+.pop-dd__icon {
   width: 16px;
   height: 16px;
   object-fit: contain;
   border-radius: 50%;
 }
-
-.pop-dropdown__dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.pop-dropdown__sep {
+.pop-dd__sep {
   font-size: var(--font-xs);
   font-weight: 700;
   color: var(--color-muted);
+  flex-shrink: 0;
+}
+.pop-dd__check {
+  margin-left: auto;
+  font-size: var(--font-sm);
+  color: var(--color-primary);
+  font-weight: 900;
 }
 
-/* ---------- Carousel wrapper ---------- */
-.pop-section {
-  width: 100%;
+/* ============================================
+   POPULAR BATTLES — Results count
+   ============================================ */
+
+.pop-results-count {
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: var(--color-muted);
+  margin-bottom: var(--gap-md);
+}
+.pop-results-count__num {
+  font-size: var(--font-xl);
+  font-weight: 900;
+  color: var(--color-dark);
 }
 
-.pop-carousel-wrap {
-  width: 100%;
-  overflow: hidden;
-  cursor: grab;
-}
+/* ============================================
+   POPULAR BATTLES — Card Grid (3 cols)
+   ============================================ */
 
-.pop-carousel-wrap:active {
-  cursor: grabbing;
+.pop-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap-md);
 }
-
-.pop-carousel-track {
-  display: flex;
-  gap: 16px;
-  will-change: transform;
-  /* No transition — driven by rAF */
+@media (min-width: 577px) {
+  .pop-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 993px) {
+  .pop-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* ---------- Popular Battle Card ---------- */
 .pop-card {
-  flex-shrink: 0;
-  width: 260px;
-  height: 200px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   position: relative;
   background: #1a1a2e;
   box-shadow: 0 4px 16px rgba(0,0,0,0.18);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  min-height: 180px;
 }
-
 .pop-card:hover {
-  transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.28);
 }
 
-/* Gradient BG layer */
+/* Gradient layer */
 .pop-card__bg {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
 
-/* Lightning decorative layer */
-.pop-card__lightning {
+/* Glow layer */
+.pop-card__glow {
   position: absolute;
   inset: 0;
   z-index: 1;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(255,220,80,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse at 50% 0%, rgba(255,220,80,0.07) 0%, transparent 70%),
     radial-gradient(ellipse at 20% 100%, rgba(255,255,255,0.04) 0%, transparent 60%),
     radial-gradient(ellipse at 80% 100%, rgba(255,255,255,0.04) 0%, transparent 60%);
   pointer-events: none;
 }
 
-/* Content sits above layers */
+/* Content */
 .pop-card__content {
   position: relative;
   z-index: 2;
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 10px 12px 10px;
+  padding: 10px 14px 14px;
 }
 
-/* Title banner */
+/* Constituency title */
 .pop-card__title {
   text-align: center;
   font-size: 9px;
   font-weight: 900;
-  color: rgba(255,255,255,0.85);
-  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   background: rgba(255,255,255,0.08);
   border-radius: var(--radius-sm);
   padding: 4px 8px;
-  margin-bottom: 8px;
-  line-height: 1.3;
+  margin-bottom: 10px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -396,35 +429,30 @@
   gap: 4px;
 }
 
-/* Individual candidate column */
+/* Candidate column */
 .pop-card__candidate {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   flex: 1;
 }
 
-/* Photo wrapper with badge */
+/* Photo wrap */
 .pop-card__photo-wrap {
   position: relative;
   width: 72px;
-  height: 80px;
+  height: 84px;
 }
-
 .pop-card__photo {
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: bottom;
   display: block;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.45));
 }
-
-/* Flip right-side candidate to face left */
-.pop-card__photo--flip {
-  transform: scaleX(-1);
-}
+.pop-card__photo--flip { transform: scaleX(-1); }
 
 /* Party badge on photo */
 .pop-card__badge {
@@ -434,19 +462,19 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  background: var(--color-white);
+  border: 2px solid var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   box-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
-
 .pop-card__badge img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-
 .pop-card__badge-text {
   font-size: 6px;
   font-weight: 900;
@@ -454,43 +482,32 @@
   line-height: 1;
 }
 
-/* Candidate name */
+/* Name + party label */
 .pop-card__name {
   font-size: 9px;
   font-weight: 800;
   color: rgba(255,255,255,0.92);
   text-align: center;
-  line-height: 1.2;
-  max-width: 80px;
+  line-height: 1.3;
+  max-width: 90px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-/* Party label under name */
-.pop-card__party {
+.pop-card__party-label {
   font-size: 8px;
   font-weight: 900;
   letter-spacing: 0.05em;
   text-align: center;
 }
 
-/* VS badge in center */
+/* VS badge */
 .pop-card__vs {
   font-size: 18px;
   font-weight: 900;
   color: rgba(255,255,255,0.9);
-  text-shadow: 0 0 12px rgba(255,220,80,0.6);
-  letter-spacing: -0.02em;
+  text-shadow: 0 0 12px rgba(255,220,80,0.5);
   flex-shrink: 0;
   align-self: center;
-  padding-bottom: 16px;
-}
-
-/* Tablet: slightly bigger cards */
-@media (min-width: 577px) {
-  .pop-card {
-    width: 280px;
-    height: 210px;
-  }
+  padding-bottom: 20px;
 }

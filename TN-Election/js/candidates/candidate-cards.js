@@ -939,10 +939,10 @@ var ALLIANCE_PARTIES = {
 };
 
 var ALLIANCE_COLOURS = {
-  NDA: { bg: '#F97256', bar: '#FDA29B', text: '#7A1200' },
-  SPA: { bg: '#6172F3', bar: '#A4BCFD', text: '#1a237e' },
-  TVK: { bg: '#FEDF89', bar: '#FDB022', text: '#7A4500' },
-  NTK: { bg: '#D1FADF', bar: '#039855', text: '#fff'    }
+  NDA: { bg: '#F97256', bar: '#FDA29B', text: '#000000' },
+  SPA: { bg: '#6172F3', bar: '#A4BCFD', text: '#000000' },
+  TVK: { bg: '#FEDF89', bar: '#FDB022', text: '#000000' },
+  NTK: { bg: '#D1FADF', bar: '#039855', text:'#000000'    }
 };
 
 function getAllianceColours(partyShort) {

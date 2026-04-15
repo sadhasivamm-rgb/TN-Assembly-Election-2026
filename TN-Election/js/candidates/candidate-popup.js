@@ -243,6 +243,14 @@
 // Candidate detail popup — matches Figma design
 // ============================================
 
+// ============================================
+// js/candidates/candidate-popup.js
+// Candidate detail popup — matches Figma design
+// ============================================
+
+// -----------------------------------------------
+// Silhouette SVG for missing photos
+// -----------------------------------------------
 function buildPopupSilhouette() {
   return (
     '<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">' +
@@ -253,6 +261,9 @@ function buildPopupSilhouette() {
   );
 }
 
+// -----------------------------------------------
+// Alliance colour lookup
+// -----------------------------------------------
 var POPUP_ALLIANCE_PARTIES = {
   NDA: ['ADMK','AIADMK','BJP','PMK','AMMK','TMC','IJK','PBK','PNK','STMK','TM-BSP','SIFB','TMMK'],
   SPA: ['DMK','INC','CPI','CPI(M)','CPM','VCK','MDMK','DMDK','IUML','KMDK','MMK','MJK','MPP','SDPI','TDK'],
@@ -260,10 +271,10 @@ var POPUP_ALLIANCE_PARTIES = {
   NTK: ['NTK']
 };
 var POPUP_ALLIANCE_COLOURS = {
-  NDA: { bg: '#F97256', bar: '#FDA29B', text: '#7A1200' },
-  SPA: { bg: '#6172F3', bar: '#A4BCFD', text: '#1a237e' },
-  TVK: { bg: '#FEDF89', bar: '#FDB022', text: '#7A4500' },
-  NTK: { bg: '#D1FADF', bar: '#039855', text: '#14532d' }
+  NDA: { bg: '#F97256', bar: '#FDA29B', text: '#000000' },
+  SPA: { bg: '#6172F3', bar: '#A4BCFD', text: '#000000' },
+  TVK: { bg: '#FEDF89', bar: '#FDB022', text: '#000000' },
+  NTK: { bg: '#D1FADF', bar: '#039855', text: '#000000' }
 };
 
 function getPopupColours(partyShort) {
@@ -275,48 +286,143 @@ function getPopupColours(partyShort) {
 }
 
 // -----------------------------------------------
-// Competitor mini-card (floating photo + coloured body)
+// SORT competitors — major parties first, IND last
+//
+// Order logic:
+//   1. Selected candidate always FIRST
+//   2. Major rival parties in fixed priority order
+//   3. Other named parties (alliance members / small)
+//   4. IND (independent) always LAST
+//
+// Major party priority list (the 4 big ones):
+//   ADMK > DMK > NTK > TVK > BJP > INC > PMK
+// When selected party is one of these, it is skipped
+// (already placed first) and the rest follow in order.
+// -----------------------------------------------
+var MAJOR_PARTY_ORDER = ['ADMK','AIADMK','DMK','NTK','TVK','BJP','INC','PMK'];
+
+function getAllianceOf(partyShort) {
+  var p = (partyShort || '').trim();
+  for (var a in POPUP_ALLIANCE_PARTIES) {
+    if (POPUP_ALLIANCE_PARTIES[a].indexOf(p) !== -1) return a;
+  }
+  return 'OTHER';
+}
+
+function sortCompetitors(candidates, selectedId) {
+  var selected   = null;
+  var majors     = [];   // major party candidates (not selected, not IND)
+  var others     = [];   // small party / unlisted alliance
+  var independents = []; // IND
+
+  candidates.forEach(function(c) {
+    var isSelf   = String(c.id) === String(selectedId);
+    var partyKey = (c.party_short || '').trim();
+
+    if (isSelf) {
+      selected = c;
+      return;
+    }
+
+    if (partyKey === 'IND') {
+      independents.push(c);
+      return;
+    }
+
+    var isMajor = MAJOR_PARTY_ORDER.indexOf(partyKey) !== -1;
+    if (isMajor) {
+      majors.push(c);
+    } else {
+      others.push(c);
+    }
+  });
+
+  // Sort major candidates by MAJOR_PARTY_ORDER priority
+  majors.sort(function(a, b) {
+    var ai = MAJOR_PARTY_ORDER.indexOf((a.party_short || '').trim());
+    var bi = MAJOR_PARTY_ORDER.indexOf((b.party_short || '').trim());
+    return ai - bi;
+  });
+
+  // Sort small parties alphabetically by party name for consistency
+  others.sort(function(a, b) {
+    return (a.party_short || '').localeCompare(b.party_short || '');
+  });
+
+  // Final order: selected → majors → others → IND
+  var result = [];
+  if (selected) result.push(selected);
+  result = result.concat(majors).concat(others).concat(independents);
+  return result;
+}
+
+// -----------------------------------------------
+// Build one competitor mini-card
+// (floating photo above coloured body, like candidate cards)
 // -----------------------------------------------
 function buildCompetitorCard(comp, isSelf) {
   var partyKey = (comp.party_short || '').trim();
   var colours  = getPopupColours(partyKey);
-  var iconPath = PARTY_ICONS[partyKey];
 
-  var badgeHTML = iconPath
-    ? '<img src="' + iconPath + '" alt="' + partyKey + '" style="width:100%;height:100%;object-fit:contain"/>'
-    : '<span style="font-size:6px;font-weight:900;color:#fff;line-height:1">' + partyKey.slice(0,3) + '</span>';
+  // Party logo badge — use icon if available, else party short name text
+  var iconPath = typeof PARTY_ICONS !== 'undefined' ? PARTY_ICONS[partyKey] : null;
+  var badgeInner;
+  if (iconPath) {
+    badgeInner = '<img src="' + iconPath + '" alt="' + partyKey + '" style="width:100%;height:100%;object-fit:contain"/>';
+  } else {
+    // Show party short name as text (max 4 chars to fit)
+    var label = partyKey === 'IND' ? 'IND' : partyKey.slice(0, 4);
+    badgeInner = '<span style="font-size:5px;font-weight:900;color:#fff;line-height:1;text-align:center;display:block;padding:1px">' + label + '</span>';
+  }
 
   var hasPhoto = comp.photo && comp.photo.length > 0;
   var photoHTML = hasPhoto
     ? '<img src="' + comp.photo + '" alt="' + comp.name + '" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block"/>'
     : buildPopupSilhouette();
 
-  var selfRing = isSelf ? 'outline:2.5px solid ' + colours.bg + ';outline-offset:2px;' : '';
+  // Self gets a highlight ring
+  var selfRing = isSelf
+    ? 'outline:2.5px solid ' + colours.bg + ';outline-offset:2px;border-radius:var(--radius-md);'
+    : '';
+
+  // Party bar label — use short name, capped at 6 chars for tiny parties
+  var barLabel = partyKey.length > 6 ? partyKey.slice(0, 6) : partyKey;
 
   return (
     '<div class="pcomp-card" style="' + selfRing + '">' +
+
+      // Floating oval photo
       '<div class="pcomp-card__photo-wrap">' + photoHTML + '</div>' +
+
+      // Coloured body
       '<div class="pcomp-card__body" style="background:' + colours.bg + '">' +
         '<p class="pcomp-card__name" style="color:' + colours.text + '">' + (comp.name || '').trim() + '</p>' +
         '<p class="pcomp-card__const" style="color:' + colours.text + '">' + (comp.constituency || '').trim() + '</p>' +
-        '<div class="pcomp-card__logo">' + badgeHTML + '</div>' +
+
+        // Party logo / initials circle — bottom-left
+        '<div class="pcomp-card__logo" style="background:' + (iconPath ? '#fff' : colours.bar) + '">' +
+          badgeInner +
+        '</div>' +
+
+        // Party name bar — bottom
         '<div class="pcomp-card__bar" style="background:' + colours.bar + '">' +
-          '<span style="color:#fff;font-size:10px;font-weight:800;letter-spacing:.03em">' + partyKey + '</span>' +
+          '<span style="color:#fff;font-size:9px;font-weight:800;letter-spacing:.02em">' + barLabel + '</span>' +
         '</div>' +
       '</div>' +
+
     '</div>'
   );
 }
 
 // -----------------------------------------------
-// Wins / Losses bar
+// Wins / Losses progress bar
 // -----------------------------------------------
 function buildWinsBar(wins, losses) {
   if (wins === undefined || wins === null) return '';
-  var w = parseInt(wins) || 0;
-  var l = parseInt(losses) || 0;
+  var w     = parseInt(wins)   || 0;
+  var l     = parseInt(losses) || 0;
   var total = w + l;
-  var pct = total > 0 ? Math.round((w / total) * 100) : 0;
+  var pct   = total > 0 ? Math.round((w / total) * 100) : 0;
   return (
     '<div class="popup-wins-wrap">' +
       '<div class="popup-wins-label">History of Elections</div>' +
@@ -324,7 +430,9 @@ function buildWinsBar(wins, losses) {
         '<span class="popup-wins-w">' + w + ' Wins</span>' +
         '<span class="popup-wins-l">' + l + ' Losses</span>' +
       '</div>' +
-      '<div class="popup-wins-bar"><div class="popup-wins-bar__fill" style="width:' + pct + '%"></div></div>' +
+      '<div class="popup-wins-bar">' +
+        '<div class="popup-wins-bar__fill" style="width:' + pct + '%"></div>' +
+      '</div>' +
     '</div>'
   );
 }
@@ -336,53 +444,76 @@ function buildPopupHTML(candidate) {
   var partyKey = (candidate.party_short || '').trim();
   var colours  = getPopupColours(partyKey);
 
+  // --- Fetch all candidates in same constituency ---
   var constKey   = (candidate.constituency || '').toUpperCase();
   var allInConst = (typeof allCandidatesByConstituency !== 'undefined' && allCandidatesByConstituency[constKey]) || [];
 
-  var competitorsHTML = allInConst.length > 0
-    ? allInConst.map(function(comp) {
-        var isSelf = String(comp.id) === String(candidate.id);
-        if (isSelf && candidate.photo) comp.photo = candidate.photo;
-        return buildCompetitorCard(comp, isSelf);
+  // Merge real photo onto self entry from constituency list
+  var merged = allInConst.map(function(comp) {
+    if (String(comp.id) === String(candidate.id) && candidate.photo) {
+      return Object.assign({}, comp, { photo: candidate.photo });
+    }
+    return comp;
+  });
+
+  // Sort: selected first → major parties → small parties → IND
+  var competitors = allInConst.filter(function(comp) {
+    return String(comp.id) !== String(candidate.id);
+  });
+ 
+  var sorted = sortCompetitors(competitors);
+
+  var competitorsHTML = sorted.length > 0
+    ? sorted.map(function(comp) {
+        return buildCompetitorCard(comp, String(comp.id) === String(candidate.id));
       }).join('')
     : '<div class="popup-competitors__empty">No competitor data available</div>';
 
+  // --- Main candidate photo ---
   var hasPhoto = candidate.photo && candidate.photo.length > 0;
   var mainPhotoHTML = hasPhoto
     ? '<img src="' + candidate.photo + '" alt="' + candidate.name + '" class="popup-main__photo-img"/>'
     : '<div class="popup-main__photo-placeholder">' + buildPopupSilhouette() + '</div>';
 
+  // --- Optional fields ---
   var contestingHTML = candidate.contesting
     ? '<div class="popup-main__contesting" style="color:' + colours.bg + '">Contesting ' + candidate.contesting + '</div>'
     : '';
 
   var winsHTML = buildWinsBar(candidate.wins, candidate.losses);
 
+  // --- Detail rows builder ---
   function rows(arr) {
     return arr.map(function(r) {
-      return '<div class="popup-details__row"><span class="popup-details__label">' + r.label + '</span><span class="popup-details__value">: ' + r.value + '</span></div>';
+      return (
+        '<div class="popup-details__row">' +
+          '<span class="popup-details__label">' + r.label + '</span>' +
+          '<span class="popup-details__value">: ' + r.value + '</span>' +
+        '</div>'
+      );
     }).join('');
   }
 
   var personalRows = [
-    { label: 'Full Name',    value: (candidate.full_name  || candidate.name || '—').trim() },
-    { label: 'Date of Birth',value: candidate.dob        || '—' },
-    { label: 'Birth Place',  value: candidate.birth_place || '—' },
-    { label: 'Father',       value: candidate.father      || '—' },
-    { label: 'Children',     value: candidate.children    || '—' },
+    { label: 'Full Name',     value: (candidate.full_name   || candidate.name || '—').trim() },
+    { label: 'Date of Birth', value: candidate.dob          || '—' },
+    { label: 'Birth Place',   value: candidate.birth_place  || '—' },
+    { label: 'Father',        value: candidate.father       || '—' },
+    { label: 'Children',      value: candidate.children     || '—' },
   ];
   var politicalRows = [
-    { label: 'Party',              value: candidate.party_full || partyKey || '—' },
-    { label: 'Constituency',       value: candidate.constituency || '—' },
-    { label: 'Current Position',   value: candidate.position    || '—' },
-    { label: 'First Elected as MLA',value: candidate.first_elected || '—' },
-    { label: 'Political Experience',value: candidate.experience  || '—' },
+    { label: 'Party',               value: candidate.party_full    || partyKey || '—' },
+    { label: 'Constituency',        value: candidate.constituency   || '—' },
+    { label: 'Current Position',    value: candidate.position       || '—' },
+    { label: 'First Elected as MLA',value: candidate.first_elected  || '—' },
+    { label: 'Political Experience',value: candidate.experience     || '—' },
   ];
 
   return (
     '<div class="popup-overlay" id="candidate-popup-overlay">' +
       '<div class="popup-modal" role="dialog" aria-modal="true">' +
 
+        // Header
         '<div class="popup-header">' +
           '<button class="popup-header__back" id="popup-close-btn" aria-label="Close">' +
             '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>' +
@@ -393,15 +524,19 @@ function buildPopupHTML(candidate) {
           '</button>' +
         '</div>' +
 
+        // Scrollable body
         '<div class="popup-body">' +
 
+          // Top row: left info + right competitors
           '<div class="popup-top-row">' +
 
             '<div class="popup-left">' +
               '<div class="popup-main__photo-wrap">' + mainPhotoHTML + '</div>' +
               '<div class="popup-main__info">' +
                 '<h2 class="popup-main__name" style="color:' + colours.bg + '">' + (candidate.name || '').trim() + '</h2>' +
-                '<div class="popup-main__constituency-pill" style="background:' + colours.bg + ';color:#fff">' + (candidate.constituency || '').toUpperCase() + '</div>' +
+                '<div class="popup-main__constituency-pill" style="background:' + colours.bg + ';color:#fff">' +
+                  (candidate.constituency || '').toUpperCase() +
+                '</div>' +
                 '<div class="popup-main__party">' + (candidate.party_full || partyKey) + '</div>' +
                 contestingHTML +
                 winsHTML +
@@ -415,6 +550,7 @@ function buildPopupHTML(candidate) {
 
           '</div>' +
 
+          // Details grid (bottom)
           '<div class="popup-details-grid">' +
             '<div class="popup-details-col">' +
               '<div class="popup-details__heading">Personal Details</div>' +
@@ -433,7 +569,7 @@ function buildPopupHTML(candidate) {
 }
 
 // -----------------------------------------------
-// Open / Close
+// Open popup
 // -----------------------------------------------
 function openCandidatePopup(candidate) {
   var existing = document.getElementById('candidate-popup-overlay');
@@ -446,23 +582,35 @@ function openCandidatePopup(candidate) {
 
   function closePopup() {
     var overlay = document.getElementById('candidate-popup-overlay');
-    if (overlay) { overlay.classList.add('popup-overlay--closing'); setTimeout(function() { overlay.remove(); }, 220); }
+    if (overlay) {
+      overlay.classList.add('popup-overlay--closing');
+      setTimeout(function() { overlay.remove(); }, 220);
+    }
     document.body.style.overflow = '';
   }
 
   document.getElementById('popup-close-btn').addEventListener('click', closePopup);
   document.getElementById('popup-close-x').addEventListener('click', closePopup);
-  document.getElementById('candidate-popup-overlay').addEventListener('click', function(e) { if (e.target === this) closePopup(); });
-  function onKey(e) { if (e.key === 'Escape') { closePopup(); document.removeEventListener('keydown', onKey); } }
+  document.getElementById('candidate-popup-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closePopup();
+  });
+  function onKey(e) {
+    if (e.key === 'Escape') { closePopup(); document.removeEventListener('keydown', onKey); }
+  }
   document.addEventListener('keydown', onKey);
 }
 
+// -----------------------------------------------
+// Wire up card clicks
+// -----------------------------------------------
 function initCandidatePopupClicks() {
   var grid = document.getElementById('candidates-grid');
   if (!grid) return;
+
   grid.addEventListener('click', function(e) {
     var card = e.target.closest('.candidate-card');
     if (!card || !card.dataset.candidateId) return;
+
     var id = card.dataset.candidateId;
     var allArrays = [
       typeof popularCandidates      !== 'undefined' ? popularCandidates      : [],

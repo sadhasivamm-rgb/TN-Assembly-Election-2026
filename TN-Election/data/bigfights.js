@@ -13,151 +13,151 @@ const bigFightsData = [
   {
     constituencyId: 19,
     constituency: "Chepauk-Thiruvallikeni",
-    candidate1: { id: 490,  name: "Udhayanidhi Stalin",   partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 490,  photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 466,  name: "Aadirajaram",           partyShort: "ADMK",   alliance: "NDA",    allianceColor: "#16A34A", votes2021: 466,  photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 490,  name: "Udhayanidhi Stalin",   partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 490,  photo: "../assets/images/candidates/mla/2026/490.jpg" },
+    candidate2: { id: 466,  name: "Aadirajaram",           partyShort: "ADMK",   alliance: "NDA",    allianceColor: "#16A34A", votes2021: 466,  photo: "../assets/images/candidates/mla/2026/466.jpg" }
   },
   {
     constituencyId: 13,
     constituency: "Kolathur",
-    candidate1: { id: 1289, name: "M. Poornima",           partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1289, photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 1295, name: "R. Balaji",             partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1295, photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 1289, name: "M. Poornima",           partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1289, photo: "../assets/images/candidates/mla/2026/1289.jpg" },
+    candidate2: { id: 1295, name: "R. Balaji",             partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1295, photo: "../assets/images/candidates/mla/2026/1295.jpg" }
   },
   {
     constituencyId: 217,
     constituency: "Ottapidaram",
-    candidate1: { id: 1322, name: "Karunanithi K",         partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 1322, photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 1324, name: "Pandi P",               partyShort: "NTK",    alliance: "NTK",    allianceColor: "#1a1a2e", votes2021: 1324, photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 1322, name: "Karunanithi K",         partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 1322, photo: "../assets/images/candidates/mla/2026/1322.jpg" },
+    candidate2: { id: 1324, name: "Pandi P",               partyShort: "NTK",    alliance: "NTK",    allianceColor: "#1a1a2e", votes2021: 1324, photo: "../assets/images/candidates/mla/2026/1324.jpg" }
   },
   {
     constituencyId: 6,
     constituency: "Avadi",
-    candidate1: { id: 350,  name: "S.M. Nasar",            partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 350,  photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 347,  name: "Rajasimha Mahendra",    partyShort: "BJP",    alliance: "NDA",    allianceColor: "#16A34A", votes2021: 347,  photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 350,  name: "S.M. Nasar",            partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 350,  photo: "../assets/images/candidates/mla/2026/350.jpg" },
+    candidate2: { id: 347,  name: "Rajasimha Mahendra",    partyShort: "BJP",    alliance: "NDA",    allianceColor: "#16A34A", votes2021: 347,  photo: "../assets/images/candidates/mla/2026/347.jpg" }
   },
   {
     constituencyId: 118,
     constituency: "Coimbatore (North)",
-    candidate1: { id: 557,  name: "Vanathi Srinivasan",    partyShort: "BJP",    alliance: "NDA",    allianceColor: "#16A34A", votes2021: 557,  photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 551,  name: "DURAI. SENTHAMIL SELVAN B.E",               partyShort: "DMK",      alliance: "SPA", allianceColor: "#E05A46", votes2021: 534,  photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 557,  name: "Vanathi Srinivasan",    partyShort: "BJP",    alliance: "NDA",    allianceColor: "#16A34A", votes2021: 557,  photo: "../assets/images/candidates/mla/2026/557.jpg" },
+    candidate2: { id: 551,  name: "DURAI. SENTHAMIL SELVAN B.E",               partyShort: "DMK",      alliance: "SPA", allianceColor: "#E05A46", votes2021: 534,  photo: "../assets/images/candidates/mla/2026/534.jpg" }
   },
   {
     constituencyId: 48,
     constituency: "Ambur",
-    candidate1: { id: 92,   name: "Vilwanathan A.C.",      partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 92,   photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 91,   name: "Venkatesan R",          partyShort: "ADMK",   alliance: "NDA",    allianceColor: "#16A34A", votes2021: 91,   photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 92,   name: "Vilwanathan A.C.",      partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 92,   photo: "../assets/images/candidates/mla/2026/92.jpg" },
+    candidate2: { id: 91,   name: "Venkatesan R",          partyShort: "ADMK",   alliance: "NDA",    allianceColor: "#16A34A", votes2021: 91,   photo: "../assets/images/candidates/mla/2026/91.jpg" }
   },
   {
     constituencyId: 149,
     constituency: "Ariyalur",
-    candidate1: { id: 268,  name: "Rajendran S",           partyShort: "ADMK",   alliance: "NDA",    allianceColor: "#16A34A", votes2021: 268,  photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 266,  name: "Latha Balu",            partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 266,  photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 268,  name: "Rajendran S",           partyShort: "ADMK",   alliance: "NDA",    allianceColor: "#16A34A", votes2021: 268,  photo: "../assets/images/candidates/mla/2026/268.jpg" },
+    candidate2: { id: 266,  name: "Latha Balu",            partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 266,  photo: "../assets/images/candidates/mla/2026/266.jpg" }
   },
   {
     constituencyId: 139,
     constituency: "Srirangam",
-    candidate1: { id: 2923, name: "Ravichandiran N",       partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2923, photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 2927, name: "Shashi Kiran K.N.",     partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2927, photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 2923, name: "Ravichandiran N",       partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2923, photo: "../assets/images/candidates/mla/2026/2923.jpg" },
+    candidate2: { id: 2927, name: "Shashi Kiran K.N.",     partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2927, photo: "../assets/images/candidates/mla/2026/2927.jpg" }
   },
   {
     constituencyId: 135,
     constituency: "Karur",
-    candidate1: { id: 1131, name: "Mailvaganan B",         partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1131, photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 1100, name: "Anbarasan N",           partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1100, photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 1131, name: "Mailvaganan B",         partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1131, photo: "../assets/images/candidates/mla/2026/1131.jpg" },
+    candidate2: { id: 1100, name: "Anbarasan N",           partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1100, photo: "../assets/images/candidates/mla/2026/1100.jpg" }
   },
   {
     constituencyId: 40,
     constituency: "Katpadi",
-    candidate1: { id: 1183, name: "Ganesan P",             partyShort: "IDMK",   alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1183, photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 1193, name: "A. Sozhan",             partyShort: "PMK",    alliance: "NDA",    allianceColor: "#16A34A", votes2021: 1193, photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 1183, name: "Ganesan P",             partyShort: "IDMK",   alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1183, photo: "../assets/images/candidates/mla/2026/1183.jpg" },
+    candidate2: { id: 1193, name: "A. Sozhan",             partyShort: "PMK",    alliance: "NDA",    allianceColor: "#16A34A", votes2021: 1193, photo: "../assets/images/candidates/mla/2026/1193.jpg" }
   },
   {
     constituencyId: 104,
     constituency: "Bhavani",
-    candidate1: { id: 388,  name: "Karuppanan K.C.",       partyShort: "ADMK",   alliance: "NDA",    allianceColor: "#16A34A", votes2021: 388,  photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 385,  name: "Chandrasekar K.A.",     partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 385,  photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 388,  name: "Karuppanan K.C.",       partyShort: "ADMK",   alliance: "NDA",    allianceColor: "#16A34A", votes2021: 388,  photo: "../assets/images/candidates/mla/2026/388.jpg" },
+    candidate2: { id: 385,  name: "Chandrasekar K.A.",     partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 385,  photo: "../assets/images/candidates/mla/2026/385.jpg" }
   },
   {
     constituencyId: 95,
     constituency: "Paramathi Velur",
-    candidate1: { id: 2192, name: "Karthik R",             partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2192, photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 2211, name: "Selvarasu S",           partyShort: "ADMK",   alliance: "NDA",    allianceColor: "#16A34A", votes2021: 2211, photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 2192, name: "Karthik R",             partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2192, photo: "../assets/images/candidates/mla/2026/2192.jpg" },
+    candidate2: { id: 2211, name: "Selvarasu S",           partyShort: "ADMK",   alliance: "NDA",    allianceColor: "#16A34A", votes2021: 2211, photo: "../assets/images/candidates/mla/2026/2211.jpg" }
   },
   {
     constituencyId: 106,
     constituency: "Gobichettipalayam",
-    candidate1: { id: 851,  name: "Shanmugam G",           partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 851,  photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 842,  name: "Palanisamyraaj M",      partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 842,  photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 851,  name: "Shanmugam G",           partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 851,  photo: "../assets/images/candidates/mla/2026/851.jpg" },
+    candidate2: { id: 842,  name: "Palanisamyraaj M",      partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 842,  photo: "../assets/images/candidates/mla/2026/842.jpg" }
   },
   {
     constituencyId: 195,
     constituency: "Thiruparankundram",
-    candidate1: { id: 3091, name: "Pounraj N",             partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 3091, photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 3097, name: "Syed Ibrahim M",        partyShort: "TVK",    alliance: "TVK",    allianceColor: "#F59E0B", votes2021: 3097, photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 3091, name: "Pounraj N",             partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 3091, photo: "../assets/images/candidates/mla/2026/3091.jpg" },
+    candidate2: { id: 3097, name: "Syed Ibrahim M",        partyShort: "TVK",    alliance: "TVK",    allianceColor: "#F59E0B", votes2021: 3097, photo: "../assets/images/candidates/mla/2026/3097.jpg" }
   },
   {
     constituencyId: 198,
     constituency: "Andipatti",
-    candidate1: { id: 119,  name: "Maharajan A",           partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 119,  photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 118,  name: "Logirajan A",           partyShort: "ADMK",   alliance: "NDA",    allianceColor: "#16A34A", votes2021: 118,  photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 119,  name: "Maharajan A",           partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 119,  photo: "../assets/images/candidates/mla/2026/119.jpg" },
+    candidate2: { id: 118,  name: "Logirajan A",           partyShort: "ADMK",   alliance: "NDA",    allianceColor: "#16A34A", votes2021: 118,  photo: "../assets/images/candidates/mla/2026/118.jpg" }
   },
   {
     constituencyId: 129,
     constituency: "Athoor",
-    candidate1: { id: 302,  name: "A. Viswanathan",        partyShort: "ADMK",   alliance: "NDA",    allianceColor: "#16A34A", votes2021: 302,  photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 307,  name: "I. Periyasamy",               partyShort: "DMK",      alliance: "SPA", allianceColor: "E05A46", votes2021: 306,  photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 302,  name: "A. Viswanathan",        partyShort: "ADMK",   alliance: "NDA",    allianceColor: "#16A34A", votes2021: 302,  photo: "../assets/images/candidates/mla/2026/302.jpg" },
+    candidate2: { id: 307,  name: "I. Periyasamy",               partyShort: "DMK",      alliance: "SPA", allianceColor: "E05A46", votes2021: 306,  photo: "../assets/images/candidates/mla/2026/306.jpg" }
   },
   {
     constituencyId: 37,
     constituency: "Kancheepuram",
-    candidate1: { id: 1043, name: "V. Somasundaram",       partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1043, photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 1039, name: "P. Venkatesan",         partyShort: "AIPTMK", alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1039, photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 1043, name: "V. Somasundaram",       partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1043, photo: "../assets/images/candidates/mla/2026/1043.jpg" },
+    candidate2: { id: 1039, name: "P. Venkatesan",         partyShort: "AIPTMK", alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1039, photo: "../assets/images/candidates/mla/2026/1039.jpg" }
   },
   {
     constituencyId: 94,
     constituency: "Namakkal",
-    candidate1: { id: 1899, name: "Stalin R",              partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1899, photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 1900, name: "Sureshkannan P",        partyShort: "GPI",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1900, photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 1899, name: "Stalin R",              partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1899, photo: "../assets/images/candidates/mla/2026/1899.jpg" },
+    candidate2: { id: 1900, name: "Sureshkannan P",        partyShort: "GPI",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1900, photo: "../assets/images/candidates/mla/2026/1900.jpg" }
   },
   {
     constituencyId: 31,
     constituency: "Tambaram",
-    candidate1: { id: 2977, name: "M. Jacob",              partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2977, photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 2984, name: "S. Parthiban",          partyShort: "DNA",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2984, photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 2977, name: "M. Jacob",              partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2977, photo: "../assets/images/candidates/mla/2026/2977.jpg" },
+    candidate2: { id: 2984, name: "S. Parthiban",          partyShort: "DNA",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2984, photo: "../assets/images/candidates/mla/2026/2984.jpg" }
   },
   {
     constituencyId: 143,
     constituency: "Lalgudi",
-    candidate1: { id: 1483, name: "M. Krishnan",           partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1483, photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 1484, name: "M. Rameshkumar",        partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1484, photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 1483, name: "M. Krishnan",           partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1483, photo: "../assets/images/candidates/mla/2026/1483.jpg" },
+    candidate2: { id: 1484, name: "M. Rameshkumar",        partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1484, photo: "../assets/images/candidates/mla/2026/.1484jpg" }
   },
   {
     constituencyId: 17,
     constituency: "Royapuram",
-    candidate1: { id: 2566, name: "Kerthivarunnan R",      partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2566, photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 2568, name: "I. Jayaprakash",        partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2568, photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 2566, name: "Kerthivarunnan R",      partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2566, photo: "../assets/images/candidates/mla/2026/2566.jpg" },
+    candidate2: { id: 2568, name: "I. Jayaprakash",        partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2568, photo: "../assets/images/candidates/mla/2026/2568.jpg" }
   },
   {
     constituencyId: 182,
     constituency: "Alangudi",
-    candidate1: { id: 28,   name: "Kandasamy",             partyShort: "TVK",    alliance: "TVK",    allianceColor: "#F59E0B", votes2021: 28,   photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 35,   name: "Siva V. Meyyanathan",   partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 35,   photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 28,   name: "Kandasamy",             partyShort: "TVK",    alliance: "TVK",    allianceColor: "#F59E0B", votes2021: 28,   photo: "../assets/images/candidates/mla/2026/28.jpg" },
+    candidate2: { id: 35,   name: "Siva V. Meyyanathan",   partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 35,   photo: "../assets/images/candidates/mla/2026/35.jpg" }
   },
   {
     constituencyId: 16,
     constituency: "Egmore",
-    candidate1: { id: 750,  name: "M. Nagarajan",          partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 750,  photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 744,  name: "Aravindan",             partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 744,  photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 750,  name: "M. Nagarajan",          partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 750,  photo: "../assets/images/candidates/mla/2026/750.jpg" },
+    candidate2: { id: 744,  name: "Aravindan",             partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 744,  photo: "../assets/images/candidates/mla/2026/744.jpg" }
   },
   {
     constituencyId: 179,
     constituency: "Viralimalai",
-    candidate1: { id: 3988, name: "Durai K",               partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 3988, photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 3968, name: "Mathiyalagan G",        partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 3968, photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 3988, name: "Durai K",               partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 3988, photo: "../assets/images/candidates/mla/2026/3988.jpg" },
+    candidate2: { id: 3968, name: "Mathiyalagan G",        partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 3968, photo: "../assets/images/candidates/mla/2026/3968.jpg" }
   },
   {
     constituencyId: 54,
     constituency: "Veppanahalli",
-    candidate1: { id: 3845, name: "Ramasamy G.C.",         partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 3845, photo: "../assets/images/candidates/placeholder.svg" },
-    candidate2: { id: 3849, name: "Anniyur Siva",          partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 3849, photo: "../assets/images/candidates/placeholder.svg" }
+    candidate1: { id: 3845, name: "Ramasamy G.C.",         partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 3845, photo: "../assets/images/candidates/mla/2026/3845.jpg" },
+    candidate2: { id: 3849, name: "Anniyur Siva",          partyShort: "DMK",    alliance: "SPA",    allianceColor: "#E05A46", votes2021: 3849, photo: "../assets/images/candidates/mla/2026/3849.jpg" }
   }
 ];
