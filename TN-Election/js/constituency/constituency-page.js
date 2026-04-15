@@ -206,6 +206,7 @@ function renderMiniMap(constId) {
         .attr('stroke', '#fff').attr('stroke-width', 0.5);
 }
 
+
 function getConstituencyCandidates(constId){
   var constMeta=constituenciesData[constId]||{};
   var allInConst=(typeof allCandidatesByConstituency!=='undefined'&&allCandidatesByConstituency[(constMeta.name||'').toUpperCase()])||[];
