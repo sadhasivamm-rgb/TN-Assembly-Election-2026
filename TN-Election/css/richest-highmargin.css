@@ -9,6 +9,7 @@
   padding: 2rem 1.5rem;
   background: #f0f4f8;
   box-sizing: border-box;
+  justify-content: center;
 }
 
 /* ── Shared Box ── */
@@ -54,7 +55,7 @@
 
 /* ── Table ── */
 .stats-table {
-  width: 100%;
+  
   border-collapse: collapse;
   table-layout: fixed;
 }

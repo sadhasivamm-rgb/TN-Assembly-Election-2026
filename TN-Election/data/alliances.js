@@ -270,7 +270,7 @@ const alliancesData = {
     {
       pn: "PMD",
       fullName: "PMD",
-      icon: "",
+      icon: "../assets/icons/aiptmk.jpg",
       cid: [204, 223],
       canid: [],
       figmaSeats: "–"

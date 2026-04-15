@@ -5,7 +5,7 @@ const topCandidatesByAssets = {
   top_candidates: [
     {
       name: "Leema Rose Martin",
-      pn: "AIADMK",
+      pn: "ADMK",
       cn: "LALGUDI",
       crores: 1049.56
     },
@@ -23,7 +23,7 @@ const topCandidatesByAssets = {
     },
     {
       name: "S.P. Velumani",
-      pn: "AIADMK",
+      pn: "ADMK",
       cn: "THONDAMUTHUR",
       crores: 30.12
     },
