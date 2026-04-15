@@ -199,18 +199,45 @@
 .cand-card.party-ntk  { border-color: #16A34A; }
 .cand-card.party-tvk  { border-color: #F59E0B; }
 
-.cand-photo-wrap {
+/* .cand-photo-wrap {
     width: 100%;
     height: 130px;
     background: #F1F5F9;
     overflow: hidden;
-}
+} */
 
-.cand-photo-wrap img {
+
+
+/* .cand-photo-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: top;
+} */
+
+
+/* Ensure the candidate photo fills the top half of the card properly */
+.cand-photo-wrap {
+    width: 100%;
+    height: 130px;
+    background: #fff; /* Changed from gray to white */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cand-photo-wrap img {
+    width: 90%; /* Slight padding so the face isn't touching borders */
+    height: auto;
+    object-fit: contain;
+}
+
+/* Round the badges like the image */
+.cand-party-badge {
+    border-radius: 4px; /* More rectangular than pill-shaped in the screenshot */
+    padding: 2px 8px;
+    font-size: 9px;
 }
 
 .cand-icon-wrap {
@@ -484,4 +511,33 @@
     font-size: 15px;
     font-weight: 800;
     color: var(--color-dark);
+}
+
+/* Card party borders */
+.cand-card.party-dmk { border: 2px solid #EF4444; }
+.cand-card.party-admk { border: 2px solid #22C55E; }
+.cand-card.party-tvk { border: 2px solid #F59E0B; }
+
+.cand-photo-wrap {
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.cand-photo-wrap img {
+    max-height: 100%;
+    max-width: 90%;
+    object-fit: contain;
+}
+
+.cand-icon-wrap {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    margin: -17px auto 5px;
+    background: white;
+    border: 1px solid #eee;
+    z-index: 2;
 }

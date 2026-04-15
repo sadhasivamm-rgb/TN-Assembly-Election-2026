@@ -36,6 +36,13 @@ window.MANIFESTOS_DATA = [
     image: "../assets/manifesto/inc.png",
     pdf: "../assets/manifesto/pdf/inc-manifesto.pdf",
   },
+
+  {
+    id: "bjp",
+    label: "BJP Manifesto",
+    image: "../assets/manifesto/bjp.jpg",
+    pdf: "../assets/manifesto/pdf/bjp-manifesto.pdf"
+  }
 ];
 
 // ── RENDER ────────────────────────────────────────────────────────────────────
@@ -43,46 +50,6 @@ window.MANIFESTOS_DATA = [
   const container = document.getElementById("manifestos-container");
   console.log(container);
   if (!container) return;
-
-  // const cards = window.MANIFESTOS_DATA.map((m) => `
-  //   <div class="manifesto-card" data-id="${m.id}">
-  //     <img
-  //       class="manifesto-card__img"
-  //       src="${m.image}"
-  //       alt="${m.label}"
-  //     />
-  //     <div class="manifesto-card__overlay">
-  //       <button
-  //         class="manifesto-btn manifesto-btn--view"
-  //         onclick="openManifestoPdf('${m.id}')"
-  //       >
-  //         <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-  //           stroke="currentColor" stroke-width="2.5"
-  //           stroke-linecap="round" stroke-linejoin="round">
-  //           <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-  //           <circle cx="12" cy="12" r="3"/>
-  //         </svg>
-  //         View
-  //       </button>
-  //       <a
-  //         class="manifesto-btn manifesto-btn--download"
-  //         href="${m.pdf}"
-  //         download="${m.label}.pdf"
-  //       >
-  //         <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-  //           stroke="currentColor" stroke-width="2.5"
-  //           stroke-linecap="round" stroke-linejoin="round">
-  //           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-  //           <polyline points="7 10 12 15 17 10"/>
-  //           <line x1="12" y1="15" x2="12" y2="3"/>
-  //         </svg>
-  //         Download
-  //       </a>
-  //     </div>
-  //   </div>
-  // `).join("");
-
-  // container.innerHTML = cards;
 
  const cards = window.MANIFESTOS_DATA.map((m, i) => `
     <div class="manifesto-card" data-id="${m.id}">

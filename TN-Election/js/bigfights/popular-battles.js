@@ -21,7 +21,7 @@ var RIVALRY_CONFIG = {
 var CANDIDATE_PHOTOS = {
   "M.K. Stalin":          "../assets/images/candidates/stalin.svg",
   "Edappadi Palaniswami": "../assets/images/candidates/eps.svg",
-  "Udhayanidhi Stalin":   "../assets/images/candidates/stalin.svg"
+  "Udhayanidhi Stalin":   "../assets/images/candidates/mla/2026/490.jpg"
 };
 
 // -----------------------------------------------
@@ -141,8 +141,8 @@ function renderPopularBattles() {
 
   var countHTML =
     '<div class="pop-results-count">' +
-      '<span class="pop-results-count__num">' + data.length + '</span> ' +
-      cfg.displayLabel + ' battles across Tamil Nadu' +
+      // '<span class="pop-results-count__num">' + data.length + '</span> ' +
+      // cfg.displayLabel + ' battles across Tamil Nadu' +
     '</div>';
 
   var gridHTML = data.map(buildPopCard).join('');

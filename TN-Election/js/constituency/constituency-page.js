@@ -1,16 +1,12 @@
-// ============================================
-// js/constituency/constituency-page.js
-// Reads selectedConstId from localStorage and
-// renders all sections of constituency.html
-// ============================================
+// Global Configuration
 var PARTY_COLORS = {
-  DMK:'#1D4ED8',ADMK:'#C8282A',BJP:'#F97316',INC:'#16A34A',
-  CPM:'#DC2626',CPI:'#EF4444',VCK:'#7C3AED',PMK:'#0891B2',
-  NTK:'#C2410C',TVK:'#0F766E',OTHERS:'#94A3B8'
+    DMK: '#EF4444', ADMK: '#22C55E', NTK: '#16A34A', 
+    TVK: '#F59E0B', INC: '#1D4ED8', BJP: '#F97316', OTHERS: '#94A3B8'
 };
+
 var PARTY_ICONS = {
-  DMK:'../assets/icons/dmk.svg',ADMK:'../assets/icons/admk.svg',
-  NTK:'../assets/icons/ntk.svg',TVK:'../assets/icons/tvk.svg'
+    DMK: '../assets/icons/dmk.svg', ADMK: '../assets/icons/admk.svg',
+    NTK: '../assets/icons/ntk.svg', TVK: '../assets/icons/tvk.svg'
 };
 function getPartyColor(p){return PARTY_COLORS[p]||PARTY_COLORS.OTHERS;}
 function goHome(){window.location.href='index.html';}
@@ -241,59 +237,52 @@ function renderCandidates(constId){
     return;
   }
 
-  container.innerHTML=candidates.map(function(cand){
+    container.innerHTML = candidates.map(function(cand, index) {
+        var pc = getPartyColor(cand.party);
+        
+        // Image Mapping: assets/images/candidates/mla/2026/{ID}.jpg
+        var imagePath = (index === 0) 
+            ? `../assets/images/candidates/mla/2026/${constId}.jpg`
+            : `../assets/images/candidates/mla/2026/${constId}_${cand.party.toLowerCase()}.jpg`;
 
-    var pc=getPartyColor(cand.party);
+        var ico = PARTY_ICONS[cand.party]
+            ? `<img src="${PARTY_ICONS[cand.party]}" alt="${cand.party}">`
+            : `<div class="party-fallback">${cand.party.slice(0,2)}</div>`;
 
-    var ico=PARTY_ICONS[cand.party]
-      ?'<img src="'+PARTY_ICONS[cand.party]+'" alt="'+cand.party+'" onerror="this.style.display=\'none\'">'
-      :'<div style="width:100%;height:100%;background:#E2E8F0;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;color:#475569">'+cand.party.slice(0,2)+'</div>';
-
-    var ph=cand.photo
-      ?'<img src="'+cand.photo+'" alt="'+cand.name+'" onerror="this.parentElement.style.background=\'#F1F5F9\'">'
-      :'<div style="width:100%;height:100%;background:#E2E8F0;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;color:#CBD5E1">'+cand.name[0]+'</div>';
-
-    return `
-      <div class="cand-card party-${cand.party.toLowerCase()}">
-        <div class="cand-photo-wrap">${ph}</div>
-        <div class="cand-icon-wrap">${ico}</div>
-        <div class="cand-name">${cand.name}</div>
-        <span class="cand-party-badge" style="background:${pc}">${cand.party}</span>
-      </div>
-    `;
-  }).join('');
+        return `
+            <div class="cand-card party-${cand.party.toLowerCase()}">
+                <div class="cand-photo-wrap">
+                    <img src="${imagePath}" alt="${cand.name}" onerror="this.src='../assets/images/candidates/placeholder.jpg';">
+                </div>
+                <div class="cand-icon-wrap">${ico}</div>
+                <div class="cand-name">${cand.name}</div>
+                <span class="cand-party-badge" style="background:${pc}">${cand.party}</span>
+            </div>`;
+    }).join('');
 }
 
-function renderHistory(constId){
-  var container=document.getElementById('history-cards');
-  if(!container)return;
-  var hist=typeof historyData!=='undefined'&&historyData[constId];
-  if(!hist){
-    container.innerHTML='<div class="history-card" style="color:#6B7280;font-size:13px">Historical data not available.</div>';
-    return;
-  }
-  var html='';
-  ['2021','2016','2011'].forEach(function(yr){
-    if(!hist[yr]||!hist[yr].length)return;
-    var w=hist[yr].find(function(c){return c.winner;});
-    var ru=hist[yr].find(function(c){return c.position===2;});
-    if(!w)return;
-    html+=
-      '<div class="history-card">'+
-        '<div class="history-year-tag">'+yr+' Assembly Election</div>'+
-        '<div class="history-winner-name" style="color:'+getPartyColor(w.party)+'">'+w.candidate+'</div>'+
-        '<div class="history-winner-party">'+w.party+'</div>'+
-        '<div class="history-stat">Votes gained : <span>'+fmt(w.votes)+'</span></div>'+
-        '<div class="history-margin">Margin: '+fmt(w.margin)+'</div>'+
-        (ru?
-          '<div class="history-runnerup">'+
-            '<div class="history-ru-name">'+ru.candidate+'</div>'+
-            '<div class="history-ru-detail">'+ru.party+'</div>'+
-            '<div class="history-stat" style="margin-top:4px">Votes gained : <span>'+fmt(ru.votes)+'</span></div>'+
-          '</div>':'')+''+
-      '</div>';
-  });
-  container.innerHTML=html||'<div class="history-card" style="color:#6B7280;font-size:13px">No historical data available.</div>';
+// 2. Render Historical Trajectory
+function renderHistory(constId) {
+    var container = document.getElementById('history-cards');
+    var hist = typeof historyData !== 'undefined' && historyData[constId];
+    if (!hist) { container.innerHTML = "Not available"; return; }
+
+    var html = '';
+    ['2021', '2016'].forEach(yr => {
+        if (!hist[yr]) return;
+        var w = hist[yr].find(c => c.winner);
+        var ru = hist[yr].find(c => c.position === 2);
+        html += `
+            <div class="history-card">
+                <div class="history-year-tag">${yr} Election</div>
+                <div class="history-winner-name" style="color:${getPartyColor(w.party)}">${w.candidate}</div>
+                <div class="history-winner-party">${w.party}</div>
+                <div class="history-stat">Votes: <span>${fmt(w.votes)}</span></div>
+                <div class="history-margin">Margin: ${fmt(w.margin)}</div>
+                ${ru ? `<div class="history-runnerup"><div class="history-ru-name">${ru.candidate}</div><div class="history-ru-detail">${ru.party}</div></div>` : ''}
+            </div>`;
+    });
+    container.innerHTML = html;
 }
 
 function drawPie(canvasId, segments){

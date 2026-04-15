@@ -7,8 +7,8 @@ const FLAG_BASE = "../assets/icons/";
 
 const FLAG_MAP = {
   DMK:    { src: `${FLAG_BASE}dmk-flag.png`,    fallback: "dmk-fallback"  },
-  AIADMK: { src: `${FLAG_BASE}aiadmk-flag.png`, fallback: "admk-fallback" },
-  TVK:    { src: `${FLAG_BASE}tvk-flag.png`,    fallback: "tvk-fallback"  },
+  ADMK: { src: `${FLAG_BASE}admk-flag.png`, fallback: "admk-fallback" },
+  TVK:    { src: `${FLAG_BASE}tvk-flag.jpg`,    fallback: "tvk-fallback"  },
 };
 
 function getPartyFlag(pn) {

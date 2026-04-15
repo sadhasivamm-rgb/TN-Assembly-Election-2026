@@ -15,25 +15,102 @@
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
     <link rel="stylesheet" href="../css/results.css" />
+    <link rel="stylesheet" href="../css/tn-map.css" />
+
+    <style>
+      .map-body {
+        grid-template-columns: 100%;
+      }
+    </style>
   </head>
 
   <body data-page="results">
     <div id="navbar-container"></div>
 
     <main>
-      <section style="padding: 40px 24px; text-align: center; color: #6b7280">
+      <!-- <section style="padding: 40px 24px; text-align: center; color: #6b7280">
         <h1 style="font-size: 24px; font-weight: 800; color: #1a1a2e">
           2021 Results Page
         </h1>
         <p style="margin-top: 8px">
-          Modules will be added here by each fresher.
+          <!-- Modules will be added here by each fresher. -->
+          Coming soon....
         </p>
+      </section> -->
+
+      <section class="map-section">
+        <div class="map-body">
+          <div class="map-right">
+            <!-- Search bar — top left of map column -->
+            <div class="map-search">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              <input
+                id="map-search-input"
+                type="text"
+                placeholder="Search Constituency…"
+              />
+              <div class="map-search-results" id="map-search-results"></div>
+            </div>
+
+            <!-- Map SVG fills remaining space -->
+            <div class="map-svg-wrap">
+              <svg id="tn-map-svg"></svg>
+            </div>
+
+            <!-- Popup anchored inside map-right -->
+            <div class="map-popup" id="map-popup">
+              <div class="popup-header">
+                <div class="popup-name" id="popup-name">—</div>
+                <button
+                  class="popup-close"
+                  id="popup-close-btn"
+                  aria-label="Close"
+                >
+                  ×
+                </button>
+              </div>
+              <div class="popup-body">
+                <div class="popup-section-label">Candidate</div>
+                <div id="popup-candidates"></div>
+                <div class="popup-section-label">Current MLA</div>
+                <div id="popup-mla"></div>
+              </div>
+              <div class="popup-footer">
+                <button
+                  class="popup-view-btn"
+                  onclick="viewConstituencyDetails()"
+                >
+                  View full details ›
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+
     </main>
 
     <script src="../data/navbar.js"></script>
     <script src="../js/components/navbar.js"></script>
-    <!-- <script src="../data/results2021.js"></script> -->
+    <script src="../data/results2021.js"></script>
+    <script src="../data/constituencies.js"></script>
+    <script src="../data/candidates2026.js"></script>
+    <script src="../data/tn-map-topo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+    <script src="../js/home/tn-map.js"></script>
     <!-- <script src="../js/results/parliament-chart.js"></script> -->
     <!-- <script src="../js/results/alliance-summary.js"></script> -->
     <!-- <script src="../js/results/results-table.js"></script> -->
