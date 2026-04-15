@@ -1,29 +1,82 @@
 // Global Configuration
+// Global Configuration
 var PARTY_COLORS = {
     DMK: '#EF4444', ADMK: '#22C55E', NTK: '#16A34A', 
     TVK: '#F59E0B', INC: '#1D4ED8', BJP: '#F97316', OTHERS: '#94A3B8'
+    // DMK: '#EF4444', ADMK: '#22C55E', NTK: '#16A34A', 
+    // TVK: '#F59E0B', INC: '#1D4ED8', BJP: '#F97316', OTHERS: '#94A3B8'
 };
+
 
 var PARTY_ICONS = {
     DMK: '../assets/icons/dmk.svg', ADMK: '../assets/icons/admk.svg',
     NTK: '../assets/icons/ntk.svg', TVK: '../assets/icons/tvk.svg'
+    // DMK: '../assets/icons/dmk.svg', ADMK: '../assets/icons/admk.svg',
+    // NTK: '../assets/icons/ntk.svg', TVK: '../assets/icons/tvk.svg'
 };
-function getPartyColor(p){return PARTY_COLORS[p]||PARTY_COLORS.OTHERS;}
-function goHome(){window.location.href='index.html';}
-function fmt(n){return Number(n).toLocaleString('en-IN');}
 
-function renderHeader(c){
-  document.title=c.name+' | TN Election 2026';
-  var bc=document.getElementById('const-breadcrumb');
-  if(bc) bc.textContent=c.name;
-  var desc=document.getElementById('const-description-text');
-  if(desc){
-    desc.innerHTML='<strong>'+c.name+'</strong> State Assembly constituency is one of the 234 state legislative assemblies in Tamil Nadu, India. Its State Assembly Constituency number is '+c.id+'. It is located in <strong>'+c.district+'</strong> district. Parliament constituency: <strong>'+(c.pc_name||'—')+'</strong>.';
-  }
+function getPartyColor(p) { return PARTY_COLORS[p] || PARTY_COLORS.OTHERS; }
+function goHome() { window.location.href = 'index.html'; }
+function fmt(n) { return Number(n).toLocaleString('en-IN'); }
+
+// 1. Render Candidates with Constituency ID Image Mapping
+function renderCandidates(constId) {
+    var container = document.getElementById('candidates-scroll');
+    if (!container) return;
+
+    var candidates = (typeof candidates2026Data !== 'undefined' && candidates2026Data[constId]) || [];
+
+    if (candidates.length === 0) {
+        container.innerHTML = '<div style="padding:20px;color:#6B7280;font-style:italic">Data coming soon…</div>';
+        return;
+    }
+
+    container.innerHTML = candidates.map(function(cand, index) {
+        var pc = getPartyColor(cand.party);
+        
+        // Image Mapping: assets/images/candidates/mla/2026/{ID}.jpg
+        var imagePath = (index === 0) 
+            ? `../assets/images/candidates/mla/2026/${constId}.jpg`
+            : `../assets/images/candidates/mla/2026/${constId}_${cand.party.toLowerCase()}.jpg`;
+
+        var ico = PARTY_ICONS[cand.party]
+            ? `<img src="${PARTY_ICONS[cand.party]}" alt="${cand.party}">`
+            : `<div class="party-fallback">${cand.party.slice(0,2)}</div>`;
+
+        return `
+            <div class="cand-card party-${cand.party.toLowerCase()}">
+                <div class="cand-photo-wrap">
+                    <img src="${imagePath}" alt="${cand.name}" onerror="this.src='../assets/images/candidates/placeholder.jpg';">
+                </div>
+                <div class="cand-icon-wrap">${ico}</div>
+                <div class="cand-name">${cand.name}</div>
+                <span class="cand-party-badge" style="background:${pc}">${cand.party}</span>
+            </div>`;
+    }).join('');
 }
 
-function getMLAImagePath(constituencyId){
-  return '../assets/images/candidates/mla/2021/'+constituencyId+'.jpg';
+// 2. Render Historical Trajectory
+function renderHistory(constId) {
+    var container = document.getElementById('history-cards');
+    var hist = typeof historyData !== 'undefined' && historyData[constId];
+    if (!hist) { container.innerHTML = "Not available"; return; }
+
+    var html = '';
+    ['2021', '2016'].forEach(yr => {
+        if (!hist[yr]) return;
+        var w = hist[yr].find(c => c.winner);
+        var ru = hist[yr].find(c => c.position === 2);
+        html += `
+            <div class="history-card">
+                <div class="history-year-tag">${yr} Election</div>
+                <div class="history-winner-name" style="color:${getPartyColor(w.party)}">${w.candidate}</div>
+                <div class="history-winner-party">${w.party}</div>
+                <div class="history-stat">Votes: <span>${fmt(w.votes)}</span></div>
+                <div class="history-margin">Margin: ${fmt(w.margin)}</div>
+                ${ru ? `<div class="history-runnerup"><div class="history-ru-name">${ru.candidate}</div><div class="history-ru-detail">${ru.party}</div></div>` : ''}
+            </div>`;
+    });
+    container.innerHTML = html;
 }
 
 function getPartyOrder(p){
@@ -137,49 +190,20 @@ function buildCandidateEntry(cand, allInConst){
 function renderMinister(c){
   var container=document.getElementById('minister-cards');
   if(!container)return;
+// 3. Mini Map using D3
+function renderMiniMap(constId) {
+    if (typeof d3 === 'undefined' || !window.tnMapTopo) return;
+    var svgEl = d3.select('#const-mini-svg');
+    var topoKey = Object.keys(tnMapTopo.objects)[0];
+    var features = topojson.feature(tnMapTopo, tnMapTopo.objects[topoKey]).features;
+    
+    var proj = d3.geoMercator().fitSize([260, 220], {type: 'FeatureCollection', features: features});
+    var path = d3.geoPath().projection(proj);
 
-  var mlaInit=(c.current_mla||c.mla_2021||'MLA').split(' ').map(function(w){return w[0]||'';}).join('').slice(0,2).toUpperCase();
-  var mpInit=(c.mp_name||'MP').split(' ').map(function(w){return w[0]||'';}).join('').slice(0,2).toUpperCase();
-
-  var mlaImgPath=getMLAImagePath(c.id);
-  var base='../assets/images/candidates/mp/';
-  var mpCon=c.mp_constituency||'';
-  var noSpace=mpCon.replace(/\s*\(/,'(');
-  var noSuffix=mpCon.replace(/\s*\([^)]*\)/g,'').trim();
-
-  var mlaAvatar=
-    '<div class="minister-avatar" style="background:'+getPartyColor(c.current_mla_party||c.mla_party_2021||'')+';color:#fff;padding:0;">'+
-      '<img src="'+mlaImgPath+'" alt="'+mlaInit+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" '+
-        'onerror="this.style.display=\'none\';this.nextSibling.style.display=\'flex\'">'+
-      '<span style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:11px;font-weight:800;">'+mlaInit+'</span>'+
-    '</div>';
-
-  var mpAvatar=
-    '<div class="minister-avatar" style="background:'+getPartyColor(c.mp_party||'')+';color:#fff;padding:0;">'+
-      '<img src="'+base+mpCon+'.jpg" alt="'+mpInit+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" '+
-        'onerror="this.src=\''+base+noSpace+'.jpg\';this.onerror=function(){this.src=\''+base+noSuffix+'.jpg\';this.onerror=function(){this.style.display=\'none\';this.nextSibling.style.display=\'flex\';};};"> '+
-      '<span style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:11px;font-weight:800;">'+mpInit+'</span>'+
-    '</div>';
-
-  container.innerHTML=
-    '<div class="minister-card">'+
-      mlaAvatar+
-      '<div class="minister-info">'+
-        '<div class="m-role">MLA</div>'+
-        '<div class="m-name">'+(c.current_mla||c.mla_2021||'—')+'</div>'+
-        '<div class="m-party">'+(c.current_mla_party||c.mla_party_2021||'')+'</div>'+
-      '</div>'+
-    '</div>'+
-    (c.mp_name?
-      '<div class="minister-card">'+
-        mpAvatar+
-        '<div class="minister-info">'+
-          '<div class="m-role">MP'+(c.mp_constituency?' · '+c.mp_constituency:'')+'</div>'+
-          '<div class="m-name">'+c.mp_name+'</div>'+
-          '<div class="m-party">'+(c.mp_party||'')+'</div>'+
-        '</div>'+
-      '</div>':''
-    );
+    svgEl.selectAll('path').data(features).enter().append('path')
+        .attr('d', path)
+        .attr('fill', f => String(f.properties.AC_NO) === String(constId) ? '#E05A46' : '#D1D5DB')
+        .attr('stroke', '#fff').attr('stroke-width', 0.5);
 }
 
 function getConstituencyCandidates(constId){
@@ -524,3 +548,4 @@ document.addEventListener('DOMContentLoaded',function(){
     });
   }
 });
+}
