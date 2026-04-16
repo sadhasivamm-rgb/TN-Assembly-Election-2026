@@ -19,10 +19,11 @@ function buildNavbar() {
     // Read the active page name from the <body> tag
     // Each HTML page sets:  <body data-page="home">
     const currentPage = document.body.dataset.page || "";
+    const activePage = currentPage === 'constituency' ? 'index' : currentPage;
 
     // Build nav link items — mark the active one
     const linksHTML = navbarData.links.map(link => {
-        const isActive = link.href.replace(".html", "") === currentPage ? "active" : "";
+        const isActive = link.href.replace(".html", "") === activePage ? "active" : "";
         return `<li>
       <a href="${link.href}" class="${isActive}">${link.label}</a>
     </li>`;
@@ -30,7 +31,7 @@ function buildNavbar() {
 
     // Build mobile menu links — same active logic
     const mobileLinksHTML = navbarData.links.map(link => {
-        const isActive = link.href.replace(".html", "") === currentPage ? "active" : "";
+        const isActive = link.href.replace(".html", "") === activePage ? "active" : "";
         return `<a href="${link.href}" class="${isActive}">${link.label}</a>`;
     }).join("");
 

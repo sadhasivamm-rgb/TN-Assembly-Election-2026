@@ -130,14 +130,25 @@ function buildPopCard(match) {
 }
 
 // -----------------------------------------------
-// Render grid of popular battle cards
+// Render grid of popular battle cards (with optional search)
 // -----------------------------------------------
-function renderPopularBattles() {
+function renderPopularBattles(searchTerm) {
   var container = document.getElementById('bigfight-cards-container');
   if (!container) return;
 
   var data = (headToHeadData && headToHeadData[activeRivalry]) || [];
   var cfg  = RIVALRY_CONFIG[activeRivalry];
+
+  // Filter by search term if provided
+  if (searchTerm && searchTerm.trim()) {
+    var term = searchTerm.trim().toLowerCase();
+    data = data.filter(function(match) {
+      var name1 = (match.candidate1 || '').toLowerCase();
+      var name2 = (match.candidate2 || '').toLowerCase();
+      var constituency = (match.constituency_name || '').toLowerCase();
+      return name1.includes(term) || name2.includes(term) || constituency.includes(term);
+    });
+  }
 
   var countHTML =
     '<div class="pop-results-count">' +
@@ -205,7 +216,9 @@ function openDropdown(tabBtn) {
       e.stopPropagation();
       activeRivalry = item.dataset.rivalry;
       dropdown.remove();
-      renderPopularBattles();
+      var searchInput = document.getElementById('candidates-search-input');
+      var searchTerm = searchInput ? searchInput.value : '';
+      renderPopularBattles(searchTerm);
       // Reopen with updated active state
       openDropdown(tabBtn);
     });
@@ -230,7 +243,9 @@ function initPopularBattlesTab() {
       tab.addEventListener('click', function(e) {
         e.stopPropagation();
         openDropdown(tab);
-        renderPopularBattles();
+        var searchInput = document.getElementById('candidates-search-input');
+        var searchTerm = searchInput ? searchInput.value : '';
+        renderPopularBattles(searchTerm);
       });
     } else {
       tab.addEventListener('click', function() {

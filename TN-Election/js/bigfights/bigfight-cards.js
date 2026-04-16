@@ -108,18 +108,54 @@ function buildFightCard(fight) {
 }
 
 // -----------------------------------------------
-// Render all fight cards into the grid
+// Render all fight cards into the grid (with optional filtering)
 // -----------------------------------------------
-function buildBigFightCards() {
+function buildBigFightCards(searchTerm) {
   var container = document.getElementById('bigfight-cards-container');
   if (!container) return;
 
-  container.innerHTML = bigFightsData.map(buildFightCard).join('');
+  var data = bigFightsData;
+
+  // Filter by search term if provided
+  if (searchTerm && searchTerm.trim()) {
+    var term = searchTerm.trim().toLowerCase();
+    data = data.filter(function(fight) {
+      var name1 = (fight.candidate1.name || '').toLowerCase();
+      var name2 = (fight.candidate2.name || '').toLowerCase();
+      var constituency = (fight.constituency || '').toLowerCase();
+      return name1.includes(term) || name2.includes(term) || constituency.includes(term);
+    });
+  }
+
+  container.innerHTML = data.map(buildFightCard).join('');
 }
 
 // -----------------------------------------------
-// Filter tab switching
+// Initialize search functionality
 // -----------------------------------------------
+function initSearch() {
+  var searchInput = document.getElementById('candidates-search-input');
+  if (!searchInput) return;
+
+  searchInput.addEventListener('input', function() {
+    var searchTerm = searchInput.value;
+    var activeTab = document.querySelector('.bigfight-tab--active');
+    var filter = activeTab ? activeTab.dataset.filter : 'all';
+
+    if (filter === 'popular') {
+      // For Popular Battles tab, use the renderPopularBattles function
+      if (typeof renderPopularBattles === 'function') {
+        renderPopularBattles(searchTerm);
+      }
+    } else {
+      // For Big Fights tab, filter and render bigFightsData
+      var container = document.getElementById('bigfight-cards-container');
+      if (!container) return;
+
+      buildBigFightCards(searchTerm);
+    }
+  });
+}
 function initFilterTabs() {
   var tabs = document.querySelectorAll('.bigfight-tab');
   if (!tabs.length) return;
@@ -133,6 +169,9 @@ function initFilterTabs() {
       var container = document.getElementById('bigfight-cards-container');
       if (!container) return;
 
+      var searchInput = document.getElementById('candidates-search-input');
+      var searchTerm = searchInput ? searchInput.value : '';
+
       var majorAlliances = ['NDA', 'SPA', 'NTK', 'TVK'];
 
       var data = filter === 'popular'
@@ -143,6 +182,17 @@ function initFilterTabs() {
             );
           })
         : bigFightsData;
+
+      // Apply search filter if there's a search term
+      if (searchTerm && searchTerm.trim()) {
+        var term = searchTerm.trim().toLowerCase();
+        data = data.filter(function(fight) {
+          var name1 = (fight.candidate1.name || '').toLowerCase();
+          var name2 = (fight.candidate2.name || '').toLowerCase();
+          var constituency = (fight.constituency || '').toLowerCase();
+          return name1.includes(term) || name2.includes(term) || constituency.includes(term);
+        });
+      }
 
       container.innerHTML = data.map(buildFightCard).join('');
     });
@@ -155,4 +205,5 @@ function initFilterTabs() {
 document.addEventListener('DOMContentLoaded', function() {
   buildBigFightCards();
   initFilterTabs();
+  initSearch();
 });

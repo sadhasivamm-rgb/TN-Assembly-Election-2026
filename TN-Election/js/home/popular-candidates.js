@@ -23,7 +23,7 @@ function buildHomePopularCandidates() {
 
     // Reuse buildCandidateCard() from candidate-cards.js — same card, no duplication
     container.innerHTML =
-        '<div class="candidates-grid">' +
+        '<div class="candidates-grid" id="home-popular-candidates-grid">' +
         preview.map(buildCandidateCard).join('') +
         '</div>' +
         '<div class="hpc__viewall-wrap">' +
@@ -31,6 +31,28 @@ function buildHomePopularCandidates() {
         '</div>';
 }
 
+function initHomePopularCandidateClicks() {
+    var grid = document.getElementById('home-popular-candidates-grid');
+    if (!grid) return;
+
+    grid.addEventListener('click', function(e) {
+        var card = e.target.closest('.candidate-card');
+        if (!card || !card.dataset.candidateId) return;
+
+        var id = card.dataset.candidateId;
+        var allArrays = [
+            typeof popularCandidates !== 'undefined' ? popularCandidates : [],
+        ];
+        var found = null;
+        for (var i = 0; i < allArrays.length; i++) {
+            found = allArrays[i].find(function(c) { return String(c.id) === String(id); });
+            if (found) break;
+        }
+        if (found && typeof openCandidatePopup !== 'undefined') openCandidatePopup(found);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     buildHomePopularCandidates();
+    initHomePopularCandidateClicks();
 });

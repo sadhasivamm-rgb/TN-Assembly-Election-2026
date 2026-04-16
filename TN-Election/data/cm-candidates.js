@@ -7,6 +7,7 @@
 
 const cmCandidatesData = [
     {
+        id: 1288,
         name: "M K Stalin",
         party: "DMK",
         photo: "../assets/images/candidates/stalin.svg",
@@ -14,6 +15,7 @@ const cmCandidatesData = [
         borderColor: "#E05A46"
     },
     {
+        id: 728,
         name: "E.P.S",
         party: "ADMK",
         photo: "../assets/images/candidates/eps.svg",
@@ -21,6 +23,7 @@ const cmCandidatesData = [
         borderColor: "#16A34A"
     },
     {
+        id: 1092,
         name: "Seeman",
         party: "NTK",
         photo: "../assets/images/candidates/seeman.svg",
@@ -28,6 +31,7 @@ const cmCandidatesData = [
         borderColor: "#16A34A"
     },
     {
+        id: 2271,
         name: "Vijay",
         party: "TVK",
         photo: "../assets/images/candidates/vijay.svg",

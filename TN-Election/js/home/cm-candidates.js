@@ -19,7 +19,7 @@ function buildCMCandidates() {
     // Build one card per candidate
     var cardsHTML = cmCandidatesData.map(function (candidate) {
         return (
-            '<div class="cm-card" style="border-color:' + candidate.borderColor + '">' +
+            '<div class="cm-card" data-candidate-id="' + candidate.id + '" style="border-color:' + candidate.borderColor + '">' +
 
             // Candidate photo
             '<div class="cm-card__photo-wrap">' +
@@ -50,7 +50,29 @@ function buildCMCandidates() {
     container.innerHTML = cardsHTML;
 }
 
+function initCMCandidateClicks() {
+    var container = document.getElementById("cm-candidates-container");
+    if (!container) return;
+
+    container.addEventListener('click', function(e) {
+        var card = e.target.closest('.cm-card');
+        if (!card || !card.dataset.candidateId) return;
+
+        var id = card.dataset.candidateId;
+        var allArrays = [
+            typeof popularCandidates !== 'undefined' ? popularCandidates : [],
+        ];
+        var found = null;
+        for (var i = 0; i < allArrays.length; i++) {
+            found = allArrays[i].find(function(c) { return String(c.id) === String(id); });
+            if (found) break;
+        }
+        if (found && typeof openCandidatePopup !== 'undefined') openCandidatePopup(found);
+    });
+}
+
 // Run when page is ready
 document.addEventListener("DOMContentLoaded", function () {
     buildCMCandidates();
+    initCMCandidateClicks();
 });

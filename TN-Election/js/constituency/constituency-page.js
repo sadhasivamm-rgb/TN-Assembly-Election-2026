@@ -53,6 +53,13 @@ function normalizePartyKey(p){
   return (p||'').toString().trim().toUpperCase();
 }
 
+function normalizeConstituencyKey(name){
+  var key = (name||'').toString().trim().toUpperCase();
+  // Normalize alternate spellings / mismatches in constituency lookup keys
+  if(key === 'MANAPAARAI') return 'MANAPPARAI';
+  return key;
+}
+
 function normalizeCandidateName(name){
   return (name||'').toString()
     .trim()
@@ -188,7 +195,8 @@ function renderMinister(c){
 
 function getConstituencyCandidates(constId){
   var constMeta=constituenciesData[constId]||{};
-  var allInConst=(typeof allCandidatesByConstituency!=='undefined'&&allCandidatesByConstituency[(constMeta.name||'').toUpperCase()])||[];
+  var constKey = normalizeConstituencyKey(constMeta.name);
+  var allInConst=(typeof allCandidatesByConstituency!=='undefined'&&allCandidatesByConstituency[constKey])||[];
 
   var candidates=(typeof candidates2026Data!=='undefined'&&candidates2026Data[constId])||[];
   if(candidates.length){
@@ -403,7 +411,8 @@ function renderMiniMap(constId){
 
 function viewAllCandidates(constId){
   var constMeta=constituenciesData[constId]||{};
-  var allInConst=(typeof allCandidatesByConstituency!=='undefined'&&allCandidatesByConstituency[(constMeta.name||'').toUpperCase()])||[];
+  var constKey = normalizeConstituencyKey(constMeta.name);
+  var allInConst=(typeof allCandidatesByConstituency!=='undefined'&&allCandidatesByConstituency[constKey])||[];
   var allCandidates=(typeof candidates2026Data!=='undefined'&&candidates2026Data[constId])||[];
   
   if(allCandidates.length){
@@ -448,35 +457,40 @@ function viewAllCandidates(constId){
     return;
   }
 
-  var lines=allCandidates.map(function(c,idx){
-    return '<tr>'+
-      '<td style="padding:12px;text-align:center;font-weight:600;color:#475569">'+(idx+1)+'</td>'+
-      '<td style="padding:12px;color:#1F2937;font-weight:500">'+c.name+'</td>'+
-      '<td style="padding:12px;"><span style="background:'+getPartyColor(c.party)+';color:#fff;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:600">'+c.party+'</span></td>'+
-      '<td style="padding:12px;color:#6B7280;font-size:13px">'+(c.age||'—')+'</td>'+
-    '</tr>';
+  // Generate card HTML for all candidates
+  var cardsHTML = allCandidates.map(function(cand){
+    var pc=getPartyColor(cand.party);
+
+    var ico=PARTY_ICONS[cand.party]
+      ?'<img src="'+PARTY_ICONS[cand.party]+'" alt="'+cand.party+'" onerror="this.style.display=\'none\'">'
+      :'<div style="width:100%;height:100%;background:#E2E8F0;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;color:#475569">'+cand.party.slice(0,2)+'</div>';
+
+    var ph=cand.photo
+      ?'<img src="'+cand.photo+'" alt="'+cand.name+'" onerror="this.parentElement.style.background=\'#F1F5F9\'">'
+      :'<div style="width:100%;height:100%;background:#E2E8F0;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;color:#CBD5E1">'+cand.name[0]+'</div>';
+
+    return `
+      <div class="cand-card party-${cand.party.toLowerCase()}">
+        <div class="cand-photo-wrap">${ph}</div>
+        <div class="cand-icon-wrap">${ico}</div>
+        <div class="cand-name">${cand.name}</div>
+        <span class="cand-party-badge" style="background:${pc}">${cand.party}</span>
+      </div>
+    `;
   }).join('');
 
   var modal=document.createElement('div');
   modal.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:1000;backdrop-filter:blur(2px)';
   modal.innerHTML=
-    '<div style="background:#fff;border-radius:12px;max-width:600px;width:90%;max-height:80vh;overflow-y:auto;box-shadow:0 20px 25px rgba(0,0,0,0.15)">'+
+    '<div style="background:#fff;border-radius:12px;max-width:800px;width:90%;max-height:80vh;overflow-y:auto;box-shadow:0 20px 25px rgba(0,0,0,0.15)">'+
       '<div style="padding:20px;border-bottom:1px solid #E5E7EB;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#fff">'+
         '<h3 style="margin:0;color:#1F2937;font-size:16px;font-weight:700">All Contesting Candidates</h3>'+
         '<button onclick="this.closest(\'[data-modal]\').remove()" style="background:none;border:none;font-size:24px;color:#6B7280;cursor:pointer;padding:0;width:30px;height:30px;display:flex;align-items:center;justify-content:center">×</button>'+
       '</div>'+
       '<div style="padding:20px">'+
-        '<table style="width:100%;border-collapse:collapse">'+
-          '<thead>'+
-            '<tr style="border-bottom:2px solid #E5E7EB;background:#F9FAFB">'+
-              '<th style="padding:12px;text-align:left;font-weight:600;color:#6B7280;font-size:12px;text-transform:uppercase">S.No</th>'+
-              '<th style="padding:12px;text-align:left;font-weight:600;color:#6B7280;font-size:12px;text-transform:uppercase">Name</th>'+
-              '<th style="padding:12px;text-align:left;font-weight:600;color:#6B7280;font-size:12px;text-transform:uppercase">Party</th>'+
-              '<th style="padding:12px;text-align:left;font-weight:600;color:#6B7280;font-size:12px;text-transform:uppercase">Age</th>'+
-            '</tr>'+
-          '</thead>'+
-          '<tbody>'+lines+'</tbody>'+
-        '</table>'+
+        '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:18px;justify-items:center">'+
+          cardsHTML +
+        '</div>'+
       '</div>'+
     '</div>';
   modal.setAttribute('data-modal','true');
