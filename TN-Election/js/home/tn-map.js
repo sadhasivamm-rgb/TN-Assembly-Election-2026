@@ -148,7 +148,9 @@ function buildMap() {
     .attr('class', 'constituency-path')
     .attr('id', function(d) { return 'path-' + d.properties.AC_NO; })
     .attr('d', path)
-    .attr('fill', '#E5E7EB')
+    .attr('fill', '#9CA3AF')
+    .attr('stroke', '#9CA3AF')
+    .attr('stroke-width', 0.5)
     .on('mousemove', function(event, d) {
       var name = d.properties.AC_NAME || d.properties.ac_name || '';
       // Show floating tooltip near cursor
@@ -167,10 +169,12 @@ function buildMap() {
       d3.selectAll('.constituency-path')
         .classed('highlighted', false)
         .attr('filter', null)
-        .attr('fill', '#E5E7EB');
+        .attr('fill', '#9CA3AF')
+        .attr('stroke', '#9CA3AF');
       d3.select(this)
         .classed('highlighted', true)
         .attr('fill', '#FF8C00')
+        .attr('stroke', '#FF8C00')
         .attr('filter', 'url(#hologram-glow)');
       // Pass click coords relative to .map-right so popup anchors on map
       var mapRight = document.querySelector('.map-right');
@@ -183,7 +187,8 @@ function buildMap() {
     d3.selectAll('.constituency-path')
       .classed('highlighted', false)
       .attr('filter', null)
-      .attr('fill', '#E5E7EB');
+      .attr('fill', '#9CA3AF')
+      .attr('stroke', '#9CA3AF');
     closePopup();
   });
 }
@@ -201,16 +206,14 @@ function openPopup(constId, x, y, mapRect) {
   function renderCandidateLine(candidate) {
     var party = resolvePartyKey(candidate) || 'IND';
     var imageHtml = '';
-    if (candidate.photo) {
-      imageHtml = '<img class="popup-party-icon" src="' + candidate.photo + '" alt="' + party + '" onerror="this.style.display=\'none\'">';
-    } else if (PARTY_ICONS[party]) {
+    if (PARTY_ICONS[party]) {
       imageHtml = '<img class="popup-party-icon" src="' + PARTY_ICONS[party] + '" alt="' + party + '" onerror="this.style.display=\'none\'">';
     } else {
       imageHtml = '<div class="popup-party-icon" style="background:#E2E8F0;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;color:#475569">' + party.slice(0,2) + '</div>';
     }
 
     return '<div class="popup-candidate-row">' +
-      '<span class="popup-cand-name">' + (candidate.name || (party + ' candidate')) + '</span>' +
+      '<span class="popup-cand-name">' + (candidate.name || candidate.candidate || (party + ' candidate')) + '</span>' +
       '<div class="popup-party-wrap">' + imageHtml +
         '<span class="popup-party-name">' + party + '</span>' +
       '</div>' +
@@ -223,7 +226,7 @@ function openPopup(constId, x, y, mapRect) {
 
   // Current MLA
   var mlaName  = c.current_mla  || c.mla_2021  || '—';
-  var mlaParty = c.current_mla_party || c.mla_party_2021 || '';
+  var mlaParty = (c.current_mla_party || c.mla_party_2021 || '').replace('AIADMK', 'ADMK');
   var mlaIcon  = PARTY_ICONS[mlaParty]
     ? '<img class="popup-party-icon" src="' + PARTY_ICONS[mlaParty] + '" alt="' + mlaParty + '" onerror="this.style.display=\'none\'">'
     : '<div class="popup-party-icon" style="background:#E2E8F0;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;color:#475569">' + (mlaParty||'?').slice(0,2) + '</div>';
@@ -235,6 +238,69 @@ function openPopup(constId, x, y, mapRect) {
         '<span class="popup-party-name">' + mlaParty + '</span>' +
       '</div>' +
     '</div>';
+
+  // Contesting Candidates - DMK and ADMK
+  var candidatesHtml = '';
+  var allCandidates = [];
+  if (typeof candidates2026Data !== 'undefined' && candidates2026Data[selectedConstId]) {
+    allCandidates = candidates2026Data[selectedConstId];
+  }
+  if (allCandidates.length === 0 && typeof constituenciesWithCandidates !== 'undefined' && constituenciesWithCandidates[selectedConstId]) {
+    allCandidates = constituenciesWithCandidates[selectedConstId].candidates || [];
+  }
+  if (allCandidates.length === 0 && typeof allCandidatesByConstituency !== 'undefined') {
+    var constMeta = constituenciesData[selectedConstId] || {};
+    var constName = (constMeta.name || '').toUpperCase();
+    allCandidates = allCandidatesByConstituency[constName] || [];
+  }
+  var dmkCandidate = allCandidates.find(function(cand) {
+    return resolvePartyKey(cand) === 'DMK';
+  });
+  if (!dmkCandidate && typeof alliancesData !== 'undefined' && alliancesData.SPA) {
+    for (var i = 0; i < alliancesData.SPA.length; i++) {
+      var party = alliancesData.SPA[i];
+      if (party.pn !== 'DMK' && party.cid && party.cid.includes(parseInt(selectedConstId))) {
+        dmkCandidate = allCandidates.find(function(cand) {
+          return resolvePartyKey(cand) === party.pn;
+        });
+        if (dmkCandidate) break;
+      }
+    }
+  }
+
+  var admkCandidate = allCandidates.find(function(cand) {
+    return resolvePartyKey(cand) === 'ADMK';
+  });
+  if (!admkCandidate && typeof alliancesData !== 'undefined' && alliancesData.NDA) {
+    for (var i = 0; i < alliancesData.NDA.length; i++) {
+      var party = alliancesData.NDA[i];
+      if (party.pn !== 'ADMK' && party.cid && party.cid.includes(parseInt(selectedConstId))) {
+        admkCandidate = allCandidates.find(function(cand) {
+          return resolvePartyKey(cand) === party.pn;
+        });
+        if (admkCandidate) break;
+      }
+    }
+  }
+  var tvkCandidate = allCandidates.find(function(cand) {
+    return resolvePartyKey(cand) === 'TVK';
+  });
+  var ntkCandidate = allCandidates.find(function(cand) {
+    return resolvePartyKey(cand) === 'NTK';
+  });
+  if (dmkCandidate) {
+    candidatesHtml += renderCandidateLine(dmkCandidate);
+  }
+  if (admkCandidate) {
+    candidatesHtml += renderCandidateLine(admkCandidate);
+  }
+  if (tvkCandidate) {
+    candidatesHtml += renderCandidateLine(tvkCandidate);
+  }
+  if (ntkCandidate) {
+    candidatesHtml += renderCandidateLine(ntkCandidate);
+  }
+  document.getElementById('popup-candidates').innerHTML = candidatesHtml || '<div class="popup-no-candidates">No DMK/ADMK/TVK/NTK candidates found</div>';
 
   // ── Position popup inside .map-right ──────────────────────
   var popup = document.getElementById('map-popup');
@@ -271,7 +337,8 @@ function closePopup() {
   d3.selectAll('.constituency-path')
     .classed('highlighted', false)
     .attr('filter', null)
-    .attr('fill', '#E5E7EB');
+    .attr('fill', '#9CA3AF')
+    .attr('stroke', '#9CA3AF');
   selectedConstId = null;
 }
 
@@ -317,7 +384,8 @@ function initSearch() {
         d3.selectAll('.constituency-path')
           .classed('highlighted', false)
           .attr('filter', null)
-          .attr('fill', '#E5E7EB');
+          .attr('fill', '#9CA3AF')
+          .attr('stroke', '#9CA3AF');
 
         // Apply orange hologram highlight — identical to clicking on map
         var pathEl = document.getElementById('path-' + c.id);
@@ -325,6 +393,7 @@ function initSearch() {
           d3.select(pathEl)
             .classed('highlighted', true)
             .attr('fill', '#FF8C00')
+            .attr('stroke', '#FF8C00')
             .attr('filter', 'url(#hologram-glow)');
         }
 

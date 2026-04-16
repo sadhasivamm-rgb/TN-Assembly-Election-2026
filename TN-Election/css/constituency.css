@@ -416,6 +416,12 @@
     flex-wrap: wrap;
 }
 
+.single-pie-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 .pie-block {
     flex: 1;
     min-width: 160px;

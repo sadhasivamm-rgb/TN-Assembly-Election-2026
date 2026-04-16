@@ -1,4 +1,4 @@
-// data/history.js
+// data/
 // 2016 & 2021 election results per constituency
 // Source: TN_2016_2021_history.json
 

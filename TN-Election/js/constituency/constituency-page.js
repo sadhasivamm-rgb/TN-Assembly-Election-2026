@@ -347,30 +347,6 @@ function renderCensus(c){
     {value:cFemale,color:'#EC4899'},
     {value:cOthers,color:'#94A3B8'}
   ]);
-
-  // Population pie — teal for male, purple for female, gray for others
-  var popTotal=c.total_population||0;
-  var popMale=c.male_population||0;
-  var popFemale=c.female_population||0;
-  var popOthers=c.other_population||0;
-
-  if(popTotal){
-    document.getElementById('census-population').textContent=fmt(popTotal);
-    document.getElementById('pop-male').textContent=fmt(popMale);
-    document.getElementById('pop-female').textContent=fmt(popFemale);
-    document.getElementById('pop-others').textContent=fmt(popOthers);
-    drawPie('population-pie',[
-      {value:popMale,color:'#34D399'},
-      {value:popFemale,color:'#818CF8'},
-      {value:popOthers,color:'#94A3B8'}
-    ]);
-  } else {
-    document.getElementById('census-population').textContent='Data unavailable';
-    document.getElementById('pop-male').textContent='—';
-    document.getElementById('pop-female').textContent='—';
-    document.getElementById('pop-others').textContent='—';
-    drawPie('population-pie',[{value:1,color:'#E2E8F0'}]);
-  }
 }
 
 function renderAssemblyDetails(c){
@@ -411,16 +387,16 @@ function renderMiniMap(constId){
   // all constituencies — light gray
   svg.selectAll('.bp').data(features).enter().append('path')
     .attr('d',path)
-    .attr('fill','#D1D5DB')
-    .attr('stroke','#fff')
+    .attr('fill','#9CA3AF')
+    .attr('stroke','#9CA3AF')
     .attr('stroke-width',0.4);
   // highlighted constituency — accent red
   var target=features.find(function(f){return String(f.properties.AC_NO)===String(constId);});
   if(target){
     svg.append('path').datum(target)
       .attr('d',path)
-      .attr('fill','#E05A46')
-      .attr('stroke','#fff')
+      .attr('fill','#FF8C00')
+      .attr('stroke','#FF8C00')
       .attr('stroke-width',1.5);
   }
 }
