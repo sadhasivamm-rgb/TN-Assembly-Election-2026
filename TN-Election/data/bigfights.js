@@ -133,7 +133,7 @@ const bigFightsData = [
   {
     constituencyId: 17,
     constituency: "Royapuram",
-    candidate1: { id: 2566, name: "Kerthivarunnan R",      partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2566, photo: "../assets/images/candidates/mla/2026/2566.jpg" },
+    candidate1: { id: 2566, name: "Kerthivarunnan R",      partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2566, photo: "../assets/images/candidates/mla/2026/2573.jpg" },
     candidate2: { id: 2568, name: "I. Jayaprakash",        partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2568, photo: "../assets/images/candidates/mla/2026/2568.jpg" }
   },
   {
