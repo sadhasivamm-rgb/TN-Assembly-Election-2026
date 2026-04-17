@@ -81,10 +81,7 @@ function initCandidateSearch() {
       return;
     }
 
-    container.innerHTML = filtered.map(buildCandidateCard).join('');
-
-    var countEl = document.getElementById('candidates-count');
-    if (countEl) countEl.textContent = filtered.length + ' Candidates';
+    renderCandidates(filtered);
   });
 }
 

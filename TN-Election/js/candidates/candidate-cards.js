@@ -999,12 +999,12 @@ function buildCandidateCard(candidate, index) {
 
       '<div class="candidate-card__body" style="background:' + cardBg + '">' +
         '<div class="candidate-card__footer">' +
-          '<p class="candidate-card__name" style="color:' + nameColor + '">' + (candidate.name || '').trim() + '</p>' +
-          '<p class="candidate-card__constituency" style="color:' + nameColor + '">' + (candidate.constituency || '').trim() + '</p>' +
+          '<p class="candidate-card__name">' + (candidate.name || '').trim() + '</p>' +
+          '<p class="candidate-card__constituency">' + (candidate.constituency || '').trim() + '</p>' +
           '<div class="candidate-card__logo-wrap">' +
             badgeHTML +
           '</div>' +
-          '<div class="candidate-card__party-bar" style="background:' + cardBar + ';color:white">' +
+          '<div class="candidate-card__party-bar" style="width:100%;background:' + cardBar + ';color:white">' +
             partyKey +
           '</div>' +
         '</div>' +

@@ -104,7 +104,7 @@ const bigFightsData = [
     constituencyId: 129,
     constituency: "Athoor",
     candidate1: { id: 302,  name: "A. Viswanathan",        partyShort: "ADMK",   alliance: "NDA",    allianceColor: "#16A34A", votes2021: 302,  photo: "../assets/images/candidates/mla/2026/302.jpg" },
-    candidate2: { id: 307,  name: "I. Periyasamy",               partyShort: "DMK",      alliance: "SPA", allianceColor: "E05A46", votes2021: 306,  photo: "../assets/images/candidates/mla/2026/306.jpg" }
+    candidate2: { id: 307,  name: "I. Periyasamy",               partyShort: "DMK",      alliance: "SPA", allianceColor: "E05A46", votes2021: 306,  photo: "../assets/images/candidates/mla/2026/307.jpg" }
   },
   {
     constituencyId: 37,
@@ -128,12 +128,12 @@ const bigFightsData = [
     constituencyId: 143,
     constituency: "Lalgudi",
     candidate1: { id: 1483, name: "M. Krishnan",           partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1483, photo: "../assets/images/candidates/mla/2026/1483.jpg" },
-    candidate2: { id: 1484, name: "M. Rameshkumar",        partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1484, photo: "../assets/images/candidates/mla/2026/.1484jpg" }
+    candidate2: { id: 1484, name: "M. Rameshkumar",        partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 1484, photo: "../assets/images/candidates/mla/2026/1484.jpg" }
   },
   {
     constituencyId: 17,
     constituency: "Royapuram",
-    candidate1: { id: 2566, name: "Kerthivarunnan R",      partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2566, photo: "../assets/images/candidates/mla/2026/2566.jpg" },
+    candidate1: { id: 2566, name: "Kerthivarunnan R",      partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2566, photo: "../assets/images/candidates/mla/2026/2573.jpg" },
     candidate2: { id: 2568, name: "I. Jayaprakash",        partyShort: "IND",    alliance: "OTHERS", allianceColor: "#6b7280", votes2021: 2568, photo: "../assets/images/candidates/mla/2026/2568.jpg" }
   },
   {

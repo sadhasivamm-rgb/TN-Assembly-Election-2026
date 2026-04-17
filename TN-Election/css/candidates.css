@@ -59,7 +59,8 @@
 /* ---------- Search Bar ---------- */
 .candidates-search {
   position: relative;
-  margin-bottom: var(--gap-md);
+  min-width: 280px;
+  max-width: 420px;
 }
 
 .candidates-search__input {
@@ -72,11 +73,15 @@
   background: var(--color-white);
   color: var(--color-dark);
   outline: none;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: none;
 }
 
-.candidates-search__input:focus {
-  border-color: var(--color-primary);
+.candidates-search__input:hover,
+.candidates-search__input:focus,
+.candidates-search__input:active {
+  border-color: var(--color-border);
+  box-shadow: none;
 }
 
 .candidates-search__input::placeholder {
@@ -179,6 +184,7 @@
   margin-top: 90px;
   border-radius: var(--radius-lg);
   overflow: visible;
+  width: 220px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -194,7 +200,7 @@
 /* ---------- Floating oval photo — overflows above card ---------- */
 .candidate-card__photo-wrap {
   position: absolute;
-  bottom:100px;
+  top:-60px;
   left: 50%;
   transform: translateX(-50%);
   width: 120px;
@@ -252,6 +258,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   line-height: 1.3;
+  color: var(--color-dark) !important;
 }
 
 .candidate-card__constituency {
@@ -259,6 +266,7 @@
   font-weight: 600;
   margin: 0 0 10px;
   opacity: 0.8;
+  color: var(--color-muted) !important;
 }
 
 /* ---------- Party logo circle — bottom-left of bar ---------- */
@@ -278,23 +286,145 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-.candidate-card__logo-wrap img {
+.page-footer {
+  background-color: #003333;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  z-index: 2;
-}
-
-/* ---------- Party name bar at bottom ---------- */
-.candidate-card__party-bar {
-  width: 100%;
-  height: 32px;
-  font-size: var(--font-sm);
-  font-weight: 700;
+  min-height: 159px;
   display: flex;
   align-items: center;
   justify-content: center;
-  letter-spacing: 0.04em;
+  margin-top: 36px;
+  padding: 24px 120px;
+  color: #EAECF0;
+}
+
+.page-footer__inner {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.page-footer__content {
+  max-width: 740px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page-footer__copy {
+  margin: 0;
+  font-size: 0.98rem;
+  color: #F8F8F8;
+}
+
+.page-footer__heart {
+  color: #ff5a5a;
+  margin: 0 6px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.page-footer__description {
+  margin: 0;
+  color: #d9e2ec;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  max-width: 720px;
+}
+
+.page-footer__builtby {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: #f8f8f8;
+  font-weight: 600;
+}
+
+.page-footer__builtby svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.page-footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-end;
+}
+
+.page-footer__links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.page-footer__links a {
+  color: #f8f8f8;
+  text-decoration: none;
+  opacity: 0.88;
+  font-size: 0.95rem;
+  transition: opacity 0.2s ease;
+}
+
+.page-footer__links a:hover {
+  opacity: 1;
+}
+
+.page-footer__social {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.page-footer__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+.page-footer__social svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 900px) {
+  .page-footer {
+    padding: 24px 24px 24px 24px;
+  }
+
+  .page-footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-footer__nav {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .page-footer__links {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-footer {
+    padding: 24px 16px;
+  }
+
+  .page-footer__links {
+    gap: 12px;
+  }
 }
 
 /* ---------- Empty / Loading States ---------- */
@@ -374,8 +504,9 @@
   background: #f0f4f8;
   border-radius: var(--radius-lg);
   width: 100%;
-  max-width: 860px;
-  max-height: 90vh;
+  /* max-width: 860px;
+  max-height: 90vh; */
+  height: 100%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -412,7 +543,7 @@
   border: none; 
   cursor: pointer; 
   padding: 4px;
-  margin-left: 500px;
+  margin-left: auto;
   color: var(--color-dark); 
   display: flex; align-items: center;
   border-radius: var(--radius-sm); 
@@ -437,6 +568,7 @@
   display: flex;
   gap: var(--gap-md);
   align-items: stretch;
+  color: #1F2937 !important;
 }
 
 /* LEFT PANEL */
@@ -446,7 +578,7 @@
   background:transparent;
   border-radius: var(--radius-md);
   padding: var(--gap-md);
-  flex-shrink: 0;
+  flex: 1;
   align-items: flex-start;
   min-width: 0;
 }
@@ -473,6 +605,7 @@
   flex-direction: column;
   gap: 6px;
   min-width: 0;
+  color: #1F2937 !important;
 }
 .popup-main__name {
   font-size: 28px;
@@ -480,6 +613,7 @@
   font-weight: 900;
   line-height: 1.15;
   margin: 0;
+  color: #1F2937 !important;
 }
 .popup-main__constituency-pill {
   display: inline-block;
@@ -489,15 +623,17 @@
   font-weight: 900;
   letter-spacing: 0.05em;
   width: fit-content;
+  color: var(--color-white);
 }
 .popup-main__party {
   font-size: var(--font-sm);
   font-weight: 600;
-  color: var(--color-muted);
+  color: #6B7280 !important;
 }
 .popup-main__contesting {
   font-size: var(--font-sm);
   font-weight: 700;
+  color: #1F2937 !important;
 }
 
 /* Wins / Losses bar */
@@ -548,6 +684,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-sm);
+  color: #1F2937 !important;
 }
 .popup-competitors__title {
   font-size: var(--font-md);
@@ -621,6 +758,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   width: 100%;
+  color: #1F2937 !important;
 }
 .pcomp-card__const {
   font-size: 9px;
@@ -633,6 +771,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
+  color: #6B7280 !important;
 }
 
 /* Party logo circle — bottom-left */
@@ -728,6 +867,7 @@
   background: var(--color-white);
   border-radius: var(--radius-md);
   padding: var(--gap-md);
+  margin-top: 10px;
 }
 .popup-about-text {
   font-size: var(--font-sm);
